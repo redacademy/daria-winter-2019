@@ -338,6 +338,8 @@ ASALocalRun/
 !README.md
 # Ignore everything in "plugins" except certain plugins. #
 plugins/*
+!plugins/custom-posts-widget/
+!plugins/akismet/
 # Ignore everything in "themes" except the active theme. #
 themes/*
 !themes/daria-day/
