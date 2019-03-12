@@ -375,3 +375,7 @@ ehthumbs.db
 # Ignore packages #
 # =============== #
 node_modules/
+
+# Ignore yarn #
+# =============== #
+yarn.lock
