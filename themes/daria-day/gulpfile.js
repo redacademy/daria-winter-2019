@@ -64,7 +64,7 @@ gulp.task('browser-sync', function() {
   ];
 
   browserSync.init(files, {
-    proxy: 'http://localhost/Xampp/Sandbox/wordpress-stuff/project-5-quotes-on-devs/quotes-on-devs/'
+    proxy: 'http://localhost/Xampp/Sandbox/wordpress-stuff/daria-day'
   });
 
   gulp.watch(files).on('change', browserSync.reload);

@@ -338,10 +338,14 @@ ASALocalRun/
 !README.md
 !index.php
 
+# Ignore wp-migrate backup folders #
+uploads/wp-migrate-db
+
 # Ignore everything in "plugins" except certain plugins. #
 plugins/*
 !plugins/custom-posts-widget/
 !plugins/akismet/
+!plugins/wpshopify/
 !plugins/index.php
 !plugins/hello.php
 
