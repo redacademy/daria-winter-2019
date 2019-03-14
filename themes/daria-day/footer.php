@@ -16,34 +16,44 @@
 	<footer id="footer" class="footer">
 		<div class="companyinfo">
 
-		
+
+			<div id="footer-sidebar" class="secondary">
+
+				<div id="products">
+				<?php
+					if(is_active_sidebar('products')){
+					dynamic_sidebar('products');
+					}
+				?>
+				</div>
+
+				<div id="company">
+				<?php
+					if(is_active_sidebar('company')){
+					dynamic_sidebar('company');
+					}
+					?>
+				</div>
+
+				<div id="customers">
+					<?php
+					if(is_active_sidebar('customers')){
+					dynamic_sidebar('customers');
+					}?>
+				</div>
+
+				<div id="darialogo">
+					<?php
+					if(is_active_sidebar('darialogo')){
+					dynamic_sidebar('darialogo');
+					}?>
+				</div>
 	
-
-
-			<!-- <div class= 'products'>
-				<h2>Our Products</h2>
-				<p><a href ="#">Earrings</a></p>
-				<p><a href ="#">Necklaces</a></p>
-				<p><a href ="#">Bracelets</a></p>
 			</div>
 
-			<div class= 'company'>
-				<h2>Our Company</h2>
-				<p><a href ="#">Our Story</a></p>
-				<p><a href ="#">Our Artisans</a></p>
-				<p><a href ="#">Jewel Care</a></p>
-			</div>	
-
-			<div class= 'customers'>	
-				<h2>Customers</h2>
-				<p><a href ="#">Shipping</a></p>
-				<p><a href ="#">Return Policy</a></p>
-				<p><a href ="#">My Account</a></p>
-				<p><a href ="#">My Orders</a></p>
-			</div> -->
 
 		</div><!-- .site-info -->
-		<div class ='darialogo'>	<div>
+		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
