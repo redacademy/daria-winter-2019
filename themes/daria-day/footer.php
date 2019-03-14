@@ -13,20 +13,37 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'daria-day' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'daria-day' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'daria-day' ), 'daria-day', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
+	<footer id="footer" class="footer">
+		<div class="companyinfo">
+
+		
+	
+
+
+			<!-- <div class= 'products'>
+				<h2>Our Products</h2>
+				<p><a href ="#">Earrings</a></p>
+				<p><a href ="#">Necklaces</a></p>
+				<p><a href ="#">Bracelets</a></p>
+			</div>
+
+			<div class= 'company'>
+				<h2>Our Company</h2>
+				<p><a href ="#">Our Story</a></p>
+				<p><a href ="#">Our Artisans</a></p>
+				<p><a href ="#">Jewel Care</a></p>
+			</div>	
+
+			<div class= 'customers'>	
+				<h2>Customers</h2>
+				<p><a href ="#">Shipping</a></p>
+				<p><a href ="#">Return Policy</a></p>
+				<p><a href ="#">My Account</a></p>
+				<p><a href ="#">My Orders</a></p>
+			</div> -->
+
 		</div><!-- .site-info -->
+		<div class ='darialogo'>	<div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

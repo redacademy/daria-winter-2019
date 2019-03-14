@@ -13,7 +13,7 @@ const terser = require('gulp-terser');
 
 gulp.task('sass', function() {
   return gulp
-    .src('./sass/main.scss', { sourcemaps: true })
+    .src('./sass/style.scss', { sourcemaps: true })
     .pipe(sourcemaps.init())
     .pipe(prettyError())
     .pipe(sass())
@@ -64,7 +64,7 @@ gulp.task('browser-sync', function() {
   ];
 
   browserSync.init(files, {
-    proxy: 'http://localhost/Xampp/Sandbox/wordpress-stuff/daria-day'
+    proxy: 'http://localhost:8888/daria/'
   });
 
   gulp.watch(files).on('change', browserSync.reload);
