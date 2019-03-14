@@ -360,6 +360,7 @@ template {
 [hidden] {
   display: none; }
 
+<<<<<<< HEAD
 #footer {
   margin-top: 6%;
   width: 100%;
@@ -400,3 +401,7 @@ template {
   display: -ms-flexbox;
   display: flex;
   z-index: 99; }
+=======
+body {
+  background-color: purple; }
+>>>>>>> 879b1448a17aee5f2e8e5a6c8f9253fe4b1d8694

@@ -380,6 +380,11 @@ ehthumbs.db
 # =============== #
 node_modules/
 
-# Ignore yarn #
+# Ignore yarn and gulpfile #
 # =============== #
 yarn.lock
+themes/daria-day/gulpfile.js
+
+# Ignore Dploy configs #
+# =============== #
+dploy.yaml
