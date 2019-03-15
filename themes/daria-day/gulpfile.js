@@ -64,7 +64,7 @@ gulp.task('browser-sync', function() {
   ];
 
   browserSync.init(files, {
-    proxy: 'http://localhost/Xampp/Sandbox/wordpress-stuff/daria-day'
+    proxy: 'http://localhost:8888'
   });
 
   gulp.watch(files).on('change', browserSync.reload);
