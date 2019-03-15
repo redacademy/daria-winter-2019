@@ -28,10 +28,13 @@
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
+	<!DOCTYPE html>
 
 	<?php daria_day_post_thumbnail(); ?>
 
 	<div class="entry-content">
+
+
 		<?php
 		the_content( sprintf(
 			wp_kses(
