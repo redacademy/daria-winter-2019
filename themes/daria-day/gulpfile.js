@@ -13,7 +13,7 @@ const terser = require('gulp-terser');
 
 gulp.task('sass', function() {
   return gulp
-    .src('./sass/main.scss', { sourcemaps: true })
+    .src('./sass/style.scss', { sourcemaps: true })
     .pipe(sourcemaps.init())
     .pipe(prettyError())
     .pipe(sass())

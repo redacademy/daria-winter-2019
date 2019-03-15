@@ -1,5 +1,12 @@
+
+<?php 
+// Variables
+$hero_title = get_field('hero_title');
+$hero_sub_title = get_field('hero_sub_title');
+?>
 <div class="home-hero">
-<h1>Captivating energy that improves your life and its makers.</h1>
-<h3>Handcrafted jewelry radiating the Earth’s energy everyday</h3>
-<button>Shop now</button>
+<p class="hero-title"><?php echo $hero_title ?></p>
+<p class="hero-sub-title"><?php echo $hero_sub_title ?></p>
+<button class="hero-btn"><a href="#"><p>Shop now </p></a></button>
 </div>
+

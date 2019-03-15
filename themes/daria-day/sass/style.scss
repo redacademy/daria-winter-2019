@@ -60,13 +60,10 @@ sass/
 
 // Base
 @import 'base/normalize';
-
+@import 'hero.scss';
 // Components
 
 // Layout
 
 // Pages
 
-body {
-  background-color: purple;
-}
