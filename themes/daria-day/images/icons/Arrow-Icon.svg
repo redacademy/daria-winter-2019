@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="12px" viewBox="0 0 24 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>Arrow-Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Mobile-&gt;-Product" transform="translate(-175.000000, -2101.000000)" stroke="#0C5535">
+            <g id="Group-7" transform="translate(121.000000, 2094.000000)">
+                <g id="Arrow-Icon" transform="translate(66.000000, 13.000000) rotate(-180.000000) translate(-66.000000, -13.000000) translate(54.000000, 8.000000)">
+                    <polyline id="Path-4" points="5.27702438 -1.90070182e-13 4.35207426e-14 5.10628386 5.27702438 9.9320405"></polyline>
+                    <path d="M0.80952381,4.96602025 L22.9339617,4.96602025" id="Line-6"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
