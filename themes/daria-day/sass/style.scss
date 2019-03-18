@@ -62,8 +62,10 @@ sass/
 @import 'base/normalize';
 
 // Components
+@import 'components/slider';
 
 // Layout
 @import 'layout/footer';
-// Pages
 
+// Pages
+@import 'pages/about';

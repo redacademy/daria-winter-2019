@@ -14,18 +14,18 @@
 
 get_header();
 ?>
-<?php
-get_template_part( 'template-parts/content', 'none' );
-?>
+
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
+        <?php
+            get_template_part( 'template-parts/content', 'slider' );
+            
+        ?>
+       
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
-			get_template_part( 'template-parts/content-slider' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -34,9 +34,11 @@ get_template_part( 'template-parts/content', 'none' );
 
 		endwhile; // End of the loop.
 		?>
-    <section class = 'ourstory'>
-
-    </section>
+    
+        <?php
+    get_template_part( 'template-parts/content', 'about' );
+    ?>  
+  
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
