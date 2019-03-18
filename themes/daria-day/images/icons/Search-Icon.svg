@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="25px" viewBox="0 0 23 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>searchbar</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-&gt;-Home-&gt;-Default" transform="translate(-250.000000, -25.000000)">
+            <g id="searchbar" transform="translate(250.000000, 25.000000)">
+                <g id="Search" stroke-width="1" transform="translate(10.400000, 7.513043)"></g>
+                <ellipse id="Oval" fill="#269A65" cx="11.2" cy="12.5217391" rx="11.2" ry="11.6869565"></ellipse>
+                <g id="search-icon" stroke-width="1" transform="translate(5.600000, 6.678261)" stroke="#FFFFFF">
+                    <ellipse id="Oval" stroke-width="1.04" cx="4.8" cy="5.00869565" rx="4.8" ry="5.00869565"></ellipse>
+                    <path d="M8.12307692,9.31103679 L10.9575835,12.2687828" id="Line" stroke-width="1.04" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

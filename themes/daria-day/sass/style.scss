@@ -60,12 +60,10 @@ sass/
 
 // Base
 @import 'base/normalize';
-
+@import 'hero.scss';
 // Components
 @import 'components/slider';
 
 // Layout
 @import 'layout/footer';
 
-// Pages
-@import 'pages/about';
