@@ -15,6 +15,8 @@ get_header();
                 the_post();
                 get_template_part('template-parts/content','hero');
 				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part('template-parts/content', 'instagram');
+				get_template_part('template-parts/content', 'mailchimp');
 				get_template_part('template-parts/content', 'socialmedia');
 
 			endwhile;
