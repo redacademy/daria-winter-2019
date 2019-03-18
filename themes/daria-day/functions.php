@@ -113,6 +113,44 @@ function daria_day_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+		register_sidebar( array(
+		'name' => 'Products',
+		'id' => 'products',
+		'description' => 'Appears in the footer area',
+		'before_widget' => '<aside id="products" class="products">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+		) );
+		register_sidebar( array(
+		'name' => 'Company',
+		'id' => 'company',
+		'description' => 'Appears in the footer area',
+		'before_widget' => '<aside id="company" class="company">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+		) );
+		register_sidebar( array(
+		'name' => 'Customers',
+		'id' => 'customers',
+		'description' => 'Appears in the footer area',
+		'before_widget' => '<aside id="customers" class="customers">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+		) );
+		register_sidebar( array(
+		'name' => 'Darialogo',
+		'id' => 'darialogo',
+		'description' => 'Appears in the footer area',
+		'before_widget' => '<aside id="darialogo" class="darialogo">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+			) );
+			
+
 }
 add_action( 'widgets_init', 'daria_day_widgets_init' );
 

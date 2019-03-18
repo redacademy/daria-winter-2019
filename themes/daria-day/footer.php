@@ -13,20 +13,47 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'daria-day' ) ); ?>">
+	<footer id="footer" class="footer">
+		<div class="companyinfo">
+
+
+			<div id="footer-sidebar" class="secondary">
+
+				<div id="products">
 				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'daria-day' ), 'WordPress' );
+					if(is_active_sidebar('products')){
+					dynamic_sidebar('products');
+					}
 				?>
-			</a>
-			<span class="sep"> | </span>
+				</div>
+
+				<div id="company">
 				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'daria-day' ), 'daria-day', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
+					if(is_active_sidebar('company')){
+					dynamic_sidebar('company');
+					}
+					?>
+				</div>
+
+				<div id="customers">
+					<?php
+					if(is_active_sidebar('customers')){
+					dynamic_sidebar('customers');
+					}?>
+				</div>
+
+				<div id="darialogo">
+					<?php
+					if(is_active_sidebar('darialogo')){
+					dynamic_sidebar('darialogo');
+					}?>
+				</div>
+	
+			</div>
+
+
 		</div><!-- .site-info -->
+		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
