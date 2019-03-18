@@ -57,6 +57,7 @@ sass/
 --------------------------------------------------------------*/
 
 // Abstract
+@import 'abstracts/variables';
 
 // Base
 @import 'base/normalize';
@@ -64,9 +65,20 @@ sass/
 // Components
 
 // Layout
+@import 'layout/header';
 @import 'layout/footer';
 // Pages
 
-body {
-  background-color: purple;
+/*
+=========================
+General
+=========================
+*/
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }

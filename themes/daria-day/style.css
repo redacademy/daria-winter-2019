@@ -360,7 +360,79 @@ template {
 [hidden] {
   display: none; }
 
-<<<<<<< HEAD
+.site-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  height: 54px;
+  padding: 20px 10px;
+  border-bottom: 2px solid #062b35; }
+
+.menu-toggle {
+  height: 100%;
+  width: 50px;
+  border: none;
+  background-color: transparent;
+  font-size: 2em; }
+
+.main-navigation ul {
+  position: absolute;
+  left: 0;
+  top: 96px;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: #e1e1e1; }
+  .main-navigation ul .close-mobile-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+    .main-navigation ul .close-mobile-nav button {
+      padding: 15px 15px 0;
+      background-color: transparent;
+      border: none; }
+  .main-navigation ul li:first-of-type a {
+    padding-top: 0; }
+  .main-navigation ul li:not(:last-of-type) {
+    border-bottom: 1px solid #062b35; }
+  .main-navigation ul a {
+    display: block;
+    padding: 15px 10px;
+    color: #062b35;
+    text-transform: uppercase; }
+
+.hide-menu {
+  display: none; }
+
+.site-branding {
+  height: 100%; }
+  .site-branding img {
+    height: 100%; }
+
+.nav-misc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap; }
+
 #footer {
   margin-top: 6%;
   width: 100%;
@@ -401,7 +473,14 @@ template {
   display: -ms-flexbox;
   display: flex;
   z-index: 99; }
-=======
-body {
-  background-color: purple; }
->>>>>>> 879b1448a17aee5f2e8e5a6c8f9253fe4b1d8694
+
+/*
+=========================
+General
+=========================
+*/
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }

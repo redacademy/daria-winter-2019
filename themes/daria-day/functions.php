@@ -171,6 +171,7 @@ add_filter( 'stylesheet_uri', 'daria_day_minified_css', 10, 2 );
  */
 function daria_day_scripts() {
 	wp_enqueue_style( 'daria-day-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'daria-day-fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 
 	wp_enqueue_script( 'daria-day-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -181,6 +182,17 @@ function daria_day_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'daria_day_scripts' );
+
+/**
+ * Enable uploading SVG files to gallery
+ */
+function add_file_types_to_uploads($file_types) {
+	$new_filetypes = array();
+	$new_filetypes['svg'] = 'image/svg+xml';
+	$file_types = array_merge($file_types, $new_filetypes );
+	return $file_types;
+}
+add_action('upload_mimes', 'add_file_types_to_uploads');
 
 /**
  * Implement the Custom Header feature.
