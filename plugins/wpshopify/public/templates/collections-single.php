@@ -38,6 +38,11 @@ do_action('wps_collection_single_content', $wps_collection);
 do_action('wps_collection_single_products', $wps_collection, $wps_products);
 do_action('wps_collection_single_end', $wps_collection);
 do_action('wps_collection_single_after');
-do_action('wps_collection_single_sidebar');
+do_action('wps_collection_single_sidebar');?>
 
-get_footer('wps');
+
+
+
+
+<?php get_footer('wps');
+?>
