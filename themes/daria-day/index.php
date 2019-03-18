@@ -14,19 +14,18 @@
 
 get_header();
 ?>
-
+	<?php $existStatus = 'no';
+	if(is_front_page()){
+		$existStatus = 'yes';
+	}?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
-
-
-
-			 <button id="filter-energy-abundance" data-exists-calming="yes"> Calming </button> 
+			<div class="latest-additions-container" id ="latest-additions-container"data-exists="<?php echo $existStatus; ?>"> Latest Additions</div>
 
 		
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

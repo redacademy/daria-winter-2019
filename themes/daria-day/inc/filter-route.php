@@ -8,19 +8,13 @@ function dariaRegisterSearch() {
 }
 add_action('rest_api_init', 'dariaRegisterSearch');
 
-function dariaSearchResults($data) {//we're adding data here since we know wp passes info when calling this function on top
+function dariaSearchResults($data) {
     global $wpdb;
     $results = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix.wps_products);
     $tagResults = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix.wps_tags);
     $prices = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix.wps_variants);
-    // $tagEnergy = "silver";	
-    // $productInfo = array();
-    // $count = 0;
     $products = [];
     foreach ( $results as $row ) {?>
-
-
-
         <?php 
         $tagInfo = [];
         foreach ($tagResults as $tagRow ) {
@@ -53,43 +47,4 @@ function dariaSearchResults($data) {//we're adding data here since we know wp pa
     // }
     };
     return $products;
-    // $mainQuery = new WP_Query(array(
-    //     'post_type' => 'wps_products',
-    //     // 'product_id' => 'wps_tags'
-    //     //WPS_PRODUCTS_POST_TYPE_SLUG
-    //     // 's' => sanitize_text_field($data['term'])//s stand for search, term is a madeup name that we chose, sanitize is a security measure
-    // ));
-    // var_dump($professors);
-    //since we dont need to generate html, we dont need to do perform regualr while loop
-    // $results = array(
-    //     'products' => array(),
-    //     'collections' => array(),
-    // ); //we created this array to only filter the few properties that we need
-
-    //return $mainQuery->posts;// this prints all info about posts, which we will only need a few
-    //while($mainQuery->have_posts()) {
-    //    $mainQuery->the_post(); //the_post gets all relevant data for posts ready and accessable
-        // print_r($mainQuery);
-
-    //     if(get_post_type() == WPS_PRODUCTS_POST_TYPE_SLUG ) {
-    //         array_push($results['products'], array( //1st arg is the array the we want to add on to, 2nd is what u wanna add on to the array
-                
-    //             'title' => get_the_title(),  
-    //             'permalink' => get_the_permalink(),
-    //             'image' => get_the_post_thumbnail_url(0),//0 refers to current img
-    //             'tag' => get_field('tag_name')
-    //         ));
-    //     }
-    //     if(get_post_type() == WPS_COLLECTIONS_POST_TYPE_SLUG) {
-    //         array_push($results['collections'], array( //1st arg is the array the we want to add on to, 2nd is what u wanna add on to the array
-    //             'title' => get_the_title(),  
-    //             'permalink' => get_the_permalink(),
-    //             'image' => get_the_post_thumbnail_url(0),//0 refers to current img
-    //             'tag' => get_field('tag_name')
-    //         ));
-    // }
-    
-    // }
-
-    // return $results;
 }?>

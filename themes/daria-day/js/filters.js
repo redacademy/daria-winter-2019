@@ -1,5 +1,24 @@
 ( function( $ ) {
-console.log('hellow from filters.js');
+console.log('hello from filters.js');
+    let resultsDiv = $('#latest-additions-container');
+    $.getJSON(dariaData.root_url + '/wp-json/daria/v1/search', (results) => {
+        console.log(results);
+        resultsDiv.html(`
+        <div class ='row'>
+            <div class = "one-third">
+                ${results.map(item => 
+                    `<li>
+                        <img src = ${item.image}>
+                        <a href="${item.permalink}">${item.title}</a>
+                        ${item.price}
+                    </li>`
+                    ).join('')}
+
+            </div>
+
+        <div>`);
+        
+    });
 $("#filter-energy-abundance").on('click', ()=> {
     $.ajax({
         beforeSend: (xhr) => { //this pice to pass randomly generated nonce code along with our request so wp knows we're logged in and authorized to do so
