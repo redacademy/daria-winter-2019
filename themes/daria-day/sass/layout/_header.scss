@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
   position: relative;
 
   height: $mobile-nav-height;
@@ -19,15 +20,19 @@
   font-size: 2em;
 }
 
-.main-navigation  {
+.main-navigation{
+
   ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.mobile-nav{
     position: absolute;
     left: 0;
     top: $mobile-nav-height + $menu-spacing * 4 + $menu-border-size;
 
     width: 100vw;
-    margin: 0;
-    padding: 0;
 
     background-color: $nav-grey;
 
@@ -81,19 +86,30 @@
 .nav-misc {
   display: flex;
   flex-flow: row nowrap;
+  align-items: center;
 }
 
-// @media screen and (min-width: $tablet) {
-//   .menu-toggle {
-//     display: none;
-//   }
+@media screen and (min-width: $desktop) {
+  .menu-toggle {
+    display: none;
+  }
 
-//   .main-navigation {
-//     ul {
-//       position: relative;
-//       display: flex;
-//       flex-flow: row nowrap;
-      
-//     }
-//   }
-// }
+  .main-navigation {
+    ul {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      li {
+        padding: 0 $menu-spacing;
+      }
+
+      a {
+        display: inline-block;
+
+        color: $brand-colour-evergreen;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

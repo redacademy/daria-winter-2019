@@ -383,6 +383,7 @@ node_modules/
 # Ignore yarn and gulpfile #
 # =============== #
 yarn.lock
+package-lock.json
 themes/daria-day/gulpfile.js
 
 # Ignore Dploy configs #

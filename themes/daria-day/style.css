@@ -371,6 +371,9 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   height: 54px;
   padding: 20px 10px;
@@ -384,14 +387,16 @@ template {
   font-size: 2em; }
 
 .main-navigation ul {
+  margin: 0;
+  padding: 0; }
+
+.main-navigation ul.mobile-nav {
   position: absolute;
   left: 0;
   top: 96px;
   width: 100vw;
-  margin: 0;
-  padding: 0;
   background-color: #e1e1e1; }
-  .main-navigation ul .close-mobile-nav {
+  .main-navigation ul.mobile-nav .close-mobile-nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -402,15 +407,15 @@ template {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end; }
-    .main-navigation ul .close-mobile-nav button {
+    .main-navigation ul.mobile-nav .close-mobile-nav button {
       padding: 15px 15px 0;
       background-color: transparent;
       border: none; }
-  .main-navigation ul li:first-of-type a {
+  .main-navigation ul.mobile-nav li:first-of-type a {
     padding-top: 0; }
-  .main-navigation ul li:not(:last-of-type) {
+  .main-navigation ul.mobile-nav li:not(:last-of-type) {
     border-bottom: 1px solid #062b35; }
-  .main-navigation ul a {
+  .main-navigation ul.mobile-nav a {
     display: block;
     padding: 15px 10px;
     color: #062b35;
@@ -431,7 +436,31 @@ template {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap; }
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+@media screen and (min-width: 1024px) {
+  .menu-toggle {
+    display: none; }
+  .main-navigation ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .main-navigation ul li {
+      padding: 0 10px; }
+    .main-navigation ul a {
+      display: inline-block;
+      color: #062b35;
+      text-transform: uppercase; } }
 
 #footer {
   margin-top: 6%;
