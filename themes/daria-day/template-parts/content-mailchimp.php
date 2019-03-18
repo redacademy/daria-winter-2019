@@ -2,7 +2,7 @@
 <?php
         $args2 = array(
             'type' => 'post',
-            'id'    => 45,
+            'p'    => 45,
         );
         $the_query = new WP_Query($args2);
 
