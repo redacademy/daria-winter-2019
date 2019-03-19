@@ -40,8 +40,8 @@
 	});
 
 	// Appends X to close expanded mobile nav
-	$menu.prepend('<div class="close-mobile-nav hide-menu"><button>X</button></div>');
 	const $closeMobileNav = $('.close-mobile-nav');
+	$menu.prepend($closeMobileNav);
 	
 	// Changes between mobile and desktop navs
 	const formFactorChange = (isMobile) => {
