@@ -34,13 +34,15 @@ function dariaSearchResults($data) {
 
         } 
         $productInfo = array(
+            'show_count' => 1,
             'title'=> $row->title,
             'description' => $row->body_html,
             'product_id'=> $row->product_id, 
             'image'=> $row->image,
             'product_type' => $row->product_type,
             'tags' => $tagInfo,
-            'price' => $priceInfo
+            'price' => $priceInfo,
+            'date' => $row->updated_at 
         ); 
 
         array_push($products, $productInfo);

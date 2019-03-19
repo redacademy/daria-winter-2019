@@ -184,7 +184,6 @@ function daria_day_scripts() {
 
 	wp_enqueue_script( 'daria-day-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'daria-day-filters', get_template_directory_uri() . '/js/filters.js', array(), '20151215', true );
-	wp_enqueue_script( 'daria-day-filterss', get_template_directory_uri() . '/js/latest.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'daria-day-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
