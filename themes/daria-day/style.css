@@ -693,27 +693,26 @@ template {
   margin-top: 6%;
   width: 100%;
   display: block; }
-
-.companyinfo {
-  margin-top: 6%;
-  width: 100%;
-  display: block; }
-  .companyinfo h3.widget-title {
-    color: white;
-    font-family: Avenir;
-    font-size: 1.2em; }
-  .companyinfo a {
-    text-decoration: none;
-    color: white;
-    font-family: Avenir;
-    font-weight: 100;
-    font-size: .8em; }
-  .companyinfo p {
-    line-height: .3; }
-  .companyinfo a:hover {
-    color: white;
-    text-decoration: none;
-    cursor: pointer; }
+  #footer .companyinfo {
+    margin-top: 6%;
+    width: 100%;
+    display: block; }
+    #footer .companyinfo h3.widget-title {
+      color: white;
+      font-family: Avenir;
+      font-size: 1.2em; }
+    #footer .companyinfo a {
+      text-decoration: none;
+      color: white;
+      font-family: Avenir;
+      font-weight: 100;
+      font-size: .8em; }
+    #footer .companyinfo p {
+      line-height: .3; }
+    #footer .companyinfo a:hover {
+      color: white;
+      text-decoration: none;
+      cursor: pointer; }
 
 #footer-sidebar {
   width: 100%;
@@ -725,6 +724,9 @@ template {
           justify-content: center; }
 
 #darialogo {
+  background-size: 300px 100px;
+  background-image: url("../../images/DariaDay_logo-white.svg");
+  background-repeat: no-repeat;
   z-index: 99; }
 
 div#products {
@@ -736,6 +738,14 @@ div#company {
 div#customers {
   text-align: center; }
 
+.embed-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
 .ourstory {
   background-color: #062B35;
   width: 100%;
@@ -744,19 +754,25 @@ div#customers {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-left: 23%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 10%;
     height: 400px; }
     .ourstory .skewedphotos .photo1 {
       background-color: green;
-      height: 238px;
-      width: 214px;
-      -webkit-transform: rotate(-10deg);
-              transform: rotate(-10deg); }
+      height: auto;
+      width: auto;
+      max-width: 340px;
+      max-height: 300px;
+      -webkit-transform: translate(0, 50px) rotate(-10deg);
+              transform: translate(0, 50px) rotate(-10deg); }
     .ourstory .skewedphotos .photo2 {
       background-color: orange;
-      height: 238px;
-      width: 214px;
+      height: auto;
+      width: auto;
+      max-width: 340px;
+      max-height: 300px;
       -webkit-transform: translate(0, 50px) rotate(10deg);
               transform: translate(0, 50px) rotate(10deg); }
   .ourstory .copy {
@@ -766,55 +782,6 @@ div#customers {
       font-size: 2em; }
     .ourstory .copy p {
       font-size: 1.3em; }
-
-.latest {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-
-.jewels1 {
-  background-color: red;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 238px;
-  margin: 5%;
-  width: 214px; }
-
-.jewels3 {
-  background-color: orange;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 238px;
-  margin: 5%;
-  width: 214px; }
-
-.jewels2 {
-  background-color: yellow;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 238px;
-  margin: 5%;
-  width: 214px; }
-
-.jewels4 {
-  background-color: blue;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 238px;
-  margin: 5%;
-  width: 214px; }
 
 /*
 =========================
