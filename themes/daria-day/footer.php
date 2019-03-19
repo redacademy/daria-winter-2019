@@ -43,6 +43,7 @@
 				</div>
 
 				<div id="darialogo">
+				
 					<?php
 					if(is_active_sidebar('darialogo')){
 					dynamic_sidebar('darialogo');

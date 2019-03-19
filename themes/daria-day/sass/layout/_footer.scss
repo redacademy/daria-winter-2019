@@ -2,16 +2,13 @@
     margin-top: 6%;
     width: 100%;
     display: block;
-    // height: 275px;
-    // display: flex;
-    // background-color: #062B35;
+   
 }
 .companyinfo{
     margin-top: 6%;
     width: 100%;
     display: block;
-    // justify-content: space-around;
-    // line-height: 20px;
+   
 
 
     h3.widget-title{
@@ -41,18 +38,27 @@
 
 #footer-sidebar {
     width: 100%;
-    height: 500px;
+    height: 600px;
     display: grid;
     background-color: #062B35;
     justify-content: center;
 }
     
 #darialogo {
-    display: flex;
+ 
     z-index: 99;
+    
 }
-
+div#products{
+   
+    text-align: center;
+  }
+  div#company{
+   
+    text-align: center;
+  }
 
 div#customers{
   
+  text-align: center;
 }
