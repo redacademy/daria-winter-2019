@@ -38,7 +38,7 @@ console.log('hello from latest.js');
     });
 }
 //filter functionality
-$("#filter-energy-abundance").on('click', ()=> {
+$("#filter-btn").on('click', ()=> {
     $.ajax({
         beforeSend: (xhr) => { //this pice to pass randomly generated nonce code along with our request so wp knows we're logged in and authorized to do so
         xhr.setRequestHeader('X-WP-Nonce', dariaData.nonce);
