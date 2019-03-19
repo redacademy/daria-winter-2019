@@ -148,3 +148,21 @@
   }
 }
   
+/* =========================
+      Latest Additions Section
+   ========================= */
+.latest-additions{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  list-style: none;
+  font-size: .8em;
+}
+.latest-additions-item{
+  display: flex;
+  flex-direction: column;
+  a{
+    text-decoration: none;
+  }
+}
