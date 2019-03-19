@@ -184,7 +184,6 @@ function daria_day_scripts() {
 
 	wp_enqueue_script( 'daria-day-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'daria-day-filters', get_template_directory_uri() . '/js/filters.js', array(), '20151215', true );
-	wp_enqueue_script('daria-day-filters', get_template_directory_uri() . '/js/latest.js', array(), '20151215', true);
 
 	wp_enqueue_script( 'daria-day-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -199,26 +198,6 @@ function daria_day_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'daria_day_scripts' );
 
-function load_scripts() {
-    global $post;
-
-    if( is_page() || is_single() )
-    {
-        switch($post->post_name)
-        {
-            case 'front-page':
-                wp_enqueue_script('daria-day-filters', get_template_directory_uri() . '/js/latest.js', array('jquery'), '', false);
-                break;
-
-		}
-		wp_localize_script('daria-day-filters', 'dariaData', array( //this function will make our JSON API request flexible so it runs on every machine
-			'root_url' => get_site_url(),
-			'nonce' => wp_create_nonce('wp_rest')
-		));
-    } 
-}
-
-add_action('wp_enqueue_scripts', 'load_scripts');
 /**
  * Implement the Custom Header feature.
  */
