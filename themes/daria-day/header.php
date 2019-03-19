@@ -27,6 +27,11 @@
 	<header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+			<div class="close-mobile-nav hide-menu">
+				<button>
+					<img src="<?php echo get_template_directory_uri() ?>/images/icons/x-symbol.svg">
+				</button>
+			</div>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',

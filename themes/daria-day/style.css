@@ -360,6 +360,34 @@ template {
 [hidden] {
   display: none; }
 
+@font-face {
+  font-family: 'Avenir LT Book';
+  src: url("../../fonts/AvenirLTStd-Book.eot");
+  src: url("../../fonts/AvenirLTStd-Book.eot?#iefix") format("embedded-opentype"), url("../../fonts/AvenirLTStd-Book.woff2") format("woff2"), url("../../fonts/AvenirLTStd-Book.woff") format("woff"), url("../../fonts/AvenirLTStd-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url("../../fonts/PlayfairDisplay-Regular.eot");
+  src: url("../../fonts/PlayfairDisplay-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("../../fonts/PlayfairDisplay-Regular.woff") format("woff"), url("../../fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir LT Std';
+  src: url("../../fonts/AvenirLTStd-Medium.eot");
+  src: url("../../fonts/AvenirLTStd-Medium.eot?#iefix") format("embedded-opentype"), url("../../fonts/AvenirLTStd-Medium.woff2") format("woff2"), url("../../fonts/AvenirLTStd-Medium.woff") format("woff"), url("../../fonts/AvenirLTStd-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url("../../fonts/PlayfairDisplay-Bold.eot");
+  src: url("../../fonts/PlayfairDisplay-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../../fonts/PlayfairDisplay-Bold.woff") format("woff"), url("../../fonts/PlayfairDisplay-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
 /* =========================
    Hero Banner Section
    =========================
@@ -528,17 +556,20 @@ template {
   text-align: center;
   margin-top: 2.5%; }
   .slider .imgList {
-    width: 70%;
-    scroll-behavior: smooth;
     display: inline-block;
     position: relative;
+    width: 100%;
+    padding: 0;
+    padding-top: 2%;
+    scroll-behavior: smooth;
     vertical-align: middle;
     text-align: center;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 2%; }
+    -webkit-overflow-scrolling: touch; }
+  .slider ul {
+    padding: 0; }
   .slider ul::-webkit-scrollbar {
     display: none; }
   .slider li {
@@ -622,6 +653,9 @@ template {
         padding: 15px 30px 0;
         background-color: transparent;
         border: none; }
+      .main-navigation ul.mobile-nav .close-mobile-nav img {
+        width: 1em;
+        height: 1em; }
     .main-navigation ul.mobile-nav li:first-of-type a {
       padding-top: 0; }
     .main-navigation ul.mobile-nav li:not(:last-of-type) {
