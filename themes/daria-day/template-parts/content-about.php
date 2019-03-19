@@ -38,34 +38,6 @@
 
     <h2 class= 'header'> Our latest Additions</h2>
 
-    <section class='latest'>
     
-
-        <div class='jewels1'>
-            <p>Dazzling Rose Quartz Earrings</p>
-            <p class ='price'>$528.00 CAD</p>
-        </div>
-
-        <div class='jewels2'>
-            <p>Dazzling Rose Quartz Earrings</p>
-            <p class ='price'>$528.00 CAD</p>
-        </div>
-
-        <div class='jewels3'>
-            <p>Dazzling Rose Quartz Earrings</p>
-            <p class ='price'>$528.00 CAD</p>
-        </div>
-    
-        <div class='jewels4'>
-            <p>Dazzling Rose Quartz Earrings</p>
-            <p class ='price'>$528.00 CAD</p>
-        </div>
-
-
-    </section>
-   
 	</div><!-- .entry-content -->
-	<footer class="entry-footer">
-	
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
