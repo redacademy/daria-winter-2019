@@ -14,7 +14,7 @@
 <h2 class= 'title'>There are many paths, we have different options. </h2>
     <section class='slider'>
     
-  <ul id="imgList">
+  <ul class="imgList">
 
     
     <li class= 'bracelets'><a href='#'><img src="https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/></a><p>Bold Bracelets</p><a class='link' href = '#'><p>See more</p></a></li>

@@ -42,6 +42,22 @@
 					}?>
 				</div>
 
+			
+
+				<div id="socialmedia">	
+				<?php
+				// if ( is_front_page() ) :
+				// 	footer( 'footer' );
+				// 	else :
+				// 	get_footer('front');
+				// 	endif;
+
+			get_template_part('template-parts/content', 'socialmedia');
+				
+				?>
+				</div>
+
+
 				<div id="darialogo">
 				
 					<?php
