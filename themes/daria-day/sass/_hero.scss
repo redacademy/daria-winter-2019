@@ -162,4 +162,7 @@
 .latest-additions-item{
   display: flex;
   flex-direction: column;
+  a{
+    text-decoration: none;
+  }
 }

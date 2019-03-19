@@ -521,6 +521,8 @@ template {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
+  .latest-additions-item a {
+    text-decoration: none; }
 
 #footer {
   margin-top: 6%;
