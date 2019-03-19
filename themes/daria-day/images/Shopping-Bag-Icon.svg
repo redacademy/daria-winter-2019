@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="23px" viewBox="0 0 17 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>Shopping Bag</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-&gt;-Home-&gt;-Default" transform="translate(-293.000000, -25.000000)" stroke="#062B35">
+            <g id="Shopping-Bag" transform="translate(293.000000, 25.000000)">
+                <g id="Rectangle">
+                    <g>
+                        <path d="M0.52,7.21090909 L0.52,17.7818182 C0.52,20.1455969 2.43622127,22.0618182 4.8,22.0618182 L12,22.0618182 C14.3637787,22.0618182 16.28,20.1455969 16.28,17.7818182 L16.28,7.21090909 L0.52,7.21090909 Z" stroke-width="1.04"></path>
+                        <path d="M13.08,0.52 L3.72,0.52 L3.72,5.44608879 C3.72,8.63702044 5.83891457,11.1890909 8.4,11.1890909 C10.9610854,11.1890909 13.08,8.63702044 13.08,5.44608879 L13.08,0.52 Z" stroke-width="1.04" transform="translate(8.400000, 5.854545) rotate(-180.000000) translate(-8.400000, -5.854545) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

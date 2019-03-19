@@ -57,6 +57,7 @@ sass/
 --------------------------------------------------------------*/
 
 // Abstract
+@import 'abstracts/variables';
 
 // Base
 @import 'base/normalize';
@@ -65,7 +66,28 @@ sass/
 @import 'components/slider';
 
 // Layout
+@import 'layout/header';
 @import 'layout/footer';
 
+<<<<<<< HEAD
 //Pages
 @import 'pages/about';
+=======
+/*
+=========================
+General
+=========================
+*/
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: white;
+}
+>>>>>>> 8985751e056105636fccace12e4c16e3dc2cdafd

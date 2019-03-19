@@ -1,0 +1,161 @@
+.site-header {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+
+  height: $mobile-nav-height;
+  padding: $menu-spacing * 2 $menu-spacing;
+
+  border-bottom: $menu-border-size solid $brand-colour-evergreen;
+
+  a {
+    display: block;
+    padding: $menu-spacing * 1.5 $menu-spacing;
+
+    color: $brand-colour-evergreen;
+    text-transform: uppercase;
+  }
+
+  .custom-logo-link {
+    padding: 0;
+  }
+}
+
+.main-navigation{
+  justify-self: start;
+
+  .menu-toggle {
+    height: 100%;
+    width: 50px;
+  
+    border: none;
+    background-color: transparent;
+    font-size: 2em;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.mobile-nav{
+    position: absolute;
+    left: 0;
+    top: $mobile-nav-height + $menu-spacing * 4 + $menu-border-size;
+
+    width: 100vw;
+
+    background-color: $nav-grey;
+
+    .close-mobile-nav {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+
+      button {
+        padding: $menu-spacing * 1.5 $menu-spacing * 3 0;
+
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    li {
+      &:first-of-type {
+        a {
+          padding-top: 0;
+        }
+      }
+
+      &:not(:last-of-type) {
+        border-bottom: $menu-border-size / 2 solid $brand-colour-evergreen;
+      }
+    }
+  }
+}
+
+.site-branding {
+  height: 100%;
+
+  a {
+    height: 80%;
+  }
+
+  img {
+    height: 100%;
+  }
+}
+
+.nav-misc {
+  justify-self: end;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  padding-right: 10%;
+
+  > a {
+    padding: 0 $menu-spacing / 2;
+  }
+
+  > a img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.hide-menu {
+  display: none;
+}
+
+@media screen and (min-width: $tablet) {
+  .nav-misc {
+    > a {
+      padding: 0 $menu-spacing;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .site-header {
+    grid-template-columns: 2fr 1fr 2fr;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation {
+    ul {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      li {
+        padding: 0 $menu-spacing;
+      }
+
+      a {
+        display: inline-block;
+
+        color: $brand-colour-evergreen;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+  }
+
+  .nav-misc {
+    > a {
+      padding: 0 $menu-spacing;
+    }
+
+    > a img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

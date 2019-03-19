@@ -23,29 +23,10 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'daria-day' ); ?></a>
-
+	
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$daria_day_description = get_bloginfo( 'description', 'display' );
-			if ( $daria_day_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $daria_day_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'daria-day' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
@@ -53,6 +34,21 @@
 			) );
 			?>
 		</nav><!-- #site-navigation -->
+		<div class="site-branding">
+			<?php
+			the_custom_logo();
+			?>
+		</div><!-- .site-branding -->
+
+		<div class="nav-misc">
+			<a href="#" class="search-icon">
+				<img src="<?php echo get_template_directory_uri() ?>/images/Search-Icon.svg">
+			</a>
+			<!-- <?php echo get_template_directory_uri() ?> -->
+			<a href="#" class="cart">
+			<img src="<?php echo get_template_directory_uri() ?>/images/Shopping-Bag-Icon.svg">
+			</a>
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
