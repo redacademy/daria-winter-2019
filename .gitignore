@@ -384,7 +384,11 @@ node_modules/
 # Ignore yarn and gulpfile #
 # =============== #
 yarn.lock
+<<<<<<< HEAD
+package-lock.json
+=======
 themes/daria-day/package-lock.json
+>>>>>>> 3f7b7f1da74781611eb33eb0b2dd81114e155759
 themes/daria-day/gulpfile.js
 themes/daria-day/package-lock.json
 
