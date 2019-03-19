@@ -19,6 +19,15 @@
 
 			<div id="footer-sidebar" class="secondary">
 
+			<?php
+				 if ( is_front_page() ) :
+					
+					else :
+						get_template_part('template-parts/content', 'mailchimp');
+				 	endif;
+?>
+
+
 				<div id="products">
 				<?php
 					if(is_active_sidebar('products')){
@@ -43,28 +52,16 @@
 				</div>
 
 			
+<?php
+			if ( is_front_page() ) :
+			
+			else :
+				get_template_part('template-parts/content', 'socialmedia');
+			endif;
+?>
 
-				<div id="socialmedia">	
-				<?php
-				// if ( is_front_page() ) :
-				// 	footer( 'footer' );
-				// 	else :
-				// 	get_footer('front');
-				// 	endif;
-
-			get_template_part('template-parts/content', 'socialmedia');
+			<div id="darialogo">
 				
-				?>
-				</div>
-
-
-				<div id="darialogo">
-				
-					<?php
-					if(is_active_sidebar('darialogo')){
-					dynamic_sidebar('darialogo');
-					}?>
-				</div>
 	
 			</div>
 
@@ -74,7 +71,7 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+
 
 </body>
 </html>
