@@ -61,13 +61,13 @@ sass/
 
 // Base
 @import 'base/normalize';
-
+@import 'hero.scss';
 // Components
+@import 'components/slider';
 
 // Layout
 @import 'layout/header';
 @import 'layout/footer';
-// Pages
 
 /*
 =========================
@@ -79,8 +79,7 @@ ul, li {
   list-style: none;
 }
 
-
-
 a {
   text-decoration: none;
 }
+
