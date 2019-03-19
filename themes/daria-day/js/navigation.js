@@ -5,91 +5,92 @@
  * navigation support for dropdown menus.
  */
 
+(function ($) {
+  const tabletWidth = 600;
+  const desktopWidth = 1024;
 
-
-(function($) {
-	const tabletWidth = 600;
-	const desktopWidth = 1024;
-
-	// if navigation doesn't exist, exit here
+  // if navigation doesn't exist, exit here
 	const $navigation = $('.main-navigation');
 	
 	if (!$navigation) {
 		return;
 	} 
 	
-	// checks if it is mobile or desktop
-	let isMobile = false;
-	const $menu = $('.main-navigation ul');
+  // checks mobile or desktop
+  let isMobile = false;
+  const $menu = $('.main-navigation ul');
 
-	const checkMobile = () => {
-		if (window.screen.width >= desktopWidth) {
-			isMobile = false;
-		} else {
-			isMobile = true;
+  const checkMobile = () => {
+    if (window.screen.width < desktopWidth) {
+      isMobile = true;
+    } else {
+      isMobile = false;
+    }
+  };
+
+  checkMobile();
+
+	// Finds My Account link and saves it
+	$menuItems = $('.menu-item a')
+	$menuItems.each((index, value) => {
+		if (value.innerHTML.toLowerCase() === 'my account') {
+			console.log(value.closest('li'));
+			$myAccountLink = value.closest('li');
 		}
-	};
-
-	checkMobile();
-	// Check screen size on resize
-	$(window).on('resize', () => {
-		checkMobile();
-		toggleMenu(isMobile);
 	});
 
-	// append close mobile nav button
+	// Appends X to close expanded mobile nav
 	$menu.prepend('<div class="close-mobile-nav hide-menu"><button>X</button></div>');
 	const $closeMobileNav = $('.close-mobile-nav');
-
-	// if mobile, hide menu + close button
-	if (isMobile) {
-		$menu.addClass('hide-menu', 'mobile-nav');
-		$closeMobileNav.removeClass('hide-menu');
-	} 
-
-	const toggleMenu = (isMobile) => {
+	
+	// Changes between mobile and desktop navs
+	const formFactorChange = (isMobile) => {
 		if (isMobile) {
+			$menu.addClass('hide-menu');
 			$menu.addClass('mobile-nav');
-			$('.close-mobile-nav').removeClass('hide-menu');
+			$closeMobileNav.removeClass('hide-menu');
+			$menu.append($myAccountLink);
 		} else {
-			$menu.removeClass('mobile-nav');
 			$menu.removeClass('hide-menu');
-			$('.close-mobile-nav').addClass('hide-menu');
+			$menu.removeClass('mobile-nav');
+			$closeMobileNav.addClass('hide-menu');
+			$('.nav-misc').prepend($myAccountLink);
 		}
 	};
 	
+	formFactorChange(isMobile);
+
+	// Re-evaluates mobile or desktop on screen change
+	$(window).on('resize', () => {
+		currentFormFactor = isMobile;
+		checkMobile();
+		if (currentFormFactor !== isMobile) {
+			formFactorChange(isMobile);
+		}
+	});
+	 
+	// Menu toggle functionality
 	const $menuToggle = $('.menu-toggle');
 
-	if ($menuToggle) { 
-		const closeMobileNav = event => {
+	if ($menuToggle) {
+		const toggleNav = event => {
 			event.preventDefault();
 			$menu.toggleClass('hide-menu');
 		};
 
 		$menuToggle.on('click', event => {
-			closeMobileNav(event);
+			toggleNav(event);
 		});
 
-
-		$('.close-mobile-nav').on('click', event => {
-			closeMobileNav(event);
+		$closeMobileNav.on('click', event => {
+			toggleNav(event);
 		});
 	}
 
-
-	$menuItems = $('.menu-item a')
-	$menuItems.each((index, value) => {
-		if (value.innerHTML.toLowerCase() === 'my account') {
-			$myAccountLink = value
-		}
-	});
 	
-	if (!isMobile) {
-		console.log('hi');
-		$('.nav-misc').prepend($myAccountLink);
-	}
-
 })(jQuery);
+
+
 
 
 // ( function() {

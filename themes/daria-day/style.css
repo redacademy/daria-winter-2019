@@ -361,16 +361,9 @@ template {
   display: none; }
 
 .site-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -378,58 +371,60 @@ template {
   height: 54px;
   padding: 20px 10px;
   border-bottom: 2px solid #062b35; }
-
-.menu-toggle {
-  height: 100%;
-  width: 50px;
-  border: none;
-  background-color: transparent;
-  font-size: 2em; }
-
-.main-navigation ul {
-  margin: 0;
-  padding: 0; }
-
-.main-navigation ul.mobile-nav {
-  position: absolute;
-  left: 0;
-  top: 96px;
-  width: 100vw;
-  background-color: #e1e1e1; }
-  .main-navigation ul.mobile-nav .close-mobile-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end; }
-    .main-navigation ul.mobile-nav .close-mobile-nav button {
-      padding: 15px 15px 0;
-      background-color: transparent;
-      border: none; }
-  .main-navigation ul.mobile-nav li:first-of-type a {
-    padding-top: 0; }
-  .main-navigation ul.mobile-nav li:not(:last-of-type) {
-    border-bottom: 1px solid #062b35; }
-  .main-navigation ul.mobile-nav a {
+  .site-header a {
     display: block;
     padding: 15px 10px;
     color: #062b35;
     text-transform: uppercase; }
+  .site-header .custom-logo-link {
+    padding: 0; }
 
-.hide-menu {
-  display: none; }
+.main-navigation {
+  justify-self: start; }
+  .main-navigation .menu-toggle {
+    height: 100%;
+    width: 50px;
+    border: none;
+    background-color: transparent;
+    font-size: 2em; }
+  .main-navigation ul {
+    margin: 0;
+    padding: 0; }
+  .main-navigation ul.mobile-nav {
+    position: absolute;
+    left: 0;
+    top: 96px;
+    width: 100vw;
+    background-color: #e1e1e1; }
+    .main-navigation ul.mobile-nav .close-mobile-nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; }
+      .main-navigation ul.mobile-nav .close-mobile-nav button {
+        padding: 15px 30px 0;
+        background-color: transparent;
+        border: none; }
+    .main-navigation ul.mobile-nav li:first-of-type a {
+      padding-top: 0; }
+    .main-navigation ul.mobile-nav li:not(:last-of-type) {
+      border-bottom: 1px solid #062b35; }
 
 .site-branding {
   height: 100%; }
+  .site-branding a {
+    height: 80%; }
   .site-branding img {
     height: 100%; }
 
 .nav-misc {
+  justify-self: end;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -439,9 +434,24 @@ template {
           flex-flow: row nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  padding-right: 10%; }
+  .nav-misc > a {
+    padding: 0 5px; }
+  .nav-misc > a img {
+    width: 25px;
+    height: 25px; }
+
+.hide-menu {
+  display: none; }
+
+@media screen and (min-width: 600px) {
+  .nav-misc > a {
+    padding: 0 10px; } }
 
 @media screen and (min-width: 1024px) {
+  .site-header {
+    grid-template-columns: 2fr 1fr 2fr; }
   .menu-toggle {
     display: none; }
   .main-navigation ul {
@@ -460,7 +470,13 @@ template {
     .main-navigation ul a {
       display: inline-block;
       color: #062b35;
-      text-transform: uppercase; } }
+      text-transform: uppercase;
+      text-align: center; }
+  .nav-misc > a {
+    padding: 0 10px; }
+  .nav-misc > a img {
+    width: 30px;
+    height: 30px; } }
 
 #footer {
   margin-top: 6%;
@@ -508,7 +524,7 @@ template {
 General
 =========================
 */
-ul {
+ul, li {
   list-style: none; }
 
 a {

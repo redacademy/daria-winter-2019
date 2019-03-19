@@ -41,11 +41,12 @@
 		</div><!-- .site-branding -->
 
 		<div class="nav-misc">
-			<a href="#">
-				<img src="https://via.placeholder.com/50">
+			<a href="#" class="search-icon">
+				<img src="<?php echo get_template_directory_uri() ?>/images/Search-Icon.svg">
 			</a>
-			<a href="#">
-				<img src="https://via.placeholder.com/50">
+			<!-- <?php echo get_template_directory_uri() ?> -->
+			<a href="#" class="cart">
+			<img src="<?php echo get_template_directory_uri() ?>/images/Shopping-Bag-Icon.svg">
 			</a>
 		</div>
 	</header><!-- #masthead -->
