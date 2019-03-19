@@ -6,7 +6,6 @@
  */
 
 (function ($) {
-  const tabletWidth = 600;
   const desktopWidth = 1024;
 
   // if navigation doesn't exist, exit here
@@ -34,7 +33,6 @@
 	$menuItems = $('.menu-item a')
 	$menuItems.each((index, value) => {
 		if (value.innerHTML.toLowerCase() === 'my account') {
-			console.log(value.closest('li'));
 			$myAccountLink = value.closest('li');
 		}
 	});
@@ -87,11 +85,7 @@
 		});
 	}
 
-	
 })(jQuery);
-
-
-
 
 // ( function() {
 // 	var container, button, menu, links, i, len;

@@ -36,7 +36,7 @@
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
-			) );
+			));
 			?>
 		</nav><!-- #site-navigation -->
 		<div class="site-branding">
@@ -46,14 +46,21 @@
 		</div><!-- .site-branding -->
 
 		<div class="nav-misc">
-			<a href="#" class="search-icon">
-				<img src="<?php echo get_template_directory_uri() ?>/images/Search-Icon.svg">
-			</a>
-			<!-- <?php echo get_template_directory_uri() ?> -->
+			<div class="header-search">
+				<?php get_search_form(); ?>
+			</div>
 			<a href="#" class="cart">
-			<img src="<?php echo get_template_directory_uri() ?>/images/Shopping-Bag-Icon.svg">
+				<img src="<?php echo get_template_directory_uri() ?>/images/Shopping-Bag-Icon.svg">
 			</a>
 		</div>
 	</header><!-- #masthead -->
 
+	<div>
+		<?php
+		wp_nav_menu( array(
+			'theme_location' => 'menu-2',
+			'menu_id'        => 'Shop Menu',
+		));
+		?>
+	</div>
 	<div id="content" class="site-content">
