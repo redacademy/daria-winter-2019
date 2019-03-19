@@ -155,6 +155,16 @@ function daria_day_widgets_init() {
 add_action( 'widgets_init', 'daria_day_widgets_init' );
 
 /**
+ * Add new custom field
+ */
+// function daria_custom_rest() {//this function adds new custom field to wp api, post by default doesnt exist as it is a custom field
+//     register_rest_field('product','tagName',array(
+//         'get_callback' => function() {return 'tags go here';}
+//     ));
+
+// }
+// add_action('rest_api_init', 'daria_custom_rest');
+/**
  * Filter the stylesheet_uri to output the minified CSS file.
  */
 function daria_day_minified_css( $stylesheet_uri, $stylesheet_dir_uri ) {
@@ -174,12 +184,18 @@ function daria_day_scripts() {
 	wp_enqueue_style( 'daria-day-fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 
 	wp_enqueue_script( 'daria-day-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-filters', get_template_directory_uri() . '/js/filters.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'daria-day-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+	wp_localize_script('daria-day-filters', 'dariaData', array( //this function will make our JSON API request flexible so it runs on every machine
+        'root_url' => get_site_url(),
+        'nonce' => wp_create_nonce('wp_rest')
+    ));
 }
 add_action( 'wp_enqueue_scripts', 'daria_day_scripts' );
 
@@ -220,6 +236,11 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * run filter functionality
+ */
+require get_theme_file_path('/inc/filter-route.php');
 
 function add_file_types_to_uploads($file_types) {
 	$new_filetypes = array();
