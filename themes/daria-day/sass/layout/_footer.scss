@@ -1,64 +1,55 @@
-#footer {
-    margin-top: 6%;
-    width: 100%;
-    display: block;
-   
-}
-.companyinfo{
-    margin-top: 6%;
-    width: 100%;
-    display: block;
-   
-
-
-    h3.widget-title{
-        
-        color:white;
-        font-family: Avenir;
-        font-size: 1.2em;
-    }
-    a {
-        text-decoration: none ;
-        color: white;
-        font-family: Avenir;
-        font-weight: 100;
-        font-size: .8em;
-     }
-     p{
-        line-height: .3;
-     }
-   a:hover
-     {
-       color:white;
-       text-decoration:none;
-       cursor:pointer;
-       
+.footer {
+  background-color: #062B35;
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height:700px;
+  .companyinfo{
+    margin-top:3%;
+  }
+    h3{
+    color:white;
+    font-family: Avenir;
+    font-size: 1.2em;
       }
+    a{
+    text-decoration: none ;
+    color: white;
+    font-family: Avenir;
+    font-weight: 100;
+    font-size: .8em;
+      }
+    a:hover{
+    color:red;
+    text-decoration:none;
+    cursor:pointer;
+      }
+    #darialogo,div#products,div#company,div#customers {
+    text-align: center;
+    }
+}
+#darialogo{
+  background-image:url('../../images/DariaDay_logo-02 white.svg') ;
+  background-repeat: no-repeat;
+  background-size: 125px 175px;
 }
 
-#footer-sidebar {
-    width: 100%;
-    height: 600px;
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    height:300px;
+
+    .companyinfo {
+      display: flex;
+      }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .footer {
     display: grid;
-    background-color: #062B35;
-    justify-content: center;
+    }
 }
-    
-#darialogo {
- 
-    z-index: 99;
-    
-}
-div#products{
-   
-    text-align: center;
-  }
-  div#company{
-   
-    text-align: center;
-  }
 
-div#customers{
-  
-  text-align: center;
-}
+

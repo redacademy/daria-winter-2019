@@ -2,35 +2,51 @@
     background-color: #062B35;
     width: 100%;
     display: block;
+    // padding:5%;
     // height:400px;
     
     .skewedphotos{
         display: flex;
-        margin-left: 23%;
+        justify-content: center;
+        // width: 50%;
+        padding-right: 10%;
         margin-top: 10%;
         height: 400px;
         .photo1 {
-            background-color: green;
-            height: 238px;
-            // margin: 50px;
-            width: 214px;
+            
+                border: 2px solid #73AD21;
+                width: 200px;
+                height: 200px;  
+                
+                
+            background-image:url('../../images/artisan3.jpg') ;
+            background-size: contain;
+            // background-repeat: no-repeat;
+            height: 148px;  
+            width: 144px;
             transform: rotate(-10deg);
         }
         .photo2 {
-            background-color: orange;
-           
-            height: 238px;  
-            // margin: 50px;
-            width: 214px;
-            // transform: ;
+            
+                border: 2px solid #73AD21;
+                width: 200px;
+                height: 200px;  
+                
+                
+
+            background-image:url('../../images/artisan1.jpg') ;
+            background-size: contain;
+            height: 148px;  
+            width: 144px;
             transform: translate(0,50px) rotate(10deg);
         }
     }
     .copy{
         display: grid;
-        // width:30%;
+        padding-right: 50px;
+    
         color:white;
-        
+    
         h4{
             font-size: 2em;
             
@@ -74,3 +90,61 @@
     margin: 5%;
     width: 214px;
 }
+
+/* =============================
+Media 
+============================= */
+
+@media screen and (min-width: 1024px) {
+    .ourstory  {
+       display: flex;
+       flex-flow: row-reverse;
+       width: 100%;
+    }
+    
+    
+    .copy{
+        display: flex;
+        width:40%;
+        justify-content: center;
+        padding-right: 30%;
+    }
+}
+
+// .skewedphotos{
+//     width:50%;
+// }
+// .ourstory .skewedphotos .photo1 {
+//     background-color: green;
+//     height: 248px;  
+//     // margin: 50px;
+//     width: 244px;
+//     // transform: ;
+//     transform: rotate(-10deg);
+// }
+// .ourstory .skewedphotos .photo2 {
+//     background-color: orange;
+//     height: 248px;  
+//     // margin: 50px;
+//     width: 244px;
+//     // transform: ;
+//     transform: translate(0,50px) rotate(10deg);
+// }
+@media screen and (min-width: $tablet) {
+    .ourstory .skewedphotos{
+        // width: 0%;
+    }
+    .ourstory .skewedphotos .photo1 {
+        height: 248px;  
+        // margin: 50px;
+        width: 244px;
+        // transform: ;
+    }
+    .ourstory .skewedphotos .photo2 {
+        height: 248px;  
+        // margin: 50px;
+        width: 244px;
+        // transform: ;
+    }
+}
+
