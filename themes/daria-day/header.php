@@ -53,5 +53,5 @@
 				<img src="<?php echo get_template_directory_uri() ?>/images/Shopping-Bag-Icon.svg">
 			</a>
 		</div>
-	</header><!-- #masthead --> asdada
+	</header><!-- #masthead --> 
 	<div id="content" class="site-content">
