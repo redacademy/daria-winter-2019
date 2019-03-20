@@ -502,6 +502,57 @@ template {
     width: 51px;
     height: 51px; }
 
+/* =========================
+      Search Result Page
+   ========================= */
+.search-result {
+  font-family: 'Avenir';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  color: #062b35;
+  padding: 20px; }
+  .search-result a {
+    color: #062b35;
+    text-decoration: none; }
+  .search-result .post-categories {
+    list-style: none; }
+  .search-result .search-title {
+    font-family: 'PlayfairDisplay';
+    font-size: 32px; }
+  .search-result .search-thumbnail {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .search-result .search-thumbnail img {
+      height: 300px;
+      width: 540px;
+      border-radius: 10px; }
+  .search-result .search-excerpt {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .search-result .search-post-date a {
+    text-decoration: none;
+    color: #062b35; }
+  .search-result a:hover {
+    color: #0d5468; }
+
+.hr {
+  color: #cdcdcd; }
+
+.page-title {
+  font-family: 'PlayfairDisplay';
+  font-size: 32px;
+  padding: 0 20px; }
+
 #footer {
   margin-top: 6%;
   width: 100%;

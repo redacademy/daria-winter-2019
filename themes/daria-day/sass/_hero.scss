@@ -147,4 +147,58 @@
     height: 51px;
   }
 }
+
+/* =========================
+      Search Result Page
+   ========================= */
+
+.search-result{
+  font-family: 'Avenir';
+  display: flex;
+  flex-flow: column;
+  color: #062b35;
+  padding: 20px;
+
+  a{
+    color: #062b35;
+    text-decoration: none;
+  }
+  .post-categories {
+    list-style: none;
+  }
+  .search-title {
+    font-family: 'PlayfairDisplay';
+    font-size: 32px;
+  }
   
+  .search-thumbnail{
+    display: flex;
+    justify-content:  center;
+    img{
+      height: 300px;
+      width: 540px;
+      border-radius: 10px;
+    }
+  }
+  .search-excerpt {
+    display: flex;
+  }
+  .search-post-date {
+    a{
+      text-decoration: none;
+      color: #062b35;
+    }
+    
+  }
+  a:hover{
+    color: #0d5468;
+  }
+}
+.hr{
+  color: #cdcdcd;
+}
+.page-title {
+  font-family: 'PlayfairDisplay';
+  font-size: 32px;
+  padding: 0 20px;
+}
