@@ -531,30 +531,15 @@ template {
     height: 51px; }
 
 /* =========================
-<<<<<<< HEAD
       Search Result Page
    ========================= */
 .search-result {
   font-family: 'Avenir';
-=======
-      Latest Additions Section
-   ========================= */
-.latest-additions {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  list-style: none;
-  font-size: .8em; }
-
-.latest-additions-item {
->>>>>>> ce742a6bdee0f556cdd7dba04e8b5c635138dd2c
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-<<<<<<< HEAD
       -ms-flex-flow: column;
           flex-flow: column;
   color: #062b35;
@@ -596,9 +581,23 @@ template {
   font-size: 32px;
   padding: 0 20px; }
 
-#footer {
-  margin-top: 6%;
-=======
+/* =========================
+      Latest Additions Section
+   ========================= */
+.latest-additions {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  list-style: none;
+  font-size: .8em; }
+
+.latest-additions-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
   .latest-additions-item a {
@@ -658,7 +657,6 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
->>>>>>> ce742a6bdee0f556cdd7dba04e8b5c635138dd2c
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
