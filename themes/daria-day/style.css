@@ -524,99 +524,58 @@ template {
   .latest-additions-item a {
     text-decoration: none; }
 
-.slider {
-  text-align: center;
-  margin-top: 2.5%; }
+.filter-energy-tag {
+  font-weight: bold;
+  border: none;
+  background: white; }
 
-ul {
-  width: 70%;
-  scroll-behavior: smooth;
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  text-align: center;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  padding-top: 2%; }
-
-ul::-webkit-scrollbar {
-  display: none; }
-
-li {
-  list-style: none;
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  width: 20%;
-  margin-left: 8.5%;
-  margin-right: 1.5%;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  -webkit-transition: 0.2s;
-  transition: 0.2s; }
-
-li {
-  width: 470px; }
-
-li:hover {
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0); }
-
-.link {
-  text-decoration: none; }
-
-.title {
-  vertical-align: middle; }
-
-.bracelets, .earrings, .necklaces, .energy {
-  border: 2px solid #73AD21;
-  padding: 20px;
-  width: 200px;
-  height: 200px;
-  margin-left: 5%; }
-
-.filter-overlay {
-  overflow-y: auto;
-  overflow-x: hidden;
-  z-index: 110;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.96);
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transform: scale(1.09);
-          transform: scale(1.09);
-  -webkit-transition: opacity .3s, visibility .3s, -webkit-transform .3s;
-  transition: opacity .3s, visibility .3s, -webkit-transform .3s;
-  transition: opacity .3s, transform .3s, visibility .3s;
-  transition: opacity .3s, transform .3s, visibility .3s, -webkit-transform .3s;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
-
-.filter-overlay--active {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1); }
-
-.filter-overlay__close {
+.filter-dropdown {
   position: absolute;
-  top: 13px;
-  right: 16px;
-  font-size: 2.1rem;
-  cursor: pointer;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  background-color: #FFF;
-  color: #F95738;
-  line-height: .7; }
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+
+.filter-dropdown ul {
+  margin: -1px 0 0 0; }
+
+.filter-dropdown dd ul {
+  background-color: white;
+  border: 0;
+  color: #fff;
+  display: none;
+  left: 0px;
+  padding: 2px 15px 2px 5px;
+  position: absolute;
+  top: 2px;
+  width: 280px;
+  list-style: none;
+  height: 100px;
+  overflow: auto; }
+
+.filter-btn {
+  background-color: #6BBE92;
+  width: 302px;
+  border: 0;
+  padding: 10px 0;
+  margin: 5px 0;
+  text-align: center;
+  color: #fff;
+  font-weight: bold; }
+
+.seat {
+  background: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.selected {
+  background-color: lightblue;
+  color: white; }
 
 #footer {
   margin-top: 6%;
