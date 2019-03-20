@@ -727,7 +727,7 @@ template {
     width: 25px;
     height: 25px; }
 
-.header-search .search-toggle {
+.header-search .search-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -740,9 +740,8 @@ template {
           align-items: center;
   padding: 5px; }
 
-.header-search label {
-  padding: 5px;
-  padding-left: 10px; }
+.header-search .icon-search {
+  padding: 0 5px; }
 
 .header-search .search-field {
   width: 0;
@@ -756,6 +755,7 @@ template {
   background-color: #e1e1e1; }
   .mobile-search .search-field {
     width: 100%;
+    padding: 10px;
     background-color: #e1e1e1;
     border: none;
     color: white; }
