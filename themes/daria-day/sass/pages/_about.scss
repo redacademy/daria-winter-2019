@@ -6,23 +6,23 @@
     
     .skewedphotos{
         display: flex;
-        margin-left: 23%;
+        justify-content: center;
         margin-top: 10%;
         height: 400px;
         .photo1 {
             background-color: green;
-            height: 238px;
-            // margin: 50px;
-            width: 214px;
-            transform: rotate(-10deg);
+            height: auto; 
+            width: auto; 
+            max-width: 340px; 
+            max-height: 300px;
+            transform: translate(0,50px) rotate(-10deg);
         }
         .photo2 {
             background-color: orange;
-           
-            height: 238px;  
-            // margin: 50px;
-            width: 214px;
-            // transform: ;
+            height: auto; 
+            width: auto; 
+            max-width: 340px; 
+            max-height: 300px;
             transform: translate(0,50px) rotate(10deg);
         }
     }
@@ -30,6 +30,7 @@
         display: grid;
         // width:30%;
         color:white;
+        
         
         h4{
             font-size: 2em;
@@ -39,38 +40,4 @@
             font-size: 1.3em;
         }
     }
-}
-.latest{
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-.jewels1 {
-    background-color: red;
-    display: flex;
-    height: 238px;
-    margin: 5%;
-    width: 214px;
-}
-.jewels3 {
-    background-color: orange;
-    display: flex;
-    height: 238px;
-    margin: 5%;
-    width: 214px;
-}
-.jewels2 {
-    background-color: yellow;
-    display: flex;
-    height: 238px;
-    margin: 5%;
-    width: 214px;
-}
-.jewels4 {
-    background-color: blue;
-    display: flex;
-    height: 238px;
-    margin: 5%;
-    width: 214px;
 }

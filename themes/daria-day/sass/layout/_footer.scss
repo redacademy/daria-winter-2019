@@ -3,13 +3,11 @@
     width: 100%;
     display: block;
    
-}
+
 .companyinfo{
     margin-top: 6%;
     width: 100%;
     display: block;
-   
-
 
     h3.widget-title{
         
@@ -35,7 +33,7 @@
        
       }
 }
-
+}
 #footer-sidebar {
     width: 100%;
     height: 600px;
@@ -45,8 +43,10 @@
 }
     
 #darialogo {
- 
-    z-index: 99;
+  background-size: 300px 100px;
+  background-image: url("../../images/DariaDay_logo-white.svg");
+  background-repeat: no-repeat;
+  z-index: 99;
     
 }
 div#products{
