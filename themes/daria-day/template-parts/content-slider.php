@@ -1,7 +1,4 @@
 
-
-
-
 <h2 class= 'title'>There are many paths, we have different options. </h2>
 <section class='slider'>
 
