@@ -573,7 +573,7 @@ template {
       -ms-flex-direction: column;
           flex-direction: column; }
 
-.selected {
+.seat.selected {
   background-color: lightblue;
   color: white; }
 

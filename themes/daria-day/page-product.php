@@ -48,13 +48,11 @@ get_header();
             
                 <dd>
                     <div class="multiselect">
-                    <input id="seats" value="" class="selectedVals">
+                    <input id="seats" value="" >
                         <ul>
                             <!-- <h1>By Energy</h1> -->
 
                             <li>
-                            
-
                             <button class="filter-energy-tag">By Energy</button>
                             <input type="button" class="seat" value="Abundance">
                             <input type="button" class="seat" value="Calmness">
@@ -68,6 +66,7 @@ get_header();
                             <!-- <input type="checkbox" value="abundance" />Abundance</li>
                             <li> -->
                             <button class="filter-btn-interior" id="filter-btn-interior">Apply filter</button>
+                            <button class="filter-btn-interior-close" id="filter-btn-interior-close">Cancel</button>
 
                             </li>
                         </ul>

@@ -16,13 +16,22 @@ function dariaSearchResults($data) {
     $products = [];
     foreach ( $results as $row ) {?>
         <?php 
-        $tagInfo = [];
+        $tagInfoGem = [];
+        $tagInfoEnergy = [];
+        $tagInfoMisc = [];
         foreach ($tagResults as $tagRow ) {
     
-            if($row->product_id == $tagRow->product_id ){
-                array_push($tagInfo, $tagRow->tag);    
+            if($row->product_id == $tagRow->product_id And preg_match('/\bmoonstone|rose quartz|quartz|lapis|amethyst|feldspar|amazonite|agate|rutilated quartz|Garnet\b/', $tagRow->tag)){
+                array_push($tagInfoGem, $tagRow->tag);    
 
+            }elseif($row->product_id == $tagRow->product_id And preg_match('/\bcalmness|fertility|focus|prosperity|positivity|love|enlightenment|healing|peace|abundance\b/', $tagRow->tag)){
+                array_push($tagInfoEnergy, $tagRow->tag);    
+
+            } elseif($row->product_id == $tagRow->product_id){
+                array_push($tagInfoMisc, $tagRow->tag);    
+               
             }
+            
             
         } 
         foreach ($prices as $price ) {
@@ -40,7 +49,11 @@ function dariaSearchResults($data) {
             'product_id'=> $row->product_id, 
             'image'=> $row->image,
             'product_type' => $row->product_type,
-            'tags' => $tagInfo,
+            'tags' => array(
+                'gemstone' =>$tagInfoGem ,
+                'energy' => $tagInfoEnergy,
+                'misc' => $tagInfoMisc
+            ),
             'price' => $priceInfo,
             'date' => $row->updated_at 
         ); 

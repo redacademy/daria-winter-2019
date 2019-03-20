@@ -78,6 +78,7 @@ $("#filter-btn").on('click', function() {
   
 //     }
 //   });
+
 //remove seat from list
 function removeSeat(seatListElm, seatValue) {
     var arr=seatListElm.value.split(',');
@@ -103,13 +104,15 @@ function addSeat(seatListElm, seatValue) {
     } 
 }
 
+var confirmedSeats = [];
 //called everytime a seat is clicked
 function seatClick(seat) {
     seat = (this instanceof HTMLInputElement ) ? this : seat;
+    let selectedSeats = [];
     var firstSelected;
-    var selectedSeats = [];
+
     var thisInputHasAlreadyBeenSeen = false;
-    var confirmedSeats = [];
+
     if (seat.classList.contains('reserved')==false) {
 
         if (seat.classList.toggle('selected')) {
@@ -125,56 +128,59 @@ function seatClick(seat) {
                         selectedSeats.push(this);
                     confirmedSeats = selectedSeats.slice();
                        }
-                    if(!this.classList.contains('reserved')) {
-                    selectedSeats.push(this);
-                     }
-                else{
-                    if(!thisInputHasAlreadyBeenSeen) {
-                    selectedSeats = [];
-                    firstSelected = null;
-                    } else {
-                        return false;
-                    }
-                }
+                //     if(!this.classList.contains('reserved')) {
+                //     selectedSeats.push(this);
+                //      }
+                // else{
+                    // if(!thisInputHasAlreadyBeenSeen) {
+                    // selectedSeats = [];
+                    // firstSelected = null;
+                    // } else {
+                    //     return false;
+                    // }
+                // }
                 }
                 } else {
                     selectedSeats.push(this);
                     confirmedSeats = selectedSeats.slice();
-                    if(firstSelected == null) {
-                        thisInputHasAlreadyBeenSeen = true;
-                        firstSelected = this;
-                    }
+                    // if(firstSelected == null) {
+                    //     thisInputHasAlreadyBeenSeen = true;
+                    //     firstSelected = this;
+                    // }
                 }
             });
             if(confirmedSeats.length > 1) {
-            selectAll(confirmedSeats);
+            // selectAll(confirmedSeats);
             }
+        // }
         } else {
             removeSeat(document.getElementById('seats'), seat.value);
         }
-      
+    // }
     } else {
         alert("This seat is reserved!\nPlease select another seat");
         removeSeat(document.getElementById('seats'), seat.value);
         return;
     }
-}
 
+}
+// console.log(confirmedSeats);
 
 //adding event click to seats
-var elms=document.getElementsByClassName('seat');
+var elms = document.getElementsByClassName('seat');
 for(var i=0, l=elms.length ; i<l ; i++){
     elms[i].onclick=seatClick;
 }
-
-function selectAll(seats) {
-    seats.forEach(function(seat) {
-        seat.className = seat.className + ' selected';
-    });
-}
+// function selectAll(seats) {
+//     seats.forEach(function(seat) {
+//         seat.className = seat.className + ' selected';
+//     });
+// }
 //filter process
 $("#filter-btn-interior").on('click', ()=> {
+    // console.log(selectedSeats);
     $.ajax({
+        
         beforeSend: (xhr) => { //this pice to pass randomly generated nonce code along with our request so wp knows we're logged in and authorized to do so
         xhr.setRequestHeader('X-WP-Nonce', dariaData.nonce);
         },
@@ -182,7 +188,8 @@ $("#filter-btn-interior").on('click', ()=> {
         type: 'GET', 
         // data: {'professorId': currentLikeBox.data('professor')}, //we use data property to send along info to server side and we could add it to the end of url above like ...manageLike?professorId=789, but this way is cleaner
         success: (response)=>{
-            // console.log(response);
+            
+            console.log(response);
             // let searchField =selectedSeats;
             //look in tag column of each array response and return title if there are matches
             
@@ -191,26 +198,31 @@ $("#filter-btn-interior").on('click', ()=> {
             // if(selectedSeats[0].className = "seat selected") {
             //     console.log(selectedSeats[0].defaultValue);
             // }
-            let selSeats= selectedSeats;
-            let selSeatEmpty=[];
-            console.log(selSeats);
-            // selectedSeats.map(items => {
-            // selSeats.forEach(function(e){    
-            //     if(e.className = "seat selected"){
-            //         selSeatEmpty.push(e.defaultValue.toLowerCase());
-            //     }
-            // });
- 
-            // response.map(item => {
-            //     //items.defaultValue.toLowerCase()
-            //         let tagContainer = item.tags;
-            //         if (selectedSeats[0].className = "seat selected" && tagContainer.includes('abundance')){
-            //             // console.log(item);
-            //             // var gridRes = response.tags;
-            //             console.log(item.title);
-            //             // $(".rowDip").append(gridRes);
-            //         }
-            // })
+            // let selSeats= selectedSeats;
+            let selSeat=[];
+            confirmedSeats.forEach(function(e){    
+                if(e.className === "seat selected"){
+                    selSeat.push(e.defaultValue.toLowerCase());
+                }
+            });
+            removeSeat(document.getElementById('seats'), '');
+            console.log(selSeat);
+
+            response.map(item => {
+                //items.defaultValue.toLowerCase()
+                    let tagContainer = item.tags.energy;
+                    // console.log(tagContainer);
+                    //tagContainer.some(r=> selSeat.includes(r))
+                    // for (let i =0; i<selSeat.length; i++) {
+                        if (confirmedSeats.className = "seat selected" && selSeat.every(elem => tagContainer.indexOf(elem) > -1)){
+                            // console.log(item);
+                            // var gridRes = response.tags;
+                            console.log(item.title);
+                            
+                            // $(".rowDip").append(gridRes);
+                        }
+                // }
+            })
 
             // if (response[0].tags.includes['silver']){
                 
@@ -232,7 +244,13 @@ $("#filter-btn-interior").on('click', ()=> {
         },
     });
 });
+$("#filter-btn-interior-close").on('click', ()=> {
 
+
+    // removeSeat(document.getElementById('seats'), 'Abundance');
+
+
+});
 } )( jQuery );
 
 
