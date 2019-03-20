@@ -119,6 +119,8 @@ class CPT {
 			$permalink = $products_slug;
 		}
 
+		
+
 
 		$labels = array(
 			'name'                => _x('Products', 'Post Type General Name', WPS_PLUGIN_TEXT_DOMAIN),
@@ -132,6 +134,7 @@ class CPT {
 		);
 
 		$args = array(
+			'show_in_rest' => true, //this will show this custom post type in rest url
 			'label'               => __('Products', WPS_PLUGIN_TEXT_DOMAIN),
 			'description'         => __('Custom Post Type for Products', WPS_PLUGIN_TEXT_DOMAIN),
 			'labels'              => $labels,
@@ -188,6 +191,7 @@ class CPT {
 
 
 		$labels = array(
+			
 			'name'                => _x('Collections', 'Post Type General Name', WPS_PLUGIN_TEXT_DOMAIN),
 			'singular_name'       => _x('Collection', 'Post Type Singular Name', WPS_PLUGIN_TEXT_DOMAIN),
 			'menu_name'           => __('Collections', WPS_PLUGIN_TEXT_DOMAIN),
@@ -199,6 +203,7 @@ class CPT {
 		);
 
 		$args = array(
+			'show_in_rest' => true,
 			'label'               => __('Collections', WPS_PLUGIN_TEXT_DOMAIN),
 			'description'         => __('Custom Post Type for Collections', WPS_PLUGIN_TEXT_DOMAIN),
 			'labels'              => $labels,

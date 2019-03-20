@@ -1,0 +1,150 @@
+.ourstory{
+    background-color: #062B35;
+    width: 100%;
+    display: block;
+    // padding:5%;
+    // height:400px;
+    
+    .skewedphotos{
+        display: flex;
+        justify-content: center;
+        // width: 50%;
+        padding-right: 10%;
+        margin-top: 10%;
+        height: 400px;
+        .photo1 {
+            
+                border: 2px solid #73AD21;
+                width: 200px;
+                height: 200px;  
+                
+                
+            background-image:url('../../images/artisan3.jpg') ;
+            background-size: contain;
+            // background-repeat: no-repeat;
+            height: 148px;  
+            width: 144px;
+            transform: rotate(-10deg);
+        }
+        .photo2 {
+            
+                border: 2px solid #73AD21;
+                width: 200px;
+                height: 200px;  
+                
+                
+
+            background-image:url('../../images/artisan1.jpg') ;
+            background-size: contain;
+            height: 148px;  
+            width: 144px;
+            transform: translate(0,50px) rotate(10deg);
+        }
+    }
+    .copy{
+        display: grid;
+        padding-right: 50px;
+    
+        color:white;
+    
+        h4{
+            font-size: 2em;
+            
+        }
+        p{
+            font-size: 1.3em;
+        }
+    }
+}
+.latest{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.jewels1 {
+    background-color: red;
+    display: flex;
+    height: 238px;
+    margin: 5%;
+    width: 214px;
+}
+.jewels3 {
+    background-color: orange;
+    display: flex;
+    height: 238px;
+    margin: 5%;
+    width: 214px;
+}
+.jewels2 {
+    background-color: yellow;
+    display: flex;
+    height: 238px;
+    margin: 5%;
+    width: 214px;
+}
+.jewels4 {
+    background-color: blue;
+    display: flex;
+    height: 238px;
+    margin: 5%;
+    width: 214px;
+}
+
+/* =============================
+Media 
+============================= */
+
+@media screen and (min-width: 1024px) {
+    .ourstory  {
+       display: flex;
+       flex-flow: row-reverse;
+       width: 100%;
+    }
+    
+    
+    .copy{
+        display: flex;
+        width:40%;
+        justify-content: center;
+        padding-right: 30%;
+    }
+}
+
+// .skewedphotos{
+//     width:50%;
+// }
+// .ourstory .skewedphotos .photo1 {
+//     background-color: green;
+//     height: 248px;  
+//     // margin: 50px;
+//     width: 244px;
+//     // transform: ;
+//     transform: rotate(-10deg);
+// }
+// .ourstory .skewedphotos .photo2 {
+//     background-color: orange;
+//     height: 248px;  
+//     // margin: 50px;
+//     width: 244px;
+//     // transform: ;
+//     transform: translate(0,50px) rotate(10deg);
+// }
+@media screen and (min-width: $tablet) {
+    .ourstory .skewedphotos{
+        // width: 0%;
+    }
+    .ourstory .skewedphotos .photo1 {
+        height: 248px;  
+        // margin: 50px;
+        width: 244px;
+        // transform: ;
+    }
+    .ourstory .skewedphotos .photo2 {
+        height: 248px;  
+        // margin: 50px;
+        width: 244px;
+        // transform: ;
+    }
+}
+

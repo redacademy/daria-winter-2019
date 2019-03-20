@@ -51,6 +51,31 @@ get_header();
 		endif;
 		?>
 
+		<?php
+		$tagInfo = [];
+
+		array_push($tagInfo, 'hi');
+
+		print_r($tagInfo);
+		?>
+
+		<!-- <?php 
+		global $wpdb;
+		$results = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix.wps_tags);
+		foreach ( $results as $row ) {
+				// print_r($row);
+				$productInfo = array(
+					'tag' => $row->tag
+				);
+		}
+
+		$categories = get_terms();
+		foreach ($categories as $category) :
+			print_r($category);
+		endforeach; wp_reset_postdata();
+		?> -->
+
+		
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

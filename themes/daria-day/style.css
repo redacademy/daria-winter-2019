@@ -360,6 +360,34 @@ template {
 [hidden] {
   display: none; }
 
+@font-face {
+  font-family: 'Avenir LT Book';
+  src: url("../../fonts/AvenirLTStd-Book.eot");
+  src: url("../../fonts/AvenirLTStd-Book.eot?#iefix") format("embedded-opentype"), url("../../fonts/AvenirLTStd-Book.woff2") format("woff2"), url("../../fonts/AvenirLTStd-Book.woff") format("woff"), url("../../fonts/AvenirLTStd-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url("../../fonts/PlayfairDisplay-Regular.eot");
+  src: url("../../fonts/PlayfairDisplay-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("../../fonts/PlayfairDisplay-Regular.woff") format("woff"), url("../../fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir LT Std';
+  src: url("../../fonts/AvenirLTStd-Medium.eot");
+  src: url("../../fonts/AvenirLTStd-Medium.eot?#iefix") format("embedded-opentype"), url("../../fonts/AvenirLTStd-Medium.woff2") format("woff2"), url("../../fonts/AvenirLTStd-Medium.woff") format("woff"), url("../../fonts/AvenirLTStd-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url("../../fonts/PlayfairDisplay-Bold.eot");
+  src: url("../../fonts/PlayfairDisplay-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../../fonts/PlayfairDisplay-Bold.woff") format("woff"), url("../../fonts/PlayfairDisplay-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
 /* =========================
    Hero Banner Section
    =========================
@@ -503,15 +531,30 @@ template {
     height: 51px; }
 
 /* =========================
+<<<<<<< HEAD
       Search Result Page
    ========================= */
 .search-result {
   font-family: 'Avenir';
+=======
+      Latest Additions Section
+   ========================= */
+.latest-additions {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  list-style: none;
+  font-size: .8em; }
+
+.latest-additions-item {
+>>>>>>> ce742a6bdee0f556cdd7dba04e8b5c635138dd2c
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+<<<<<<< HEAD
       -ms-flex-flow: column;
           flex-flow: column;
   color: #062b35;
@@ -555,41 +598,447 @@ template {
 
 #footer {
   margin-top: 6%;
-  width: 100%;
-  display: block; }
+=======
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .latest-additions-item a {
+    text-decoration: none; }
 
-.companyinfo {
-  margin-top: 6%;
+.slider {
+  text-align: center;
+  margin-top: 2.5%; }
+  .slider .imgList {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    padding-top: 2%;
+    scroll-behavior: smooth;
+    vertical-align: middle;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; }
+  .slider ul {
+    padding: 0; }
+  .slider ul::-webkit-scrollbar {
+    display: none; }
+  .slider li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
+    margin-left: 8.5%;
+    margin-right: 1.5%;
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+    -webkit-transition: 0.2s;
+    transition: 0.2s; }
+  .slider li {
+    width: 470px; }
+    .slider li:hover {
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+      -webkit-filter: grayscale(0);
+              filter: grayscale(0); }
+  .slider .link {
+    text-decoration: none; }
+  .slider .title {
+    vertical-align: middle; }
+  .slider #bracelets, .slider #earrings, .slider #necklaces, .slider #energy {
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    margin-left: 5%; }
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+>>>>>>> ce742a6bdee0f556cdd7dba04e8b5c635138dd2c
   width: 100%;
-  display: block; }
-  .companyinfo h3.widget-title {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.btn {
+  height: 10px;
+  width: 10px;
+  margin: 10px;
+  border-radius: 20%;
+  cursor: pointer; }
+
+.btn1 {
+  background: orange;
+  position: relative;
+  overflow: hidden; }
+
+.btn2 {
+  background: green;
+  position: relative;
+  overflow: hidden; }
+
+.btn3 {
+  background: red;
+  position: relative;
+  overflow: hidden; }
+
+.btn4 {
+  background: blue;
+  position: relative;
+  overflow: hidden; }
+
+@media screen and (min-width: 1024px) {
+  .container {
+    display: none; } }
+
+.site-header {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 54px;
+  padding: 20px 10px;
+  border-bottom: 2px solid #062b35; }
+  .site-header a {
+    display: block;
+    padding: 15px 10px;
+    color: #062b35;
+    text-transform: uppercase; }
+  .site-header .custom-logo-link {
+    padding: 0; }
+
+.main-navigation {
+  justify-self: start; }
+  .main-navigation .menu-toggle {
+    height: 100%;
+    width: 50px;
+    border: none;
+    background-color: transparent;
+    font-size: 2em; }
+  .main-navigation ul {
+    margin: 0;
+    padding: 0; }
+  .main-navigation ul.mobile-nav {
+    position: absolute;
+    left: 0;
+    top: 96px;
+    width: 100vw;
+    background-color: #e1e1e1; }
+    .main-navigation ul.mobile-nav .close-mobile-nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; }
+      .main-navigation ul.mobile-nav .close-mobile-nav button {
+        padding: 15px 30px 0;
+        background-color: transparent;
+        border: none; }
+      .main-navigation ul.mobile-nav .close-mobile-nav img {
+        width: 1em;
+        height: 1em; }
+    .main-navigation ul.mobile-nav li:first-of-type a {
+      padding-top: 0; }
+    .main-navigation ul.mobile-nav li:not(:last-of-type) {
+      border-bottom: 1px solid #062b35; }
+
+.site-branding {
+  height: 100%; }
+  .site-branding a {
+    height: 80%; }
+  .site-branding img {
+    height: 100%; }
+
+.nav-misc {
+  justify-self: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 10%; }
+  .nav-misc .cart {
+    padding: 0 5px; }
+  .nav-misc .cart img {
+    width: 25px;
+    height: 25px; }
+
+.header-search .search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px; }
+
+.header-search .icon-search {
+  padding: 0 5px; }
+
+.header-search .search-field {
+  width: 0;
+  border: none; }
+
+.header-search .search-field.show-search {
+  width: 75px; }
+
+.mobile-search {
+  padding: 10px;
+  background-color: #e1e1e1; }
+  .mobile-search .search-field {
+    width: 100%;
+    padding: 10px;
+    background-color: #e1e1e1;
+    border: none;
+    color: white; }
+
+.hide-menu {
+  display: none; }
+
+@media screen and (min-width: 600px) {
+  .site-header {
+    grid-template-columns: 2fr 1fr 2fr; }
+  .nav-misc .cart {
+    padding: 0 10px; }
+  .search-field {
+    -webkit-transition: width 1s;
+    transition: width 1s; }
+  .header-search .search-field.show-search {
+    width: 100px;
+    border-bottom: 2px solid #062b35; } }
+
+@media screen and (min-width: 1024px) {
+  .site-header {
+    grid-template-columns: 3fr 1fr 3fr; }
+  .menu-toggle {
+    display: none; }
+  .main-navigation ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .main-navigation ul li {
+      padding: 0 10px; }
+    .main-navigation ul a {
+      display: inline-block;
+      color: #062b35;
+      text-transform: uppercase;
+      text-align: center; }
+  .nav-misc .cart {
+    padding: 0 10px; }
+  .nav-misc .cart img {
+    width: 30px;
+    height: 30px; }
+  .header-search .search-field.show-search {
+    width: 150px; } }
+
+.footer {
+  background-color: #062B35;
+  margin-top: 5%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 700px; }
+  .footer .companyinfo {
+    margin-top: 3%; }
+  .footer h3 {
     color: white;
     font-family: Avenir;
     font-size: 1.2em; }
-  .companyinfo a {
+  .footer a {
     text-decoration: none;
     color: white;
     font-family: Avenir;
     font-weight: 100;
     font-size: .8em; }
-  .companyinfo p {
-    line-height: .3; }
-  .companyinfo a:hover {
-    color: white;
+  .footer a:hover {
+    color: red;
     text-decoration: none;
     cursor: pointer; }
+  .footer #darialogo, .footer div#products, .footer div#company, .footer div#customers {
+    text-align: center; }
 
-#footer-sidebar {
-  width: 100%;
-  height: 500px;
-  display: grid;
+#darialogo {
+  background-image: url("../../images/DariaDay_logo-02 white.svg");
+  background-repeat: no-repeat;
+  background-size: 125px 175px; }
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    height: 300px; }
+    .footer .companyinfo {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
+
+@media screen and (min-width: 600px) {
+  .footer {
+    display: grid; } }
+
+.ourstory {
   background-color: #062B35;
+  width: 100%;
+  display: block; }
+  .ourstory .skewedphotos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-right: 10%;
+    margin-top: 10%;
+    height: 400px; }
+    .ourstory .skewedphotos .photo1 {
+      border: 2px solid #73AD21;
+      width: 200px;
+      height: 200px;
+      background-image: url("../../images/artisan3.jpg");
+      background-size: contain;
+      height: 148px;
+      width: 144px;
+      -webkit-transform: rotate(-10deg);
+              transform: rotate(-10deg); }
+    .ourstory .skewedphotos .photo2 {
+      border: 2px solid #73AD21;
+      width: 200px;
+      height: 200px;
+      background-image: url("../../images/artisan1.jpg");
+      background-size: contain;
+      height: 148px;
+      width: 144px;
+      -webkit-transform: translate(0, 50px) rotate(10deg);
+              transform: translate(0, 50px) rotate(10deg); }
+  .ourstory .copy {
+    display: grid;
+    padding-right: 50px;
+    color: white; }
+    .ourstory .copy h4 {
+      font-size: 2em; }
+    .ourstory .copy p {
+      font-size: 1.3em; }
+
+.latest {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
 
-#darialogo {
+.jewels1 {
+  background-color: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  z-index: 99; }
+  height: 238px;
+  margin: 5%;
+  width: 214px; }
+
+.jewels3 {
+  background-color: orange;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 238px;
+  margin: 5%;
+  width: 214px; }
+
+.jewels2 {
+  background-color: yellow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 238px;
+  margin: 5%;
+  width: 214px; }
+
+.jewels4 {
+  background-color: blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 238px;
+  margin: 5%;
+  width: 214px; }
+
+/* =============================
+Media 
+============================= */
+@media screen and (min-width: 1024px) {
+  .ourstory {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse;
+            flex-flow: row-reverse;
+    width: 100%; }
+  .copy {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-right: 30%; } }
+
+@media screen and (min-width: 600px) {
+  .ourstory .skewedphotos .photo1 {
+    height: 248px;
+    width: 244px; }
+  .ourstory .skewedphotos .photo2 {
+    height: 248px;
+    width: 244px; } }
+
+/*
+=========================
+General
+=========================
+*/
+ul, li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+body {
+  background-color: white; }
