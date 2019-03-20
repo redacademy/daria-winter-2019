@@ -7,6 +7,7 @@
  (function ($) {
   const tabletWidth = 600;
 
+  const $searchForm = $('.search-form')
   const $toggleSearch = $('.icon-search');
   const $searchField = $('.search-field');
 
@@ -15,9 +16,25 @@
     if (window.screen.width < tabletWidth) {
       $('.site-header').after('<div class="mobile-search"></div>');
       const $mobileSearch = $('.mobile-search');
-      $mobileSearch.append($searchField.closest('label'));
+
+      if ($searchForm.hasClass('mobile-search-active')) {
+        $mobileSearch.remove();
+        $searchForm.removeClass('mobile-search-active');
+      } else {
+        $searchForm.addClass('mobile-search-active');
+        $mobileSearch.append($searchField.closest('label'));
+      }
     } else {
       $searchField.toggleClass('show-search');
     }
+  });
+
+  $(window).on('resize', () => {
+    if ($searchForm.hasClass('mobile-search-active')) {
+      $searchForm.append($searchField.closest('label'))
+      $searchForm.removeClass('mobile-search-active');
+      $('.mobile-search').remove();
+    }
+    $searchField.removeClass('show-search');
   });
  })(jQuery);
