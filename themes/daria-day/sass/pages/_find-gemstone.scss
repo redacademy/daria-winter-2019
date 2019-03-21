@@ -1,0 +1,52 @@
+/*
+=========================
+Find Gemstone General Styline
+=========================
+*/
+
+
+/*
+=========================
+Find Gemstone Search Styling
+=========================
+*/
+
+
+.find-gemstone-search {
+  color: $brand-colour-evergreen;
+
+  h1 {
+    margin: 60px auto;
+  }
+
+  form {
+
+    div {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+
+      margin: 10px;
+    }
+
+    input {
+      margin-left: 5px;
+
+      border: none;
+      border-bottom: 1px solid $brand-colour-bright-green;
+      text-align: center;
+    }
+  }
+
+  button {
+    display: block;
+    width: 181px;
+    margin: 60px auto;
+  }
+}
+
+/*
+=========================
+Find Gemstone Results Styling
+=========================
+*/

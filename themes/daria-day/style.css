@@ -1123,6 +1123,47 @@ Media
 
 /*
 =========================
+Find Gemstone General Styline
+=========================
+*/
+/*
+=========================
+Find Gemstone Search Styling
+=========================
+*/
+.find-gemstone-search {
+  color: #062b35; }
+  .find-gemstone-search h1 {
+    margin: 60px auto; }
+  .find-gemstone-search form div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 10px; }
+  .find-gemstone-search form input {
+    margin-left: 5px;
+    border: none;
+    border-bottom: 1px solid #269a65;
+    text-align: center; }
+  .find-gemstone-search button {
+    display: block;
+    width: 181px;
+    margin: 60px auto; }
+
+/*
+=========================
+Find Gemstone Results Styling
+=========================
+*/
+/*
+=========================
 General
 =========================
 */

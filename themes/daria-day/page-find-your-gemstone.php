@@ -17,24 +17,30 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+			<section class="find-gemstone-search">
+				<h1>We'll guide you to what you need.</h1>
+				<form class="find-gemstone-form">
+					<div>
+						<label for="find-gemstone-name">Hi, my name is</label>
+						<input type="text" name="name" id="find-gemstone-name" placeholder="type your name">
+					</div>
+					<div>
+						<label for="find-gemstone-name">and I'm looking for</label>
+						<input type="text" name="name" id="find-gemstone-name" placeholder="type your name">
+					</div>
+					<div>
+						<label for="find-gemstone-name">that can help me with</label>
+						<input type="text" name="name" id="find-gemstone-name" placeholder="type your name">
+					</div>
+				</form>
+				<button type="submit">Find my gem</button>
+			</section>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
+			<section class="find-gemstone-results">
+			</section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
