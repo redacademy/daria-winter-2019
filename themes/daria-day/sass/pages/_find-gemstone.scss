@@ -21,22 +21,80 @@ Find Gemstone Search Styling
 
   form {
 
-    div {
+    > div {
+
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
 
       margin: 10px;
+
+      div {
+        position: relative;
+      }
     }
 
     input {
-      margin-left: 5px;
+      margin-left: $find-gemstone-input-margin;
 
+      background-color: transparent;
       border: none;
       border-bottom: 1px solid $brand-colour-bright-green;
       text-align: center;
     }
   }
+
+  .dropdown-position-holder {
+    &:hover,
+    &:active,
+    &:focus {
+
+      .find-gem-dropdown {
+        display: block;
+      }
+
+      .find-tag-dropdown {
+        display: flex;
+        flex-flow: row wrap;
+    
+        li {
+          margin: 2px;
+          margin-right: 5px;
+          padding: 0 5px;
+          
+          background-color: $nav-grey;
+          border: 0px solid transparent;
+          border-radius: 5px;
+          font-size: 0.75em;
+        }
+      }
+    }
+  }
+
+  // dropdown styling
+  .dropdown-position-holder {
+
+  }
+
+  .find-gem-dropdown {
+    display: none;
+
+    box-sizing: border-box;
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    left: $find-gemstone-input-margin;
+    
+    width: 200px;
+    padding: 10px;
+    margin: 0;
+
+    border: 1px solid $brand-colour-bright-green;
+    border-top: 2px solid $brand-colour-bright-green;
+    background-color: white;
+  }
+
+  
 
   button {
     display: block;

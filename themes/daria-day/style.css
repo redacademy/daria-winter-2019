@@ -1135,7 +1135,7 @@ Find Gemstone Search Styling
   color: #062b35; }
   .find-gemstone-search h1 {
     margin: 60px auto; }
-  .find-gemstone-search form div {
+  .find-gemstone-search form > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1147,11 +1147,46 @@ Find Gemstone Search Styling
         -ms-flex-pack: center;
             justify-content: center;
     margin: 10px; }
+    .find-gemstone-search form > div div {
+      position: relative; }
   .find-gemstone-search form input {
     margin-left: 5px;
+    background-color: transparent;
     border: none;
     border-bottom: 1px solid #269a65;
     text-align: center; }
+  .find-gemstone-search .dropdown-position-holder:hover .find-gem-dropdown, .find-gemstone-search .dropdown-position-holder:active .find-gem-dropdown, .find-gemstone-search .dropdown-position-holder:focus .find-gem-dropdown {
+    display: block; }
+  .find-gemstone-search .dropdown-position-holder:hover .find-tag-dropdown, .find-gemstone-search .dropdown-position-holder:active .find-tag-dropdown, .find-gemstone-search .dropdown-position-holder:focus .find-tag-dropdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap; }
+    .find-gemstone-search .dropdown-position-holder:hover .find-tag-dropdown li, .find-gemstone-search .dropdown-position-holder:active .find-tag-dropdown li, .find-gemstone-search .dropdown-position-holder:focus .find-tag-dropdown li {
+      margin: 2px;
+      margin-right: 5px;
+      padding: 0 5px;
+      background-color: #e1e1e1;
+      border: 0px solid transparent;
+      border-radius: 5px;
+      font-size: 0.75em; }
+  .find-gemstone-search .find-gem-dropdown {
+    display: none;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    width: 200px;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #269a65;
+    border-top: 2px solid #269a65;
+    background-color: white; }
   .find-gemstone-search button {
     display: block;
     width: 181px;

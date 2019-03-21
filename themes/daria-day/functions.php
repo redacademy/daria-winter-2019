@@ -191,6 +191,7 @@ function daria_day_scripts() {
 	wp_enqueue_script( 'daria-day-filters', get_template_directory_uri() . '/js/filters.js', array(), '20151215', true );
 	wp_enqueue_script( 'daria-day-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'demo-theme-search', get_template_directory_uri() . '/js/search.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-find-gemstone', get_template_directory_uri() . '/js/find-gemstone.js', array(), '20151215', true );
 
 	// Add template directory uri to navigation.js
 	wp_localize_script('daria-day-navigation', 'directory_uri', $dariaDayThemeDirectory);
@@ -207,7 +208,13 @@ function daria_day_scripts() {
 	wp_localize_script('daria-day-filters', 'dariaData', array( //this function will make our JSON API request flexible so it runs on every machine
         'root_url' => get_site_url(),
         'nonce' => wp_create_nonce('wp_rest')
-    ));
+		));
+		
+	// Find my gemstone rest api creation 
+	wp_localize_script('daria-day-find-gemstone', 'dariaData', array( 
+		'rest_url' => get_site_url(),
+		'wpapi_nonce' => wp_create_nonce('wp_rest')
+	));
 }
 add_action( 'wp_enqueue_scripts', 'daria_day_scripts' );
 
