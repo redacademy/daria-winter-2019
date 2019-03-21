@@ -1,6 +1,6 @@
 ( function( $ ) {
 //console.log('hellooo from filters.js');
-console.log('hello from latest.js');
+
 //latest addistion on front page
     if($('#latest-additions-container').attr('data-exists')== 'yes'){
     let resultsDiv = $('#latest-additions-container');
@@ -41,43 +41,15 @@ console.log('hello from latest.js');
 //filter functionality
 
 $("#filter-btn").on('click', function() {
-    // $(".filter-dropdown dt").toggleClass("dt--active");
     $(".filter-dropdown dd ul").slideToggle('fast');
   });
 
-// $(".filter-dropdown dt a").on('click', function() {
-//     $(".filter-dropdown dd ul").slideToggle('fast');
-//   });
-  
-//   $(".filter-dropdown dd ul li a").on('click', function() {
-//     $(".filter-dropdown dd ul").hide();
-//   });
-  
-//   function getSelectedValue(id) {
-//     return $("#" + id).find("dt a span.value").html();
-//   }
-  
   $(document).bind('click', function(e) {
     var $clicked = $(e.target);
     if (!$clicked.parents().hasClass("filter-dropdown")) $(".filter-dropdown dd ul").hide();
   });
   
-//   $('.multiselect input[type="checkbox"]').on('click', function() {
-  
-//     var title = $(this).closest('.multiselect').find('input[type="checkbox"]').val(),
-//       title = $(this).val() + ",";
-  
-//     if ($(this).is(':checked')) {
-//       var html = '<span title="' + title + '">' + title + '</span>';
-//       $('.multiSel').append(html);
-//       $(".hida").hide();
-//     } else {
-//       $('span[title="' + title + '"]').remove();
-//       var ret = $(".hida");
-//       $('.filter-dropdown dt a').append(ret);
-  
-//     }
-//   });
+
 
 //remove seat from list
 function removeSeat(seatListElm, seatValue) {
@@ -104,8 +76,10 @@ function addSeat(seatListElm, seatValue) {
     } 
 }
 
-var confirmedSeats = [];
+
 //called everytime a seat is clicked
+
+var confirmedSeats = [];
 function seatClick(seat) {
     seat = (this instanceof HTMLInputElement ) ? this : seat;
     let selectedSeats = [];
@@ -164,7 +138,6 @@ function seatClick(seat) {
     }
 
 }
-// console.log(confirmedSeats);
 
 //adding event click to seats
 var elms = document.getElementsByClassName('seat');
@@ -176,57 +149,54 @@ for(var i=0, l=elms.length ; i<l ; i++){
 //         seat.className = seat.className + ' selected';
 //     });
 // }
+
 //filter process
 $("#filter-btn-interior").on('click', ()=> {
-    // console.log(selectedSeats);
     $.ajax({
         
-        beforeSend: (xhr) => { //this pice to pass randomly generated nonce code along with our request so wp knows we're logged in and authorized to do so
+        beforeSend: (xhr) => { 
         xhr.setRequestHeader('X-WP-Nonce', dariaData.nonce);
         },
         url: dariaData.root_url + '/wp-json/daria/v1/search',
         type: 'GET', 
-        // data: {'professorId': currentLikeBox.data('professor')}, //we use data property to send along info to server side and we could add it to the end of url above like ...manageLike?professorId=789, but this way is cleaner
         success: (response)=>{
-            
             console.log(response);
-            // let searchField =selectedSeats;
-            //look in tag column of each array response and return title if there are matches
-            
-            // let container = response[2].tags;
-            // let containerInc = container.includes(selectedSeats);
-            // if(selectedSeats[0].className = "seat selected") {
-            //     console.log(selectedSeats[0].defaultValue);
-            // }
-            // let selSeats= selectedSeats;
-            let selSeat=[];
-            confirmedSeats.forEach(function(e){    
-                if(e.className === "seat selected"){
-                    selSeat.push(e.defaultValue.toLowerCase());
+            console.log(confirmedSeats);
+            let tagEnergySelected=[];
+            let tagGemSelected=[];
+            let tagEnergyList = ['calmness','fertility','focus','prosperity','positivity','love','enlightenment','healing','peace','abundance'];
+            let tagGemList = ['moonstone','rose quartz','quartz','lapis','amethyst','feldspar','amazonite','agate','rutilated quartz','Garnet'];
+            confirmedSeats.forEach(function(e){
+                let el = e.value.toLowerCase();
+                // console.log(el);
+                if(e.className === "seat selected" && tagEnergyList.includes(el)){
+                    tagEnergySelected.push(el);
+                }
+            });
+            confirmedSeats.forEach(function(e){
+                let el = e.value.toLowerCase();
+                // console.log(el);
+                if(e.className === "seat selected" && tagGemList.includes(el)){
+                    tagGemSelected.push(el);
                 }
             });
             removeSeat(document.getElementById('seats'), '');
-            console.log(selSeat);
+            console.log(tagEnergySelected);
+            console.log(tagGemSelected);
 
             response.map(item => {
-                //items.defaultValue.toLowerCase()
-                    let tagContainer = item.tags.energy;
-                    // console.log(tagContainer);
-                    //tagContainer.some(r=> selSeat.includes(r))
-                    // for (let i =0; i<selSeat.length; i++) {
-                        if (confirmedSeats.className = "seat selected" && selSeat.every(elem => tagContainer.indexOf(elem) > -1)){
-                            // console.log(item);
-                            // var gridRes = response.tags;
-                            console.log(item.title);
-                            
-                            // $(".rowDip").append(gridRes);
-                        }
-                // }
+                let tagContainerEnergy = item.tags.energy;
+                let tagContainerGemstone = item.tags.gemstone;
+
+                if (tagEnergySelected.every(elem => tagContainerEnergy.indexOf(elem) > -1) && tagGemSelected.every(elem => tagContainerGemstone.indexOf(elem) > -1)){
+
+                    console.log(item.title);
+                    
+                }
+
             })
 
-            // if (response[0].tags.includes['silver']){
-                
-            // }
+
             // $(".filter-results-container").html(`
             // <ul class ='Filter Results'>
             //     ${latestAdditions.map(item =>

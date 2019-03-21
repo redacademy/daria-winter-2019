@@ -33,7 +33,7 @@
 //     line-height: .7;
 //   }
 
-  .filter-energy-tag{
+  .filter-energy-tag, .filter-gemstone-tag{
     font-weight: bold;
     border: none;
     background: white;
@@ -44,7 +44,7 @@
   
   .filter-dropdown {
     position: absolute;
-    top:50%;
+    top:35%;
     transform: translateY(-50%);
   }
   
@@ -133,14 +133,14 @@
     flex-direction: column;
 }
 
-.seat.selected{
+.selected{
     background-color:lightblue;
     color: white;
 }
 
-// .selectedVals{
-//     display: none;
-// }
+.selectedVals{
+    display: none;
+}
 
 
 
