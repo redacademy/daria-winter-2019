@@ -46,7 +46,10 @@ if ( ! function_exists( 'daria_day_setup' ) ) :
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'daria-day' ),
 		) );
-
+		register_nav_menus( array(
+			'menu-2' => esc_html__( 'Shop Menu', 'daria-day' ),
+		) );
+		
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -181,9 +184,11 @@ add_filter( 'stylesheet_uri', 'daria_day_minified_css', 10, 2 );
  */
 function daria_day_scripts() {
 	wp_enqueue_style( 'daria-day-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'daria-day-fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 
 	wp_enqueue_script( 'daria-day-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'daria-day-filters', get_template_directory_uri() . '/js/filters.js', array(), '20151215', true );
+	wp_enqueue_script( 'demo-theme-search', get_template_directory_uri() . '/js/search.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'daria-day-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -197,6 +202,17 @@ function daria_day_scripts() {
     ));
 }
 add_action( 'wp_enqueue_scripts', 'daria_day_scripts' );
+
+/**
+ * Enable uploading SVG files to gallery
+ */
+function add_file_types_to_uploads($file_types) {
+	$new_filetypes = array();
+	$new_filetypes['svg'] = 'image/svg+xml';
+	$file_types = array_merge($file_types, $new_filetypes );
+	return $file_types;
+}
+add_action('upload_mimes', 'add_file_types_to_uploads');
 
 /**
  * Implement the Custom Header feature.
@@ -226,7 +242,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * run filter functionality
+ * Customizer additions.
  */
 require get_theme_file_path('/inc/filter-route.php');
 
@@ -238,3 +254,4 @@ function add_file_types_to_uploads($file_types) {
 }
 add_action('upload_mimes', 'add_file_types_to_uploads');
 
+require get_template_directory() . '/inc/filter-route.php';

@@ -9,27 +9,23 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+<article class="search-result" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="search-thumbnail">
+		<?php daria_day_post_thumbnail(); ?>
+	</div> <!--- search-thumbnail  --->
+	<header class="search-header">
+		<?php the_title( sprintf( '<p class="search-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></p>' ); ?>
 
 		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			daria_day_posted_on();
-			daria_day_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php daria_day_post_thumbnail(); ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php daria_day_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+		<div class="search-post-date">
+				<p> <strong> Posted on: </strong><?php the_time('F - j - Y');?></p> 
+				<p> <strong> Price: </strong>$398.00 CAD</p> 
+				<p> <strong> Category: </strong> <?php the_category();?></p>
+			<?php endif; ?>
+		</div>
+		<div class="search-excerpt">
+				<?php the_excerpt(); ?>
+		</div><!-- .search-summary -->
+	</header><!-- .search-header -->	
 </article><!-- #post-<?php the_ID(); ?> -->
+<hr class="hr">

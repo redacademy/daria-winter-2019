@@ -57,15 +57,37 @@ sass/
 --------------------------------------------------------------*/
 
 // Abstract
+@import 'abstracts/variables';
 
 // Base
 @import 'base/normalize';
+@import 'base/typography';
 @import 'hero.scss';
+
 // Components
 @import 'components/slider';
 @import 'components/filter';
 // Layout
+@import 'layout/header';
 @import 'layout/footer';
+@import 'layout/about';
+
+//Pages
+@import 'pages/about-us';
+
+/*
+=========================
+General
+=========================
+*/
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
 
 body {
   background-color: white;
