@@ -183,12 +183,20 @@ add_filter( 'stylesheet_uri', 'daria_day_minified_css', 10, 2 );
  * Enqueue scripts and styles.
  */
 function daria_day_scripts() {
+	$dariaDayThemeDirectory = array('stylesheet_directory_uri' => get_stylesheet_directory_uri());
+
 	wp_enqueue_style( 'daria-day-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'daria-day-fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 
-	wp_enqueue_script( 'daria-day-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'daria-day-filters', get_template_directory_uri() . '/js/filters.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'demo-theme-search', get_template_directory_uri() . '/js/search.js', array(), '20151215', true );
+
+	// Add template directory uri to navigation.js
+	wp_localize_script('daria-day-navigation', 'directory_uri', $dariaDayThemeDirectory);
+
+	// JQuery
+	wp_enqueue_script('jquery');
 
 	wp_enqueue_script( 'daria-day-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

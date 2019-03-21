@@ -6,7 +6,7 @@
  */
 
 (function ($) {
-  const desktopWidth = 1024;
+	const desktopWidth = 1024;
 
   // if navigation doesn't exist, exit here
 	const $navigation = $('.main-navigation');
@@ -20,22 +20,92 @@
   const $menu = $('.main-navigation ul');
 
   const checkMobile = () => {
-    if (window.screen.width < desktopWidth) {
-      isMobile = true;
-    } else {
+    if (window.matchMedia(`(min-width: ${desktopWidth}px)`).matches) {
       isMobile = false;
+    } else {
+      isMobile = true;
     }
   };
 
-  checkMobile();
+	checkMobile();
 
-	// Finds My Account link and saves it
+	// Finds My Account and Shop link and saves it
 	$menuItems = $('.menu-item a')
 	$menuItems.each((index, value) => {
 		if (value.innerHTML.toLowerCase() === 'my account') {
 			$myAccountLink = value.closest('li');
 		}
+		if (value.innerHTML.toLowerCase() === 'shop') {
+			$shopLink = $menuItems.eq(index).closest('li');
+			// $shopLink = value.closest('li');
+			// $testLink = value;
+		}
 	});
+
+	// Add secondary Shop Menu
+	const addSecondaryMenu = (isMobile) => {
+		const secondaryMenu = `<div class="secondary-menu">
+			<div class="secondary-nav-content-wrapper content-wrapper">
+				<section class="secondary-category by-jewelry">
+					<h4>By Jewelry</h4>
+					<ul>
+						<li><a href="#">Bracelets</a></li>
+						<li><a href="#">Earrings</a></li>
+						<li><a href="#">Necklaces</a></li>
+					</ul>
+				</section>
+				<section class="secondary-category by-collection">
+					<h4>By Collection</h4>
+					<ul>
+						<li><a href="#">Magical Collection</a></li>
+						<li><a href="#">Winter Wonder</a></li>
+					</ul>
+				</section>
+				<section class="secondary-category by-energy">
+					<h4>By Energy</h4>
+					<ul>
+						<li><a href="#">Abundance</a></li>
+						<li><a href="#">Calming</a></li>
+						<li><a href="#">More energies</a></li>
+					</ul>
+				</section>
+				<div class="new-to-crystals">
+					<img src="${directory_uri.stylesheet_directory_uri}/images/icons/New-To-Crystals-Icon.svg">
+					<div>
+						<p>New to crystals and Gemstones?</p>
+						<p>Let us help you.</p>
+					</div>
+				</div>
+			</div>
+		</div>`;
+
+		const $siteHeader = $('.site-header');
+		$('.secondary-menu').remove();
+
+		if (isMobile) {
+			$shopLink.append(secondaryMenu);
+			$('.secondary-menu').removeClass('hide-menu');
+		} else {
+			$siteHeader.after(secondaryMenu);
+			$('.secondary-menu').addClass('hide-menu');
+		}
+	}
+
+	addSecondaryMenu(isMobile);
+	
+	// Toggle Secondary Menu
+	$shopLink.on('click', event => {
+		if (window.matchMedia(`(min-width: ${desktopWidth}px)`).matches) {
+			event.preventDefault();
+			$('.secondary-menu').toggleClass('hide-menu');
+		}
+	});
+
+	console.log(directory_uri.stylesheet_directory_uri);
+
+	// $anotherTestLink.append('<div></div>');
+	// $testLink.after(`<div></div>`);
+	// $('#menu-item-71').append(`<div></div>`)
 
 	// Appends X to close expanded mobile nav
 	const $closeMobileNav = $('.close-mobile-nav');
@@ -64,6 +134,7 @@
 		checkMobile();
 		if (currentFormFactor !== isMobile) {
 			formFactorChange(isMobile);
+			addSecondaryMenu(isMobile);
 		}
 	});
 	 

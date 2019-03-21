@@ -693,27 +693,38 @@ template {
   .container {
     display: none; } }
 
+/*
+=========================
+Nav Bar Styling
+=========================
+*/
 .site-header {
-  display: grid;
-  grid-template-columns: 2fr 3fr 2fr;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   position: relative;
-  height: 54px;
-  padding: 20px 10px;
   border-bottom: 2px solid #062b35; }
+  .site-header .main-nav-content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 54px;
+    padding: 20px 15px; }
   .site-header a {
     display: block;
-    padding: 15px 10px;
+    padding: 15px 0;
     color: #062b35;
     text-transform: uppercase; }
   .site-header .custom-logo-link {
     padding: 0; }
 
 .main-navigation {
-  justify-self: start; }
+  justify-self: start;
+  /*
+  =========================
+  Mobile-only Nav Styling
+  =========================
+  */ }
   .main-navigation .menu-toggle {
     height: 100%;
     width: 50px;
@@ -728,7 +739,10 @@ template {
     left: 0;
     top: 96px;
     width: 100vw;
+    padding: 0 10px;
     background-color: #e1e1e1; }
+    .main-navigation ul.mobile-nav a {
+      padding: 15px 0; }
     .main-navigation ul.mobile-nav .close-mobile-nav {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -747,10 +761,47 @@ template {
       .main-navigation ul.mobile-nav .close-mobile-nav img {
         width: 1em;
         height: 1em; }
-    .main-navigation ul.mobile-nav li:first-of-type a {
-      padding-top: 0; }
-    .main-navigation ul.mobile-nav li:not(:last-of-type) {
+    .main-navigation ul.mobile-nav > li:first-of-type > a {
+      padding: 0; }
+    .main-navigation ul.mobile-nav > li:not(:last-of-type) {
       border-bottom: 1px solid #062b35; }
+    .main-navigation ul.mobile-nav .secondary-menu section a {
+      padding: 0;
+      padding-top: 15px; }
+
+/*
+=========================
+Secondary Menu Styling
+=========================
+*/
+.secondary-menu {
+  background-color: #e1e1e1; }
+  .secondary-menu section {
+    padding: 15px 25px; }
+    .secondary-menu section h4 {
+      margin: 0;
+      color: #0c5535; }
+    .secondary-menu section ul {
+      margin: 0;
+      padding: 0; }
+    .secondary-menu section a {
+      color: #062b35;
+      text-transform: capitalize; }
+  .secondary-menu .new-to-crystals {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10px 0 20px; }
+    .secondary-menu .new-to-crystals p {
+      margin: 0;
+      padding-left: 10px; }
 
 .site-branding {
   height: 100%; }
@@ -770,14 +821,18 @@ template {
           flex-flow: row nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
-  padding-right: 10%; }
+          align-items: center; }
   .nav-misc .cart {
     padding: 0 5px; }
   .nav-misc .cart img {
     width: 25px;
     height: 25px; }
 
+/*
+=========================
+Header Search Styling
+=========================
+*/
 .header-search .search-form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -814,11 +869,16 @@ template {
 .hide-menu {
   display: none; }
 
+/*
+=========================
+Breakpoints
+=========================
+*/
 @media screen and (min-width: 600px) {
-  .site-header {
-    grid-template-columns: 2fr 1fr 2fr; }
-  .nav-misc .cart {
-    padding: 0 10px; }
+  .nav-misc {
+    padding-right: 10%; }
+    .nav-misc .cart {
+      padding: 0 10px; }
   .search-field {
     -webkit-transition: width 1s;
     transition: width 1s; }
@@ -827,11 +887,12 @@ template {
     border-bottom: 2px solid #062b35; } }
 
 @media screen and (min-width: 1024px) {
-  .site-header {
-    grid-template-columns: 3fr 1fr 3fr; }
-  .menu-toggle {
+  .site-header .main-nav-content-wrapper {
+    grid-template-columns: 3fr 1fr 3fr;
+    padding: 20px 25px; }
+  .site-header .menu-toggle {
     display: none; }
-  .main-navigation ul {
+  .site-header .main-navigation ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -842,20 +903,53 @@ template {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-    .main-navigation ul li {
+    .site-header .main-navigation ul li {
       padding: 0 10px; }
-    .main-navigation ul a {
+    .site-header .main-navigation ul a {
       display: inline-block;
       color: #062b35;
       text-transform: uppercase;
       text-align: center; }
+  .secondary-menu .secondary-nav-content-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    margin: 0 auto;
+    padding: 20px 25px; }
+  .secondary-menu section {
+    padding: 0 35px; }
+    .secondary-menu section:first-of-type {
+      padding-left: 10px; }
+  .secondary-menu ul {
+    padding: 0; }
+  .secondary-menu h4 {
+    padding: 5px 0; }
+  .secondary-menu li {
+    padding: 5px 0; }
+  .secondary-menu .by-collection {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; }
+  .secondary-menu .new-to-crystals {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    height: 50%;
+    margin-left: auto;
+    padding: 20px; }
   .nav-misc .cart {
     padding: 0 10px; }
   .nav-misc .cart img {
     width: 30px;
     height: 30px; }
-  .header-search .search-field.show-search {
-    width: 150px; } }
+  .header-search {
+    padding-left: 10px; }
+    .header-search .search-field.show-search {
+      width: 150px; } }
 
 .footer {
   background-color: #062B35;
@@ -1040,3 +1134,7 @@ a {
 
 body {
   background-color: white; }
+
+.content-wrapper {
+  max-width: 1171px;
+  margin: 0 auto; }

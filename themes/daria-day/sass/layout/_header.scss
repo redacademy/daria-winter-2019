@@ -1,20 +1,28 @@
-// Nav Bar general styles
+/*
+=========================
+Nav Bar Styling
+=========================
+*/
 .site-header {
-  display: grid;
-  grid-template-columns: 2fr 3fr 2fr;
-  justify-items: center;
-  align-items: center;
+
   position: relative;
-
-  height: $mobile-nav-height;
-  padding: $menu-spacing * 2 $menu-spacing;
-
+  
   border-bottom: $menu-border-size solid $brand-colour-evergreen;
 
-  // anchor link styles
+  .main-nav-content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    justify-items: center;
+    align-items: center;
+  
+    height: $mobile-nav-height;
+    padding: $menu-spacing * 2 $menu-spacing * 1.5;
+  }
+
+  // Anchor links
   a {
     display: block;
-    padding: $menu-spacing * 1.5 $menu-spacing;
+    padding: $menu-spacing * 1.5 0;
 
     color: $brand-colour-evergreen;
     text-transform: uppercase;
@@ -25,7 +33,7 @@
   }
 }
 
-// Main nav styles
+// Main nav
 .main-navigation{
   justify-self: start;
 
@@ -43,17 +51,26 @@
     padding: 0;
   }
 
-  // Mobile nav styles
+  /*
+  =========================
+  Mobile-only Nav Styling
+  =========================
+  */
   ul.mobile-nav{
     position: absolute;
     left: 0;
     top: $mobile-nav-height + $menu-spacing * 4 + $menu-border-size;
 
     width: 100vw;
+    padding: 0 $menu-spacing;
 
     background-color: $nav-grey;
 
-    // Close mobile nav button styles
+    a {
+      padding: $menu-spacing * 1.5 0;
+    }
+
+    // Close mobile nav button
     .close-mobile-nav {
       display: flex;
       flex-flow: row nowrap;
@@ -72,10 +89,10 @@
       }
     }
 
-    li {
+    > li {
       &:first-of-type {
-        a {
-          padding-top: 0;
+        > a {
+          padding: 0;
         }
       }
 
@@ -83,10 +100,63 @@
         border-bottom: $menu-border-size / 2 solid $brand-colour-evergreen;
       }
     }
+
+    // For mobile-specific secondary menu
+    .secondary-menu {
+      section {
+        a {
+          padding: 0;
+          padding-top: $menu-spacing * 1.5;
+        }
+      }
+    }
   }
 }
 
-// Daria-Day Logo style
+/*
+=========================
+Secondary Menu Styling
+=========================
+*/
+
+.secondary-menu {
+
+  background-color: $nav-grey;
+
+  section {
+    padding: $menu-spacing * 1.5 $menu-spacing * 2.5;
+
+    h4 {
+      margin: 0;
+      color: $brand-colour-green;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    
+    a {
+      color: $brand-colour-evergreen;
+      text-transform: capitalize;
+    }
+  }
+
+  .new-to-crystals {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    padding: $menu-spacing 0 $menu-spacing * 2;
+
+    p {
+      margin: 0;
+      padding-left: $menu-spacing;
+    }
+  }
+}
+
+// Daria-Day Logo
 .site-branding {
   height: 100%;
 
@@ -99,17 +169,13 @@
   }
 }
 
-// Nav-bar misc styles
+// Nav-bar misc
 .nav-misc {
   justify-self: end;
 
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-
-  padding-right: 10%;
-
-
 
   .cart {
     padding: 0 $menu-spacing / 2;
@@ -121,7 +187,11 @@
   }
 }
 
-// Navbar Search Styles
+/*
+=========================
+Header Search Styling
+=========================
+*/
 .header-search {
   .search-form {
     display: flex;
@@ -169,13 +239,15 @@
   display: none;
 }
 
-// Breakpoints
+/*
+=========================
+Breakpoints
+=========================
+*/
 @media screen and (min-width: $tablet) {
-  .site-header {
-    grid-template-columns: 2fr 1fr 2fr;
-  }
-
   .nav-misc {
+    padding-right: 10%;
+
     .cart {
       padding: 0 $menu-spacing;
     }
@@ -197,33 +269,82 @@
 
 @media screen and (min-width: $desktop) {
   .site-header {
-    grid-template-columns: 3fr 1fr 3fr;
-  }
+    .main-nav-content-wrapper {
+      grid-template-columns: 3fr 1fr 3fr;
 
-  .menu-toggle {
-    display: none;
-  }
+      padding: $menu-spacing * 2 $menu-spacing * 2.5;
+    }
+    
+    .menu-toggle {
+      display: none;
+    }
 
-  .main-navigation {
-    ul {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-
-      li {
-        padding: 0 $menu-spacing;
-      }
-
-      a {
-        display: inline-block;
-
-        color: $brand-colour-evergreen;
-        text-transform: uppercase;
-        text-align: center;
+    // Navigation
+    .main-navigation {
+      ul {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+  
+        li {
+          padding: 0 $menu-spacing;
+        }
+  
+        a {
+          display: inline-block;
+  
+          color: $brand-colour-evergreen;
+          text-transform: uppercase;
+          text-align: center;
+        }
       }
     }
   }
 
+  // Secondary menu
+  .secondary-menu {
+    .secondary-nav-content-wrapper {
+      display: flex;
+      flex-flow: row nowrap;
+
+      margin: 0 auto;
+      padding: $menu-spacing * 2 $menu-spacing * 2.5;
+    }
+
+    section {
+      padding: 0 $menu-spacing * 3.5;
+
+      &:first-of-type {
+        padding-left: $menu-spacing;
+      }
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    h4 {
+      padding: $menu-spacing / 2 0;
+    }
+
+    li {
+      padding: $menu-spacing / 2 0;
+    }
+
+    .by-collection {
+      order: 1;
+    }
+
+    .new-to-crystals {
+      order: 2;
+
+      height: 50%;
+      margin-left: auto;
+      padding: $menu-spacing * 2;
+    }
+  }
+
+  // Misc
   .nav-misc {
     .cart {
       padding: 0 $menu-spacing;
@@ -235,8 +356,10 @@
     }
   }
 
-  // desktop larger search bar
+  // Search Bar
   .header-search {
+    padding-left: $menu-spacing;
+
     .search-field.show-search {
       width: 150px;
     }

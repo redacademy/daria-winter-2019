@@ -5,7 +5,7 @@
  */
 
  (function ($) {
-  const tabletWidth = 600;
+  const desktopWidth = 1024;
 
   const $searchForm = $('.search-form')
   const $toggleSearch = $('.icon-search');
@@ -13,7 +13,9 @@
 
   $toggleSearch.on('click', event => {
     event.preventDefault();
-    if (window.screen.width < tabletWidth) {
+    if (window.matchMedia(`(min-width: ${desktopWidth}px)`).matches) {
+      $searchField.toggleClass('show-search');
+    } else {
       $('.site-header').after('<div class="mobile-search"></div>');
       const $mobileSearch = $('.mobile-search');
 
@@ -24,8 +26,6 @@
         $searchForm.addClass('mobile-search-active');
         $mobileSearch.append($searchField.closest('label'));
       }
-    } else {
-      $searchField.toggleClass('show-search');
     }
   });
 
