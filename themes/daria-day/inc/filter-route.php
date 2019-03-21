@@ -19,6 +19,14 @@ function dariaSearchResults($data) {
         $tagInfoGem = [];
         $tagInfoEnergy = [];
         $tagInfoMisc = [];
+        $customCollectionEarring = [];
+        $customCollectionHoliday = [];
+        if(preg_match('/\bDazzling\b/', $row->title)) {
+            array_push($customCollectionEarring, "Silver Gemstone Drop Earrings");
+        }
+        if(preg_match('/\bGreen Amazonite Mala|Bold Amethyst Bracelet|Golden Agate Necklace|Sparkling Water Quartz Bracelet|Glam Me Blue Lapis Tassel Earrings|Blushing Pink Rose Quartz Bracelet|Cha Cha Red Garnet Tassel Earrings|Rose Quartz Angel Kisses Bracelet|Rose Quartz Angel Kisses Bracelet|Calm Waters Blue Lapis Tassel Earrings|zendagi Gift Card\b/', $row->title)) {
+            array_push($customCollectionHoliday, "Magical Holiday Gifting");
+        }
         foreach ($tagResults as $tagRow ) {
     
             if($row->product_id == $tagRow->product_id And preg_match('/\bmoonstone|rose quartz|quartz|lapis|amethyst|feldspar|amazonite|agate|rutilated quartz|Garnet\b/', $tagRow->tag)){
@@ -31,8 +39,7 @@ function dariaSearchResults($data) {
                 array_push($tagInfoMisc, $tagRow->tag);    
                
             }
-            
-            
+
         } 
         foreach ($prices as $price ) {
             
@@ -45,7 +52,10 @@ function dariaSearchResults($data) {
         $productInfo = array(
             'show_count' => 1,
             'title'=> $row->title,
+            'permalink' =>"products/$row->post_name",
             'description' => $row->body_html,
+            'custom_earring_collection'=> $customCollectionEarring, 
+            'custom_holiday_collection' => $customCollectionHoliday,
             'product_id'=> $row->product_id, 
             'image'=> $row->image,
             'product_type' => $row->product_type,

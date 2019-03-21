@@ -95,6 +95,8 @@ if ( is_singular(WPS_PRODUCTS_POST_TYPE_SLUG) ) {
 
 }
 
-do_action('wps_product_single_sidebar');
+do_action('wps_product_single_sidebar');?>
 
-get_footer('wps');
+
+
+<?php get_footer('wps');?>

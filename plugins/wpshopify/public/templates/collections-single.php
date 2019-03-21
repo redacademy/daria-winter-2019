@@ -40,6 +40,9 @@ do_action('wps_collection_single_end', $wps_collection);
 do_action('wps_collection_single_after');
 do_action('wps_collection_single_sidebar');?>
 
+<button class="filter-btn" id="filter-btn">Filter</button>          
+
+
 
 
 

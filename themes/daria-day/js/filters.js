@@ -1,5 +1,5 @@
 ( function( $ ) {
-//console.log('hellooo from filters.js');
+console.log('hellooo from filters.js');
 
 //latest addistion on front page
     if($('#latest-additions-container').attr('data-exists')== 'yes'){
@@ -20,17 +20,23 @@
         
         for(let i = 0; i < 4 ; i++){
             latestAdditions[i].push(results[i].image);
-            latestAdditions[i].push(results[i].permalink);
+            // latestAdditions[i].push(results[i].permalink);
             latestAdditions[i].push(results[i].title);
             latestAdditions[i].push(results[i].price);           
         }
         console.log(latestAdditions);
+        // function productlink(product) {
+        //pass this to href ${productlink(item[2])}
+        //     if (product = ""){
+        //         return link
+        //     }
+        // }
         resultsDiv.html(`
         <ul class ='latest-additions'>
             ${latestAdditions.map(item =>
                 `<li class="latest-additions-item">
                     <img src = ${item[0]} width="150px" height="150px">
-                    <a href="#">${item[2]}</a>
+                    <a href="">${item[2]}</a>
                     $${item[3]} CAD
                 </li>`
             ).join('')}
@@ -221,6 +227,8 @@ $("#filter-btn-interior-close").on('click', ()=> {
 
 
 });
+
+
 } )( jQuery );
 
 

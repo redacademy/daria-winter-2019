@@ -530,8 +530,6 @@ template {
   background: white; }
 
 .filter-dropdown {
-  position: absolute;
-  top: 35%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
 
@@ -579,6 +577,9 @@ template {
 
 .selectedVals {
   display: none; }
+
+.wps-product-heading {
+  color: red; }
 
 #footer {
   margin-top: 6%;

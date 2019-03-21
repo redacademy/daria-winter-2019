@@ -17,6 +17,18 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+        <button class="filter-btn-bracelet" id="filter-btn-bracelet">Bracelets</button>          
+
+        <?php
+		while ( have_posts() ) :
+			the_post();
+
+			get_template_part( 'template-parts/content', 'page' );
+
+
+		endwhile; // End of the loop.
+
+?>
             <dl class="filter-dropdown">  
                 <button class="filter-btn" id="filter-btn">Filter</button>          
                 <dd>
@@ -62,7 +74,13 @@ get_header();
                 </dd>
 
             </dl>
-            <div class="filter-results-container"></div>
+            <?php $existStatusBracelet = 'no';
+                global $post;
+                if ($post->ID === 73) {
+                    $existStatusBracelet = 'yes';
+                }
+                ?>
+                <div class="bracelets-container" id ="bracelets-container"data-exists="<?php echo $existStatusBracelet; ?>"> </div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
