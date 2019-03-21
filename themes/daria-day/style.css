@@ -1173,6 +1173,9 @@ Find Gemstone Search Styling
       border: 0px solid transparent;
       border-radius: 5px;
       font-size: 0.75em; }
+    .find-gemstone-search .dropdown-position-holder:hover .find-tag-dropdown .selected-tag, .find-gemstone-search .dropdown-position-holder:active .find-tag-dropdown .selected-tag, .find-gemstone-search .dropdown-position-holder:focus .find-tag-dropdown .selected-tag {
+      background-color: #062b35;
+      color: white; }
   .find-gemstone-search .find-gem-dropdown {
     display: none;
     -webkit-box-sizing: border-box;
@@ -1197,6 +1200,15 @@ Find Gemstone Search Styling
 Find Gemstone Results Styling
 =========================
 */
+.find-gemstone-results h2 {
+  text-align: center; }
+
+.find-gemstone-results .display-product-results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 10px; }
+
 /*
 =========================
 General
