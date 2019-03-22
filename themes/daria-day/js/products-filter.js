@@ -86,8 +86,7 @@
     } else {
       console.log(product);
     }
-
-  }
+  };
 
   $.ajax({
     method: 'GET',

@@ -130,14 +130,27 @@
 
       let matchNone = true;
 
-      response.forEach(product => {
-        // Function to match tags
-        const matchTags = (product) => {
+      let filteredProductTypeArray = [];
+
+      if (typeValue) {
+        response.forEach(product => {
+          if (product.product_type === typeValue || product.product_type === typeValue.slice(0, -1)) {
+            filteredProductTypeArray.push(product);
+          }
+        });
+      } else {
+        filteredProductTypeArray = response;
+      }
+
+      let filteredEnergyArray = [];
+
+      if (tagValue && tagValue.length > 0) {
+        filteredProductTypeArray.forEach(product => {
           let matchesAllTags = true;
           let matchATag = false;
 
           tagValue.forEach(tag => {
-            if(product.tags.includes(tag)) {
+            if (product.tags.includes(tag.toLowerCase())) {
               matchATag = true;
             } else {
               matchesAllTags = false;
@@ -145,58 +158,20 @@
           });
 
           if (matchesAllTags === true && matchATag === true) {
-            displayProducts(product);
-            matchNone = false;
-          } 
-        };
-
-        // Match product type if product is given
-        if (typeValue) {
-          if (product.product_type === typeValue) {
-            matchTags(product);
+            filteredEnergyArray.push(product);
           }
-        } else {
-          matchTags(product);
-        }
-      });
-
-      if (matchNone === true) {
-        generateErrorMessage('noMatch');
+        }); 
+      } else {
+        generateErrorMessage('emptyTag');
         return;
       }
+
+      filteredEnergyArray.forEach(product => {
+        displayProducts(product); 
+      });
       
     }).fail(response => {
       generateErrorMessage('apiFail');
     });
   });
-
-  $.ajax({
-    method: 'GET',
-    url: dariaData.rest_url + '/wp-json/daria/v1/search',
-    beforeSend: (xhr) => {
-      xhr.setRequestHeader('X-WP-Nonce', dariaData.wpapi_nonce)
-    }
-  }).done(response => {
-    const $searchHeader = $('.search-header .search-title a');
-
-    console.log($searchHeader);
-
-    response.forEach(product => {
-      $searchHeader.each((index, value) => {
-        // console.log(value.innerHTML);
-        // console.log(product.title);
-        if (value.innerHTML === product.title) {
-          $(value).after(`<img src="${product.image}">`);
-        }
-      });
-    });
-
-    
-  }).fail(response => {
-    generateErrorMessage('apiFail');
-  });
-
-
-  
-
 })(jQuery);

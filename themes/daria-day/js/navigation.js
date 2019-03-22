@@ -162,14 +162,22 @@
 		});
 	}
 
-
-	// $('#bracelets').on('click', event => {
-	// 	sessionStorage.setItem('preFilter', 'bracelet');
-	// 	console.log(sessionStorage.getItem('preFilter'));
-	// });
-
-	$('.secondary-category a').on('click', event => {
+	$('.by-jewelry a').on('click', event => {
 		preFilteredItem = event.currentTarget.innerHTML.toLowerCase();
+		sessionStorage.setItem('preFilterCategory', 'productType');
 		sessionStorage.setItem('preFilterItem', preFilteredItem);
 	});
+
+	// $('.by-energy a').on('click', event => {
+	// 	preFilteredItem = event.currentTarget.innerHTML.toLowerCase();
+	// 	sessionStorage.setItem('preFilterCategory', 'energyTag');
+	// 	sessionStorage.setItem('preFilterItem', preFilteredItem);
+	// });
+
+	// $('.by-collection').on('click', event => {
+	// 	preFilteredItem = event.currentTarget.innerHTML.toLowerCase();
+	// 	sessionStorage.setItem('preFilterCategory', 'collectionTag');
+	// 	sessionStorage.setItem('preFilterItem', preFilteredItem);
+	// });
+
 })(jQuery);
