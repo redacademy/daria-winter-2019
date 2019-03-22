@@ -22,6 +22,7 @@
     'prosperity',
   ];
 
+  // Create dropdown menus
   const createDropdown = (dropdownValues, category) => {
     category = category.toLowerCase();
 
@@ -45,11 +46,13 @@
   $findType.after(createDropdown(typeDropdownValues, 'type'));
   $findTag.after(createDropdown(tagDropdownValues, 'tag'));
 
+  // Select type and tag variables
   const $selectType = $('.find-type-dropdown li');
   const $selectTag = $('.find-tag-dropdown li');
   let typeValue = '';
   let tagValue = [];
 
+  // Select type function
   $selectType.on('click', event => {
     typeValue = event.currentTarget.innerHTML;
     $findType.val(typeValue);
@@ -123,6 +126,7 @@
       }
     }).done(response => {
 
+      // Throw error if no tags selected
       if (tagValue === undefined || tagValue.length === 0) {
         generateErrorMessage('emptyTag');
         return;
@@ -130,6 +134,7 @@
 
       let matchNone = true;
 
+      // Filter through product types if available
       let filteredProductTypeArray = [];
 
       if (typeValue) {
@@ -142,6 +147,7 @@
         filteredProductTypeArray = response;
       }
 
+      // Filter through tags
       let filteredEnergyArray = [];
 
       if (tagValue && tagValue.length > 0) {
@@ -150,7 +156,7 @@
           let matchATag = false;
 
           tagValue.forEach(tag => {
-            if (product.tags.includes(tag.toLowerCase())) {
+            if (product.tags.energy.includes(tag.toLowerCase())) {
               matchATag = true;
             } else {
               matchesAllTags = false;
@@ -166,10 +172,17 @@
         return;
       }
 
+      // Display filtered products
       filteredEnergyArray.forEach(product => {
+        matchNone = false;
         displayProducts(product); 
       });
       
+      // Error message if no matches
+      if (matchNone) {
+        generateErrorMessage('noMatch');
+      }
+
     }).fail(response => {
       generateErrorMessage('apiFail');
     });

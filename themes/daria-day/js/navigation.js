@@ -77,7 +77,7 @@
 					<h4>By Energy</h4>
 					<ul>
 						<li><a href="${shopUrl}">Abundance</a></li>
-						<li><a href="${shopUrl}">Calming</a></li>
+						<li><a href="${shopUrl}">Calmness</a></li>
 						<li><a href="${shopUrl}">More energies</a></li>
 					</ul>
 				</section>
@@ -163,21 +163,21 @@
 	}
 
 	$('.by-jewelry a').on('click', event => {
-		preFilteredItem = event.currentTarget.innerHTML.toLowerCase();
-		sessionStorage.setItem('preFilterCategory', 'productType');
-		sessionStorage.setItem('preFilterItem', preFilteredItem);
+		prefilteredItem = event.currentTarget.innerHTML.toLowerCase();
+		sessionStorage.setItem('prefilterCategory', 'productType');
+		sessionStorage.setItem('prefilterItem', prefilteredItem);
 	});
 
-	// $('.by-energy a').on('click', event => {
-	// 	preFilteredItem = event.currentTarget.innerHTML.toLowerCase();
-	// 	sessionStorage.setItem('preFilterCategory', 'energyTag');
-	// 	sessionStorage.setItem('preFilterItem', preFilteredItem);
-	// });
+	$('.by-energy a').on('click', event => {
+		prefilteredItem = event.currentTarget.innerHTML.toLowerCase();
+		sessionStorage.setItem('prefilterCategory', 'energyTag');
+		sessionStorage.setItem('prefilterItem', prefilteredItem);
+	});
 
-	// $('.by-collection').on('click', event => {
-	// 	preFilteredItem = event.currentTarget.innerHTML.toLowerCase();
-	// 	sessionStorage.setItem('preFilterCategory', 'collectionTag');
-	// 	sessionStorage.setItem('preFilterItem', preFilteredItem);
-	// });
+	$('.by-collection').on('click', event => {
+		prefilteredItem = event.currentTarget.innerHTML.toLowerCase();
+		sessionStorage.setItem('prefilterCategory', 'collectionTag');
+		sessionStorage.setItem('prefilterItem', prefilteredItem);
+	});
 
 })(jQuery);

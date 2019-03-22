@@ -4,18 +4,24 @@
     return;
   } 
 
-  console.log('hi');
+  // Establish prefilters
+  let prefilteredItem = sessionStorage.getItem('prefilterItem');
+  let prefilteredCategory = sessionStorage.getItem('prefilterCategory')
+  sessionStorage.removeItem('prefilterItem');
+  sessionStorage.removeItem('prefilterCategory');
+  
+  console.log("prefilter category: " + prefilteredCategory);
+  console.log("prefilter item: " + prefilteredItem);
+  
+  
 
-  let preFilteredItem = sessionStorage.getItem('preFilterItem');
-  sessionStorage.removeItem('preFilterItem');
-
-  $productResultsSection = $('.products-results-section');
+  // Save products results section
+  $productResultsSection = $('.products-results-section');  
 
   // Toggle filters menu on mobile
   $('.show-filters').on('click', () => {
-    $('.filter-menu').toggleClass('hide-filters')
+    $('.filter-menu').toggleClass('hide-filters');
   });
-
 
   // Select and deselect product type
   let productTypeTag = '';
@@ -88,35 +94,21 @@
     }
   };
 
-  $.ajax({
-    method: 'GET',
-    url: dariaData.rest_url + '/wp-json/daria/v1/search',
-    beforeSend: (xhr) => {
-      xhr.setRequestHeader('X-WP-Nonce', dariaData.wpapi_nonce)
-    }
-  }).done(response => {
-
-    if (preFilteredItem) {
-      response.forEach(product => {
-        
-        if (product.product_type === preFilteredItem || product.product_type === preFilteredItem.slice(0, -1)) {
-          displayProducts(product);
-        }
-      });
-    } else {
-      response.forEach(product => {
-        displayProducts(product);
-      });
-    }
-  
-  }).fail(response => {
-    console.log(response);
-  });
-
-  $('.apply-filters').on('click', event => {
-    event.preventDefault();
-
+  const filterProductsAjax = () => {
     $productResultsSection.empty();
+
+    // Prefilter if available
+    if (prefilteredCategory && prefilteredItem) {
+      if (prefilteredCategory === 'productType') {
+        productTypeTag = prefilteredItem;
+        console.log('type');
+      } else if (prefilteredCategory === 'energyTag') {
+        energyTags.length = 0;
+        energyTags.push(prefilteredItem);
+      } else if (prefilteredCategory === 'collectionTag') {
+        console.log("this doesn't exist yet!");
+      }
+    }
 
     $.ajax({
       method: 'GET',
@@ -126,7 +118,6 @@
       }
     }).done(response => {
       productTypeTag = productTypeTag.toLowerCase();
-
       let filteredProductTypeArray = [];
 
       if (productTypeTag) {
@@ -147,7 +138,7 @@
           let matchATag = false;
 
           energyTags.forEach(tag => {
-            if (product.tags.includes(tag.toLowerCase())) {
+            if (product.tags.energy.includes(tag.toLowerCase())) {
               matchATag = true;
             } else {
               matchesAllTags = false;
@@ -170,7 +161,7 @@
           let matchATag = false;
 
           gemstoneTags.forEach(tag => {
-            if (product.tags.includes(tag.toLowerCase())) {
+            if (product.tags.gemstone.includes(tag.toLowerCase())) {
               matchATag = true;
             } else {
               matchesAllTags = false;
@@ -192,5 +183,13 @@
     }).fail(response => {
       console.log(response);
     });
+  }
+
+  filterProductsAjax();
+
+  $('.apply-filters').on('click', event => {
+    event.preventDefault();
+
+    filterProductsAjax();
   })
 })(jQuery);
