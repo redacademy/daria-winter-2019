@@ -735,6 +735,7 @@ Nav Bar Styling
     margin: 0;
     padding: 0; }
   .main-navigation ul.mobile-nav {
+    z-index: 2;
     position: absolute;
     left: 0;
     top: 96px;
@@ -1208,6 +1209,61 @@ Find Gemstone Results Styling
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   padding: 10px; }
+
+/*
+=========================
+General Products Styling
+=========================
+*/
+/*
+=========================
+Filter Products Styling
+=========================
+*/
+.products-filter-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 10px; }
+  .products-filter-section .sort-by {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .products-filter-section .sort-by input {
+      width: 50%;
+      margin: 0 10px; }
+  .products-filter-section .show-filters {
+    background-color: transparent;
+    border: 0px solid transparent; }
+  .products-filter-section .filter-menu li {
+    display: block; }
+  .products-filter-section .filter-menu .selected-product-type {
+    background-color: #e1e1e1; }
+  .products-filter-section .filter-menu .selected-tag {
+    background-color: #e1e1e1; }
+  .products-filter-section .filter-menu.hide-filters {
+    display: none; }
+
+/*
+=========================
+Products Results Styling
+=========================
+*/
+.products-results-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 10px; }
+  .products-results-section a {
+    color: #062b35; }
 
 /*
 =========================

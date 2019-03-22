@@ -45,18 +45,6 @@
   $findType.after(createDropdown(typeDropdownValues, 'type'));
   $findTag.after(createDropdown(tagDropdownValues, 'tag'));
 
-  // $findTag.after(`<ul class="find-tag-dropdown find-gem-dropdown">
-  //   <li>abundance +</li>
-  //   <li>calmness +</li>
-  //   <li>enlightenment +</li>
-  //   <li>fertility +</li>
-  //   <li>focus +</li>
-  //   <li>healing +</li>
-  //   <li>love +</li>
-  //   <li>positivity +</li>
-  //   <li>prosperity +</li>
-  // </ul>`);
-
   const $selectType = $('.find-type-dropdown li');
   const $selectTag = $('.find-tag-dropdown li');
   let typeValue = '';
@@ -64,7 +52,8 @@
 
   $selectType.on('click', event => {
     typeValue = event.currentTarget.innerHTML;
-    $findType.removeAttr('readonly').val(typeValue);
+    $findType.val(typeValue);
+    $findType.attr('readonly', true);
   });
 
   // Selecting tags function
@@ -73,7 +62,7 @@
       const removeTagIndex = tagValue.findIndex(tag => {
         return tag === event.currentTarget.innerHTML.slice(0, -2);
       });
-      if (removeTagIndex !== -1 ) {
+      if (removeTagIndex !== -1) {
         tagValue.splice(removeTagIndex, 1);
       }
     } else {
@@ -83,17 +72,21 @@
     // TODO replace comma with 'and' before last tag
     tagDisplay = tagValue.join(', ');
 
-    $findTag.removeAttr('readonly').val(tagDisplay);
+    $findTag.val(tagDisplay);
     $(event.currentTarget).toggleClass('selected-tag');
+    $findTag.attr('readonly', true);
   });
 
   // Construct product results
   const displayProducts = (product) => {
+    productURL = product.title.toLowerCase().split(' ').join('-');
 
     foundProduct = `<div class="product-result">
-      <img src="${product.image}">
-      <h3>${product.title}</h3>
-      <p>${product.price}</p>
+      <a href="${dariaData.rest_url}/products/${productURL}">
+        <img src="${product.image}">
+        <h3>${product.title}</h3>
+        <p>${product.price}</p>
+      </a>
     </div>`;
 
     $displayProductResults.append(foundProduct);
@@ -176,4 +169,34 @@
       generateErrorMessage('apiFail');
     });
   });
+
+  $.ajax({
+    method: 'GET',
+    url: dariaData.rest_url + '/wp-json/daria/v1/search',
+    beforeSend: (xhr) => {
+      xhr.setRequestHeader('X-WP-Nonce', dariaData.wpapi_nonce)
+    }
+  }).done(response => {
+    const $searchHeader = $('.search-header .search-title a');
+
+    console.log($searchHeader);
+
+    response.forEach(product => {
+      $searchHeader.each((index, value) => {
+        // console.log(value.innerHTML);
+        // console.log(product.title);
+        if (value.innerHTML === product.title) {
+          $(value).after(`<img src="${product.image}">`);
+        }
+      });
+    });
+
+    
+  }).fail(response => {
+    generateErrorMessage('apiFail');
+  });
+
+
+  
+
 })(jQuery);

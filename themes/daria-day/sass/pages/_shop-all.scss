@@ -1,0 +1,72 @@
+/*
+=========================
+General Products Styling
+=========================
+*/
+
+
+/*
+=========================
+Filter Products Styling
+=========================
+*/
+
+.products-filter-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: space-around;
+
+  padding: $menu-spacing;
+  
+  .sort-by {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    input {
+      width: 50%;
+      margin: 0 $base-spacing;
+    }
+  }
+
+  .show-filters {
+    background-color: transparent;
+    border: 0px solid transparent;
+  }
+
+  .filter-menu {
+    li {
+      display: block;
+    }
+
+    .selected-product-type {
+      background-color: $nav-grey;
+    }
+
+    .selected-tag {
+      background-color: $nav-grey;
+    }
+  }
+  
+  .filter-menu.hide-filters {
+    display: none;
+  }
+}
+
+/*
+=========================
+Products Results Styling
+=========================
+*/
+
+.products-results-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $find-gemstone-base-spacing * 2;
+
+  padding: $find-gemstone-base-spacing;
+
+  a {
+    color: $brand-colour-evergreen;
+  }
+}

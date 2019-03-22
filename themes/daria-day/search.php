@@ -27,6 +27,7 @@ get_header();
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
+				// print_r(the_post());	
 				get_template_part( 'template-parts/content', 'search' );
 			endwhile; ?>
 			<div class="old-posts">

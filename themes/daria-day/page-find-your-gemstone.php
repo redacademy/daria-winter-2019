@@ -25,13 +25,13 @@ get_header();
 						<input type="text" name="name" id="find-gemstone-name" placeholder="type your name" value="Avril">
 					</div>
 					<div>
-						<label for="find-gemstone-name">and I'm looking for</label>
+						<label for="find-gemstone-type">and I'm looking for</label>
 						<div class="dropdown-position-holder">
 							<input type="text" name="name" id="find-gemstone-type" placeholder="this type of jewelry" readonly>
 						</div>
 					</div>
 					<div>
-						<label for="find-gemstone-name">that can help me with</label>
+						<label for="find-gemstone-tag">that can help me with</label>
 						<div class="dropdown-position-holder">
 							<input type="text" name="name" id="find-gemstone-tag" placeholder="type of energy" readonly>
 						</div>

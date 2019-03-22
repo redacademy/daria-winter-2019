@@ -57,6 +57,8 @@ Nav Bar Styling
   =========================
   */
   ul.mobile-nav{
+    z-index: 2;
+
     position: absolute;
     left: 0;
     top: $mobile-nav-height + $menu-spacing * 4 + $menu-border-size;
