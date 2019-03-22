@@ -41,7 +41,6 @@ get_header();
 			</section>
 
 			<section class="find-gemstone-results">
-				<h2>Results</h2>
 				<div class="display-product-results">
 	
 				</div>

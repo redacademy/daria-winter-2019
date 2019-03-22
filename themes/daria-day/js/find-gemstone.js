@@ -1,7 +1,6 @@
 (function($) {
   const $findType = $('#find-gemstone-type');
   const $findTag = $('#find-gemstone-tag');
-  const $displayProductResults = $('.display-product-results');
   const $displayResultsSection = $('.find-gemstone-results');
 
   typeDropdownValues = [
@@ -84,17 +83,19 @@
 
   // Construct product results
   const displayProducts = (product) => {
-    productURL = product.title.toLowerCase().split(' ').join('-');
+    console.log(product);
+
+    const productUrl = dariaData.rest_url + '/' + product.permalink;
 
     foundProduct = `<div class="product-result">
-      <a href="${dariaData.rest_url}/products/${productURL}">
+      <a href="${productUrl}">
         <img src="${product.image}">
         <h3>${product.title}</h3>
         <p>${product.price}</p>
       </a>
     </div>`;
 
-    $displayProductResults.append(foundProduct);
+    $('.display-product-results').append(foundProduct);
   }
 
   // Generates error messages depending on error
@@ -117,7 +118,7 @@
   $('#find-my-gemstone').on('click', event => {
     event.preventDefault();
 
-    $displayProductResults.empty();
+    $displayResultsSection.empty();
     $('.error-message').remove();
 
     $.ajax({
@@ -133,8 +134,6 @@
         generateErrorMessage('emptyTag');
         return;
       }
-
-      let matchNone = true;
 
       // Filter through product types if available
       let filteredProductTypeArray = [];
@@ -174,16 +173,19 @@
         return;
       }
 
+      // Error if no matches
+      if (!filteredEnergyArray || filteredEnergyArray.length < 1) {
+        generateErrorMessage('noMatch');
+      }
+
       // Display filtered products
+      $displayResultsSection.append('<h2>Results</h2>');
+      $displayResultsSection.append('<div class="display-product-results"></div>')
+      
       filteredEnergyArray.forEach(product => {
-        matchNone = false;
         displayProducts(product); 
       });
       
-      // Error message if no matches
-      if (matchNone) {
-        generateErrorMessage('noMatch');
-      }
 
     }).fail(response => {
       generateErrorMessage('apiFail');
