@@ -6,7 +6,6 @@
  *
  * @package daria-day
  */
-
 get_header();
 ?>
 
@@ -27,19 +26,11 @@ get_header();
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
+				// print_r(the_post());	
 				get_template_part( 'template-parts/content', 'search' );
 			endwhile; ?>
-			<div class="old-posts">
-				<?php next_posts_link('Older posts'); ?>
-			</div> <!-- Old posts ends -->  
-
-			<div class="newer-posts">
-				<?php next_posts_link('Newer posts'); ?>
-			</div> <!-- Newer posts ends --> 
 		<?php else :
-
 			get_template_part( 'template-parts/content', 'none' );
-
 		endif;
 		?>
 

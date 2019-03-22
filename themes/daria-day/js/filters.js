@@ -25,15 +25,18 @@ console.log('hello from latest.js');
         }
         console.log(latestAdditions);
         resultsDiv.html(`
-        <ul class ='latest-additions'>
-            ${latestAdditions.map(item =>
-                `<li class="latest-additions-item">
-                    <img src = ${item[0]} width="150px" height="150px">
-                    <a href="#">${item[2]}</a>
-                    $${item[3]} CAD
-                </li>`
-            ).join('')}
-        </ul>`);
+        <h1> Our Latest Additions </h1>
+        <div class='latest-additions-container'>
+            <div class ='latest-additions'>
+                ${latestAdditions.map(item =>
+                    `<div class="latest-additions-item">
+                        <img src = ${item[0]}>
+                        <a href="#">${item[2]}</a>
+                        <div class="price"> <p> $${item[3]} CAD </p></div>
+                    </div>`
+                ).join('')}
+            </div>
+        </div>`);
         
     });
 }
