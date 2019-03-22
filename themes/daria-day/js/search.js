@@ -7,7 +7,6 @@
  (function ($) {
   const desktopWidth = 1024;
 
-  const $searchForm = $('.search-form')
   const $toggleSearch = $('.icon-search');
   const $searchField = $('.search-field');
 
@@ -16,25 +15,36 @@
     if (window.matchMedia(`(min-width: ${desktopWidth}px)`).matches) {
       $searchField.toggleClass('show-search');
     } else {
-      $('.site-header').after('<div class="mobile-search"></div>');
-      const $mobileSearch = $('.mobile-search');
-
-      if ($searchForm.hasClass('mobile-search-active')) {
-        $mobileSearch.remove();
-        $searchForm.removeClass('mobile-search-active');
+      if ($('.mobile-search').hasClass('mobile-search-active')) {
+        $('.mobile-search').remove();
       } else {
-        $searchForm.addClass('mobile-search-active');
-        $mobileSearch.append($searchField.closest('label'));
+        $('.site-header').after('<div class="mobile-search mobile-search-active"></div>');
+        $('.mobile-search').append('<input class="mobile-search-field" placeholder="Search...">');
       }
     }
   });
 
   $(window).on('resize', () => {
-    if ($searchForm.hasClass('mobile-search-active')) {
-      $searchForm.append($searchField.closest('label'))
-      $searchForm.removeClass('mobile-search-active');
-      $('.mobile-search').remove();
+    if (window.matchMedia(`(min-width: ${desktopWidth}px)`).matches) {
+      if ($('.mobile-search').hasClass('mobile-search-active')) {
+        $('.mobile-search').remove();
+      }
     }
-    $searchField.removeClass('show-search');
+  });
+
+  const submitMobileSearch = event => {
+    event.preventDefault();
+
+    let mobileSearchString = event.target.value;
+
+    $searchField.val(mobileSearchString);
+    console.log($searchField.val());
+    $('.search-form').submit();
+  }
+
+  $('body').on('keyup', ".mobile-search-active", event => {
+    if (event.key === "Enter") {
+      submitMobileSearch(event);
+    }
   });
  })(jQuery);

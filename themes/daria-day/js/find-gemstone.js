@@ -54,9 +54,12 @@
 
   // Select type function
   $selectType.on('click', event => {
-    typeValue = event.currentTarget.innerHTML;
+    if (typeValue === event.currentTarget.innerHTML) {
+      typeValue = '';
+    } else {
+      typeValue = event.currentTarget.innerHTML;
+    }
     $findType.val(typeValue);
-    $findType.attr('readonly', true);
   });
 
   // Selecting tags function
@@ -77,7 +80,6 @@
 
     $findTag.val(tagDisplay);
     $(event.currentTarget).toggleClass('selected-tag');
-    $findTag.attr('readonly', true);
   });
 
   // Construct product results

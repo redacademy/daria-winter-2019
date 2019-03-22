@@ -854,18 +854,19 @@ Header Search Styling
   width: 0;
   border: none; }
 
-.header-search .search-field.show-search {
-  width: 75px; }
-
 .mobile-search {
-  padding: 10px;
-  background-color: #e1e1e1; }
-  .mobile-search .search-field {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  padding: 30px;
+  background-color: #e1e1e1;
+  border-bottom: 2px solid #062b35; }
+  .mobile-search .mobile-search-field {
     width: 100%;
-    padding: 10px;
     background-color: #e1e1e1;
-    border: none;
-    color: white; }
+    border: 0px solid transparent;
+    font-size: 2em; }
 
 .hide-menu {
   display: none; }
@@ -879,13 +880,7 @@ Breakpoints
   .nav-misc {
     padding-right: 10%; }
     .nav-misc .cart {
-      padding: 0 10px; }
-  .search-field {
-    -webkit-transition: width 1s;
-    transition: width 1s; }
-  .header-search .search-field.show-search {
-    width: 100px;
-    border-bottom: 2px solid #062b35; } }
+      padding: 0 10px; } }
 
 @media screen and (min-width: 1024px) {
   .site-header .main-nav-content-wrapper {
@@ -949,8 +944,12 @@ Breakpoints
     height: 30px; }
   .header-search {
     padding-left: 10px; }
+    .header-search .search-field {
+      -webkit-transition: width 1s;
+      transition: width 1s; }
     .header-search .search-field.show-search {
-      width: 150px; } }
+      width: 150px;
+      border-bottom: 2px solid #062b35; } }
 
 .footer {
   background-color: #062B35;
@@ -1133,7 +1132,12 @@ Find Gemstone Search Styling
 =========================
 */
 .find-gemstone-search {
-  color: #062b35; }
+  color: #062b35;
+  /*
+  =========================
+  Dropdown Styling
+  =========================
+  */ }
   .find-gemstone-search h1 {
     margin: 60px auto; }
   .find-gemstone-search form > div {

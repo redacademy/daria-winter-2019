@@ -22,7 +22,7 @@ get_header();
 				<form autocomplete="off" class="find-gemstone-form">
 					<div>
 						<label for="find-gemstone-name">Hi, my name is</label>
-						<input type="text" name="name" id="find-gemstone-name" placeholder="type your name" value="Avril">
+						<input type="text" name="name" id="find-gemstone-name" placeholder="type your name">
 					</div>
 					<div>
 						<label for="find-gemstone-type">and I'm looking for</label>

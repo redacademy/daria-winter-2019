@@ -211,28 +211,26 @@ Header Search Styling
     width: 0;
     border: none;
   }
-  
-
-  // Show search
-  .search-field.show-search {
-    width: 75px;
-  }
 }
 
 // Mobile Search
 .mobile-search {
+  box-sizing: border-box;
+  position: absolute;
 
-  padding: $menu-spacing;
+  width: 100%;
+  padding: $menu-spacing * 3;
 
   background-color: $nav-grey;
+  border-bottom: 2px solid $brand-colour-evergreen;
 
-  .search-field {
+  .mobile-search-field {
     width: 100%;
-    padding: $menu-spacing;
+    // height: 50px;
 
     background-color: $nav-grey;
-    border: none;
-    color: white;
+    border: 0px solid transparent;
+    font-size: 2em;
   }
 }
 
@@ -252,19 +250,6 @@ Breakpoints
 
     .cart {
       padding: 0 $menu-spacing;
-    }
-  }
-
-  // Tablet/Desktop search animation
-  .search-field {
-    transition: width 1s;
-  }
-
-  // Tablet/Desktop show search
-  .header-search {
-    .search-field.show-search {
-      width: 100px;
-      border-bottom: 2px solid $brand-colour-evergreen;
     }
   }
 }
@@ -362,8 +347,14 @@ Breakpoints
   .header-search {
     padding-left: $menu-spacing;
 
+    .search-field {
+      transition: width 1s;
+    }
+
     .search-field.show-search {
       width: 150px;
+
+      border-bottom: 2px solid $brand-colour-evergreen;
     }
   }
 }
