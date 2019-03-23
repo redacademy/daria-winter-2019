@@ -1,37 +1,3 @@
-// .filter-overlay {
-//     overflow-y: auto;
-//     overflow-x: hidden;
-//     z-index: 110;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background-color: rgba(255, 255, 255, .96);
-//     visibility: hidden;
-//     opacity: 0;
-//     transform: scale(1.09);
-//     transition: opacity .3s, transform .3s, visibility .3s;
-//     box-sizing: border-box;
-//   }
-
-//   .filter-overlay--active {
-//     visibility: visible;
-//     opacity: 1;
-//     transform: scale(1);
-//   }
-
-//   .filter-overlay__close {
-//     position: absolute;
-//     top: 13px;
-//     right: 16px;
-//     font-size: 2.1rem;
-//     cursor: pointer;
-//     transition: all .3s;
-//     background-color: #FFF;
-//     color: #F95738;
-//     line-height: .7;
-//   }
 
   .filter-energy-tag, .filter-gemstone-tag{
     font-weight: bold;
@@ -39,58 +5,16 @@
     background: white;
   }
   
-
-
-  
   .filter-dropdown {
     position: absolute;
     top:35%;
     transform: translateY(-50%);
   }
-  
-//   a {
-//     color: #fff;
-//   }
-  
-//   .filter-dropdown dd,
-//   .filter-dropdown dt {
-//     margin: 0px;
-//     padding: 0px;
-//   }
-  
+ 
   .filter-dropdown ul {
     margin: -1px 0 0 0;
   }
   
-//   .filter-dropdown dd {
-//     position: relative;
-//   }
-  
-//   .filter-dropdown a,
-//   .filter-dropdown a:visited {
-//     color: #fff;
-//     text-decoration: none;
-//     outline: none;
-//     font-size: 12px;
-//   }
-  
-//   .filter-dropdown dt a {
-//     background-color: #4F6877;
-//     display: block;
-//     padding: 8px 20px 5px 10px;
-//     min-height: 25px;
-//     line-height: 24px;
-//     overflow: hidden;
-//     border: 0;
-//     width: 272px;
-//   }
-  
-//   .filter-dropdown dt a span,
-//   .multiSel span {
-//     cursor: pointer;
-//     display: inline-block;
-//     padding: 0 3px 2px 0;
-//   }
   
   .filter-dropdown dd ul {
     background-color: white;
@@ -106,13 +30,6 @@
     height: 100px;
     overflow: auto;
   }
-  
-//   .filter-dropdown span.value {
-//     display: none;
-//   }
-  
-  
-
   
   .filter-btn {
     background-color: #6BBE92;
