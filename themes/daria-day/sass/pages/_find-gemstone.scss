@@ -4,6 +4,12 @@ Find Gemstone General Styline
 =========================
 */
 
+@media screen and (min-width: $desktop) {
+  .find-your-gem.after-search-results {
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+  }
+}
 
 /*
 =========================
@@ -11,9 +17,10 @@ Find Gemstone Search Styling
 =========================
 */
 
-
 .find-gemstone-search {
-  padding: 120px 0;
+  box-sizing: border-box;
+  padding: 150px 0;
+  height: 60vh;
 
   color: $brand-colour-evergreen;
   border: $find-gemstone-base-spacing solid $brand-colour-bright-green;
@@ -79,8 +86,28 @@ Find Gemstone Search Styling
 }
 
 @media screen and (min-width: $desktop) {
-  .find-gemstone-search {
-    border: $find-gemstone-base-spacing * 3 solid $brand-colour-bright-green;
+  .find-your-gem.after-search-results {
+
+    .find-gemstone-search {
+      padding: 200px 10%;
+      height: 80vh;
+
+      border: $find-gemstone-base-spacing * 3 solid $brand-colour-bright-green;
+
+      form > div {
+        justify-content: flex-start;
+
+        margin-left: 0;
+
+        &:nth-of-type(1) {
+          margin-left: 0;
+        }
+  
+        &:nth-of-type(2) {
+          margin-left: 0;
+        }
+      }
+    }
   }
 }
 
@@ -159,6 +186,8 @@ Find Gemstone Results Styling
 */
 
 .find-gemstone-results {
+  box-sizing: border-box;
+
   h2 {
     text-align: center;
   }
@@ -177,6 +206,11 @@ Find Gemstone Results Styling
 
   a {
     color: $brand-colour-evergreen;
+
+    img {
+      border: 0px solid transparent;
+      border-radius: 5px;
+    }
 
     h3 {
       margin-bottom: $find-gemstone-base-spacing * 3;
@@ -213,6 +247,36 @@ Find Gemstone Results Styling
   .find-gemstone-results {
     .display-product-results {
       grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .find-your-gem.after-search-results {
+
+    .find-gemstone-results {
+      height: 80vh;
+      padding: $find-gemstone-base-spacing * 3 7.5%;
+      overflow-y: scroll;
+
+      .display-product-results {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: $find-gemstone-base-spacing * 6;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $larger-desktop) {
+  .find-your-gem.after-search-results {
+    .find-gemstone-search {
+      padding: 30% 20%;
+    }
+
+    .find-gemstone-results {
+      .display-product-results {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   }
 }

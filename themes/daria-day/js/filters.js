@@ -36,8 +36,8 @@
           ${latestAdditions.map(item =>
             `<li class="latest-additions-item">
               <img src = ${item[0]} width="150px" height="150px">
-              <a href="">${item[2]}</a>
-              $${item[3]} CAD
+              <a href="">${item[1]}</a>
+              $${item[2]} CAD
             </li>`
           ).join('')}
         </ul>`

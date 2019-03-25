@@ -1,0 +1,20 @@
+/*
+=========================
+Latest Additions Section
+=========================
+*/
+
+.latest-additions-container {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $find-gemstone-base-spacing * 2;
+  
+    padding: $find-gemstone-base-spacing;
+
+    img {
+      border: 0px solid transparent;
+      border-radius: 5px;
+    }
+  }
+}

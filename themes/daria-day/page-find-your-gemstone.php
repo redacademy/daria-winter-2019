@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main find-your-gem">
 			<section class="find-gemstone-search">
 				<h1>We'll guide you to what you need.</h1>
 				<form autocomplete="off" class="find-gemstone-form">
@@ -39,13 +39,6 @@ get_header();
 				</form>
 				<button id="find-my-gemstone" class="find-my-gemstone" type="submit">Find my gem</button>
 			</section>
-
-			<section class="find-gemstone-results">
-				<div class="display-product-results">
-	
-				</div>
-			</section>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

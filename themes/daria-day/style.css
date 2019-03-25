@@ -581,28 +581,6 @@ template {
   font-size: 32px;
   padding: 0 20px; }
 
-/* =========================
-      Latest Additions Section
-   ========================= */
-.latest-additions {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  list-style: none;
-  font-size: .8em; }
-
-.latest-additions-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-  .latest-additions-item a {
-    text-decoration: none; }
-
 .slider {
   text-align: center;
   margin-top: 2.5%; }
@@ -877,10 +855,8 @@ Breakpoints
 =========================
 */
 @media screen and (min-width: 600px) {
-  .nav-misc {
-    padding-right: 10%; }
-    .nav-misc .cart {
-      padding: 0 10px; } }
+  .nav-misc .cart {
+    padding: 0 10px; } }
 
 @media screen and (min-width: 1024px) {
   .site-header .main-nav-content-wrapper {
@@ -981,10 +957,8 @@ Breakpoints
   .footer #darialogo, .footer div#products, .footer div#company, .footer div#customers {
     text-align: center; }
 
-#darialogo {
-  background-image: url("../../images/DariaDay_logo-02 white.svg");
-  background-repeat: no-repeat;
-  background-size: 125px 175px; }
+#darialogo img {
+  width: 200px; }
 
 @media screen and (min-width: 1024px) {
   .footer {
@@ -1123,16 +1097,38 @@ Media
 
 /*
 =========================
+Latest Additions Section
+=========================
+*/
+.latest-additions-container ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 10px; }
+  .latest-additions-container ul img {
+    border: 0px solid transparent;
+    border-radius: 5px; }
+
+/*
+=========================
 Find Gemstone General Styline
 =========================
 */
+@media screen and (min-width: 1024px) {
+  .find-your-gem.after-search-results {
+    display: grid;
+    grid-template-columns: 3fr 4fr; } }
+
 /*
 =========================
 Find Gemstone Search Styling
 =========================
 */
 .find-gemstone-search {
-  padding: 120px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 150px 0;
+  height: 60vh;
   color: #062b35;
   border: 10px solid #269a65; }
   .find-gemstone-search h1 {
@@ -1180,8 +1176,19 @@ Find Gemstone Search Styling
     border: 20px solid #269a65; } }
 
 @media screen and (min-width: 1024px) {
-  .find-gemstone-search {
-    border: 30px solid #269a65; } }
+  .find-your-gem.after-search-results .find-gemstone-search {
+    padding: 200px 10%;
+    height: 80vh;
+    border: 30px solid #269a65; }
+    .find-your-gem.after-search-results .find-gemstone-search form > div {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      margin-left: 0; }
+      .find-your-gem.after-search-results .find-gemstone-search form > div:nth-of-type(1) {
+        margin-left: 0; }
+      .find-your-gem.after-search-results .find-gemstone-search form > div:nth-of-type(2) {
+        margin-left: 0; } }
 
 /*
 =========================
@@ -1235,55 +1242,80 @@ Dropdown Styling
 Find Gemstone Results Styling
 =========================
 */
-.find-gemstone-results h2 {
-  text-align: center; }
-
-.find-gemstone-results .display-product-results {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-  padding: 10px; }
-
-.find-gemstone-results .product-result {
-  position: relative; }
-
-.find-gemstone-results a {
-  color: #062b35; }
-  .find-gemstone-results a h3 {
-    margin-bottom: 30px; }
-  .find-gemstone-results a p {
-    position: absolute;
-    bottom: 0;
-    margin: 0;
-    color: #0c5535; }
-    .find-gemstone-results a p:before {
-      content: '$'; }
-    .find-gemstone-results a p:after {
-      content: ' CAD'; }
+.find-gemstone-results {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  .find-gemstone-results h2 {
+    text-align: center; }
+  .find-gemstone-results .display-product-results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 10px; }
+  .find-gemstone-results .product-result {
+    position: relative; }
+  .find-gemstone-results a {
+    color: #062b35; }
+    .find-gemstone-results a img {
+      border: 0px solid transparent;
+      border-radius: 5px; }
+    .find-gemstone-results a h3 {
+      margin-bottom: 30px; }
+    .find-gemstone-results a p {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      color: #0c5535; }
+      .find-gemstone-results a p:before {
+        content: '$'; }
+      .find-gemstone-results a p:after {
+        content: ' CAD'; }
 
 @media screen and (min-width: 600px) {
   .find-gemstone-results .display-product-results {
     grid-template-columns: repeat(3, 1fr); } }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 850px) {
   .find-gemstone-results .display-product-results {
     grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 1024px) {
+  .find-your-gem.after-search-results .find-gemstone-results {
+    height: 80vh;
+    padding: 30px 7.5%;
+    overflow-y: scroll; }
+    .find-your-gem.after-search-results .find-gemstone-results .display-product-results {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 60px; } }
+
+@media screen and (min-width: 1420px) {
+  .find-your-gem.after-search-results .find-gemstone-search {
+    padding: 30% 20%; }
+  .find-your-gem.after-search-results .find-gemstone-results .display-product-results {
+    grid-template-columns: repeat(3, 1fr); } }
 
 /*
 =========================
 General Products Styling
 =========================
 */
+.shop-all.two-column-shop {
+  display: grid;
+  grid-template-columns: 1fr 2fr; }
+
 /*
 =========================
 Filter Products Styling
 =========================
 */
 .products-filter-section {
+  position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  justify-items: center;
+  margin: 20px 0;
   padding: 10px; }
   .products-filter-section .sort-by {
     display: -webkit-box;
@@ -1296,33 +1328,203 @@ Filter Products Styling
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
+    .products-filter-section .sort-by .sort-products-dropdown-container {
+      position: relative; }
     .products-filter-section .sort-by input {
-      width: 50%;
-      margin: 0 10px; }
+      width: 130px;
+      margin-left: 5px;
+      padding-right: 10px;
+      background: url("../../images/icons/Carat-Icon.svg") no-repeat center right;
+      border: 1px solid transparent;
+      color: #0c5535; }
+    .products-filter-section .sort-by ul {
+      z-index: 2;
+      position: absolute;
+      top: 5px;
+      left: -5px;
+      display: none;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #269a65; }
+    .products-filter-section .sort-by li {
+      color: #0c5535;
+      margin: 5px 0; }
+    .products-filter-section .sort-by ul.dropdown-active {
+      display: block; }
   .products-filter-section .show-filters {
+    justify-self: start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 10px;
     background-color: transparent;
     border: 0px solid transparent; }
-  .products-filter-section .filter-menu li {
-    display: block; }
-  .products-filter-section .filter-menu .selected-product-type {
-    background-color: #e1e1e1; }
-  .products-filter-section .filter-menu .selected-tag {
-    background-color: #e1e1e1; }
-  .products-filter-section .filter-menu.hide-filters {
-    display: none; }
+    .products-filter-section .show-filters img {
+      height: 100%;
+      width: 16px;
+      padding-right: 10px; }
+  .products-filter-section .filter-menu {
+    z-index: 2;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    min-width: 60%;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #269a65; }
+    .products-filter-section .filter-menu .filters-title {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin: 20px 0 30px; }
+      .products-filter-section .filter-menu .filters-title h3 {
+        margin: 0; }
+      .products-filter-section .filter-menu .filters-title .close-filter {
+        height: 1em;
+        padding-right: 20px; }
+    .products-filter-section .filter-menu .filter-category-container div {
+      margin: 20px 0; }
+    .products-filter-section .filter-menu h4 {
+      color: #062b35;
+      margin: 10px 0; }
+    .products-filter-section .filter-menu ul {
+      display: grid;
+      margin: 0;
+      padding-left: 20px; }
+    .products-filter-section .filter-menu li {
+      display: inline-block;
+      margin: 5px 0; }
+    .products-filter-section .filter-menu p {
+      display: inline-block;
+      margin: 0;
+      padding: 2.5px 10px;
+      border: 1px solid transparent;
+      color: #0c5535; }
+    .products-filter-section .filter-menu .selected-product-type, .products-filter-section .filter-menu .selected-tag {
+      background-color: #269a65;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      color: white; }
+    .products-filter-section .filter-menu .filter-button-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      .products-filter-section .filter-menu .filter-button-container button {
+        padding: 10px 30px;
+        margin: 0 5px;
+        border: 0px solid transparent; }
+    .products-filter-section .filter-menu .apply-filters {
+      background-color: black;
+      color: white; }
+      .products-filter-section .filter-menu .apply-filters:hover {
+        background-color: #269a65; }
+    .products-filter-section .filter-menu .reset-filters {
+      background-color: transparent;
+      color: #0c5535; }
+      .products-filter-section .filter-menu .reset-filters:hover {
+        background-color: #269a65;
+        color: white; }
+      .products-filter-section .filter-menu .reset-filters span {
+        display: none; }
+
+.shop-all:not(.two-column-shop) .filter-menu.hide-filters {
+  display: none; }
+
+@media screen and (min-width: 600px) {
+  .products-filter-section .filter-menu .filter-category-container div {
+    margin: 30px 0; }
+  .products-filter-section .filter-menu ul {
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media screen and (min-width: 850px) {
+  .products-filter-section {
+    display: block;
+    padding: 10px 0; }
+    .products-filter-section .sort-by {
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      margin: 0 10px; }
+    .products-filter-section .show-filters {
+      display: none; }
+    .products-filter-section .filter-menu {
+      position: static;
+      border: 0px solid transparent; }
+      .products-filter-section .filter-menu .filters-title .close-filter {
+        display: none; }
+      .products-filter-section .filter-menu ul {
+        grid-template-columns: repeat(2, 1fr); }
+      .products-filter-section .filter-menu p:hover {
+        border: 1px solid #269a65;
+        border-radius: 5px; }
+      .products-filter-section .filter-menu .filter-button-container {
+        -webkit-box-pack: left;
+            -ms-flex-pack: left;
+                justify-content: left; } }
 
 /*
 =========================
 Products Results Styling
 =========================
 */
-.products-results-section {
+.products-results-section .display-product-results {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   padding: 10px; }
-  .products-results-section a {
-    color: #062b35; }
+
+.products-results-section .product-result {
+  position: relative; }
+
+.products-results-section a {
+  color: #062b35; }
+  .products-results-section a img {
+    border: 0px solid transparent;
+    border-radius: 5px; }
+  .products-results-section a h3 {
+    margin-bottom: 30px; }
+  .products-results-section a p {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    color: #0c5535; }
+    .products-results-section a p:before {
+      content: '$'; }
+    .products-results-section a p:after {
+      content: ' CAD'; }
+
+@media screen and (min-width: 600px) {
+  .products-results-section .display-product-results {
+    grid-template-columns: repeat(3, 1fr); } }
+
+@media screen and (min-width: 850px) {
+  .products-results-section {
+    margin-top: 20px; }
+    .products-results-section .display-product-results {
+      grid-template-columns: repeat(2, 1fr); } }
+
+@media screen and (min-width: 1024px) {
+  .products-results-section {
+    margin-top: 20px; }
+    .products-results-section .display-product-results {
+      grid-template-columns: repeat(3, 1fr); } }
 
 /*
 =========================

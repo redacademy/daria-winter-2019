@@ -53,17 +53,21 @@
 		</div>
 
 
-		<div id="darialogo">
-			<?php
+			<!-- <?php
 			if(is_active_sidebar('darialogo')){
 			dynamic_sidebar('darialogo');
-			}?>
+			}?> -->
+			<!-- <img src="<?php echo get_template_directory_uri() ?>/images/icons/Filter-icon.svg"> -->
+		<div id="darialogo">
+			<img id="hi" src="<?php echo get_template_directory_uri() ?>/images/DariaDay_logo/DariaDay_logo-02-white.svg">
 		</div>
+	
 
 	</div>
 
-
 	</div><!-- .site-info -->
+
+	<!-- <img class="hi" src="<?php echo get_template_directory_uri() ?>/images/DariaDay_logo/DariaDay_logo-02-white.svg"> -->
 
 </footer><!-- #colophon -->
 </div><!-- #page -->

@@ -136,7 +136,7 @@
 
 	// Re-evaluates mobile or desktop on screen change
 	$(window).on('resize', () => {
-		currentFormFactor = isMobile;
+		const currentFormFactor = isMobile;
 		checkMobile();
 		if (currentFormFactor !== isMobile) {
 			formFactorChange(isMobile);

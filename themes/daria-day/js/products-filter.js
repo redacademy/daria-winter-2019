@@ -1,114 +1,217 @@
 (function($) {
+
+  const twoColumnWidth = 850;
+
   // exit if not shop page
   if (!$('body').hasClass('page-template-page-shop')) {
     return;
   } 
 
-  // Establish prefilters
-  let prefilteredItem = sessionStorage.getItem('prefilterItem');
-  let prefilteredCategory = sessionStorage.getItem('prefilterCategory')
-  sessionStorage.removeItem('prefilterItem');
-  sessionStorage.removeItem('prefilterCategory');
-  
-  console.log("prefilter category: " + prefilteredCategory);
-  console.log("prefilter item: " + prefilteredItem);
-  
-  
-
   // Save products results section
   $productResultsSection = $('.products-results-section');  
+
+  // Check formfactor
+  let isTwoColumn = false;
+
+  const checkTwoColumn = () => {
+    if (window.matchMedia(`(min-width: ${twoColumnWidth}px)`).matches) {
+      isTwoColumn = true;
+    } else {
+      isTwoColumn = false;
+    }
+  }
+
+  checkTwoColumn();
+
+  // Changes mobile and desktop filters
+	const formFactorChange = (isTwoColumn) => {
+		if (isTwoColumn) {
+      $('.shop-all').addClass('two-column-shop');
+		} else {
+      $('.shop-all').removeClass('two-column-shop');
+		}
+	};
+
+  formFactorChange(isTwoColumn);
+
+  // Re-evaluates mobile or desktop on screen change
+	$(window).on('resize', () => {
+		const currentFormFactor = isTwoColumn;
+		checkTwoColumn();
+		if (currentFormFactor !== isTwoColumn) {
+			formFactorChange(isTwoColumn);
+		}
+	});
 
   // Toggle filters menu on mobile
   $('.show-filters').on('click', () => {
     $('.filter-menu').toggleClass('hide-filters');
   });
 
+  $('.close-filter').on('click', () => {
+    $('.filter-menu').addClass('hide-filters');
+  });
+
   // Select and deselect product type
   let productTypeTag = '';
-  $('.by-product-type li').on('click', event => {
-    $('.by-product-type li').each((index, productTypeFilter) => {
-      if ($(productTypeFilter).hasClass('selected-product-type')) {
+
+  const selectingProductTypes = (event, prefilterItem) => {
+    if (event === 'prefilter') {
+      productTypeTag = prefilterItem;
+    } else if (event === 'clear' || productTypeTag.toLowerCase() === event.currentTarget.innerHTML.toLowerCase()) {
+      productTypeTag = '';
+    } else {
+      productTypeTag = event.currentTarget.innerHTML;
+    }
+
+    $('.by-product-type li p').each((index, productTypeFilter) => {
+      if (productTypeTag.toLowerCase() === productTypeFilter.innerHTML.toLowerCase()) {
+        $(productTypeFilter).addClass('selected-product-type');
+      } else {
         $(productTypeFilter).removeClass('selected-product-type');
       }
     });
-    if (productTypeTag === event.currentTarget.innerHTML) {
-      productTypeTag = '';
-      $(event.currentTarget).removeClass('selected-product-type');
-    } else {
-      productTypeTag = event.currentTarget.innerHTML;
-      $(event.currentTarget).toggleClass('selected-product-type');
-    }
+  };
+
+  $('.by-product-type li p').on('click', event => {
+    selectingProductTypes(event);
   });
 
   // Select and deselect energy tags
   const energyTags = [];
-  $('.by-energy li').on('click', event => {
-    if ($(event.currentTarget).hasClass('selected-tag')) {
-      const removeTagIndex = energyTags.findIndex(tag => {
-        return tag === event.currentTarget.innerHTML;
+  const selectingEnergyTags = (event, prefilterItem) => {
+    if (event === 'clear') {
+      energyTags.length = 0;
+      $('.by-energy li p').each((index, energyTagFilter) => {
+        $(energyTagFilter).removeClass('selected-tag');
       });
-      if (removeTagIndex !== -1) {
-        energyTags.splice(removeTagIndex, 1);
-      }
+    } else if (event === 'prefilter') {
+      energyTags.push(prefilterItem);
+      $('.by-energy li p').each((index, energyTagFilter) => {
+        if (prefilterItem.toLowerCase() === energyTagFilter.innerHTML.toLowerCase()) {
+          $(energyTagFilter).addClass('selected-tag');
+        }
+      });
     } else {
-      energyTags.push(event.currentTarget.innerHTML);
+      let removeTag = false;
+      
+      energyTags.forEach((tag, index) => {
+        if (tag.toLowerCase() === event.currentTarget.innerHTML.toLowerCase()) {
+          energyTags.splice(index, 1);
+          removeTag = true;
+          $(event.currentTarget).removeClass('selected-tag');
+        }
+      });
+  
+      if (!removeTag) {
+        $(event.currentTarget).addClass('selected-tag');
+        energyTags.push(event.currentTarget.innerHTML);
+      }
     }
+  };
 
-    $(event.currentTarget).toggleClass('selected-tag');
+  $('.by-energy li p').on('click', event => {
+    selectingEnergyTags(event);
   });
 
   // Select and deselect gemstone
   const gemstoneTags = [];
-  $('.by-gemstone li').on('click', event => {
-    if ($(event.currentTarget).hasClass('selected-tag')) {
-      const removeTagIndex = gemstoneTags.findIndex(tag => {
-        return tag === event.currentTarget.innerHTML;
+  const selectingGemstoneTags = (event) => {
+    if (event === 'clear') {
+      gemstoneTags.length = 0;
+      $('.by-gemstone li p').each((index, gemstoneTagFilter) => {
+        $(gemstoneTagFilter).removeClass('selected-tag');
       });
-      if (removeTagIndex !== -1) {
-        gemstoneTags.splice(removeTagIndex, 1);
+    } else {
+      let removeTag = false;
+
+      gemstoneTags.forEach((tag, index) => {
+        if (tag === event.currentTarget.innerHTML) {
+          gemstoneTags.splice(index, 1);
+          removeTag = true;
+          $(event.currentTarget).removeClass('selected-tag');
+        }
+      });
+
+      if (!removeTag) {
+        $(event.currentTarget).addClass('selected-tag');
+        gemstoneTags.push(event.currentTarget.innerHTML);
       }
-    } else {
-      gemstoneTags.push(event.currentTarget.innerHTML);
-    }
-
-    $(event.currentTarget).toggleClass('selected-tag');
-  });
-
-  // Construct product results
-  const displayProducts = (product) => {
-    // productURL = product.title.toLowerCase().split(' ').join('-');
-
-    // <a href="${dariaData.rest_url}/products/${productURL}">
-    // </a>
-
-    if (product.image && product.title && product.price) {
-      foundProduct = `<div class="product-result">
-        <img src="${product.image}">
-        <h3>${product.title}</h3>
-        <p>${product.price}</p>
-      </div>`;
-  
-      $productResultsSection.append(foundProduct);
-    } else {
-      console.log(product);
     }
   };
 
+  $('.by-gemstone li p').on('click', event => {
+    selectingGemstoneTags(event);
+  });
+
+  const sortProducts = (productList, order) => {
+
+  };
+
+  // Sort-by select toggle
+  $('#sort-products-by').on('click', event => {
+    event.preventDefault();
+    $('.sort-by ul').toggleClass('dropdown-active');
+  });
+
+  // Sort-by select
+  $('.sort-by li').on('click', event => {
+    $('.sort-by ul').removeClass('dropdown-active');
+    $('#sort-products-by').val(event.currentTarget.innerHTML);
+
+    let order;
+    if (event.currentTarget.innerHTML.toLowerCase() === 'alphabetical (a-z)') {
+      order = 'alpa-dec';
+    } else if (event.currentTarget.innerHTML.toLowerCase() === 'newest') {
+      order = 'date-asc';
+    } else if (event.currentTarget.innerHTML.toLowerCase() === 'oldest') {
+      order = 'date-decc';
+    } else {
+      order = 'alpha-asc';   
+    }
+
+    // sortProducts();
+  });
+
+  // Apply prefilters
+  const applyPrefilters = () => {
+    let prefilteredItem = sessionStorage.getItem('prefilterItem');
+    let prefilteredCategory = sessionStorage.getItem('prefilterCategory');
+    sessionStorage.removeItem('prefilterItem');
+    sessionStorage.removeItem('prefilterCategory');
+
+    if (prefilteredCategory === 'productType') {
+      selectingProductTypes('prefilter', prefilteredItem);
+    } else if (prefilteredCategory === 'energyTag') {
+      selectingEnergyTags('prefilter', prefilteredItem);
+    }
+  };
+
+
+  // Display the products
+  const displayProducts = (product) => {
+    const productUrl = dariaData.rest_url + '/' + product.permalink;
+
+    // Placeholder image if image isn't available;
+    if (!product.image) {
+      product.image = "https://via.placeholder.com/1000";
+    }
+
+    foundProduct = `<div class="product-result">
+      <a href="${productUrl}">
+        <img src="${product.image}">
+        <h3>${product.title}</h3>
+        <p>${product.price}</p>
+      </a>
+    </div>`;
+
+    $('.display-product-results').append(foundProduct);
+  }
+
+  // Ajax call function
   const filterProductsAjax = () => {
     $productResultsSection.empty();
-
-    // Prefilter if available
-    if (prefilteredCategory && prefilteredItem) {
-      if (prefilteredCategory === 'productType') {
-        productTypeTag = prefilteredItem;
-        console.log('type');
-      } else if (prefilteredCategory === 'energyTag') {
-        energyTags.length = 0;
-        energyTags.push(prefilteredItem);
-      } else if (prefilteredCategory === 'collectionTag') {
-        console.log("this doesn't exist yet!");
-      }
-    }
+    $('.filter-menu').addClass('hide-filters');
 
     $.ajax({
       method: 'GET',
@@ -117,6 +220,7 @@
         xhr.setRequestHeader('X-WP-Nonce', dariaData.wpapi_nonce)
       }
     }).done(response => {
+      // Filter through product type
       productTypeTag = productTypeTag.toLowerCase();
       let filteredProductTypeArray = [];
 
@@ -130,6 +234,7 @@
         filteredProductTypeArray = response;
       }
 
+      // Filter through energy
       let filteredEnergyArray = [];
 
       if (energyTags && energyTags.length > 0) {
@@ -153,6 +258,7 @@
         filteredEnergyArray = filteredProductTypeArray;
       }
 
+      // Filter through gemstone
       let filteredGemstoneArray = [];
 
       if (gemstoneTags && gemstoneTags.length > 0) {
@@ -176,6 +282,9 @@
         filteredGemstoneArray = filteredEnergyArray;
       }
 
+      // Display filtered products
+      $('.products-results-section').append('<div class="display-product-results"></div>')
+
       filteredGemstoneArray.forEach(product => {
         displayProducts(product);
       });
@@ -185,11 +294,21 @@
     });
   }
 
+  // Initial filter and ajax call
+  applyPrefilters();
   filterProductsAjax();
 
+  // Event handlers for reseting and setting filters
   $('.apply-filters').on('click', event => {
     event.preventDefault();
-
     filterProductsAjax();
-  })
+  });
+
+  $('.reset-filters').on('click', event => {
+    event.preventDefault();
+    selectingProductTypes('clear');
+    selectingEnergyTags('clear');
+    selectingGemstoneTags('clear');
+  });
+
 })(jQuery);

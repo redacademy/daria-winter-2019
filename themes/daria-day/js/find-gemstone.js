@@ -1,7 +1,6 @@
 (function($) {
   const $findType = $('#find-gemstone-type');
   const $findTag = $('#find-gemstone-tag');
-  const $displayResultsSection = $('.find-gemstone-results');
 
   typeDropdownValues = [
     'bracelets',
@@ -111,15 +110,16 @@
     } 
 
     theErrorMessage += '</p>';
-    $displayResultsSection.append(theErrorMessage)
+    $('.find-gemstone-results').append(theErrorMessage)
   };
 
   // Find my Gemstone Ajax Call
   $('#find-my-gemstone').on('click', event => {
     event.preventDefault();
 
-    $displayResultsSection.empty();
+    $('.find-gemstone-results').remove();
     $('.error-message').remove();
+    $('.find-your-gem').addClass('after-search-results');
 
     $.ajax({
       method: 'GET',
@@ -128,12 +128,16 @@
         xhr.setRequestHeader('X-WP-Nonce', dariaData.wpapi_nonce)
       }
     }).done(response => {
+      
+      $('.find-gemstone-search').after('<section class="find-gemstone-results"></section>');
 
       // Throw error if no tags selected
       if (tagValue === undefined || tagValue.length === 0) {
         generateErrorMessage('emptyTag');
         return;
       }
+
+      $('#find-my-gemstone').html('Find another gem');
 
       // Filter through product types if available
       let filteredProductTypeArray = [];
@@ -179,8 +183,8 @@
       }
 
       // Display filtered products
-      $displayResultsSection.append('<h2>Results</h2>');
-      $displayResultsSection.append('<div class="display-product-results"></div>')
+      $('.find-gemstone-results').append('<h2>Results</h2>');
+      $('.find-gemstone-results').append('<div class="display-product-results"></div>')
       
       filteredEnergyArray.forEach(product => {
         displayProducts(product); 
