@@ -1,27 +1,26 @@
 .footer {
   background-color: #062B35;
-  margin-top: 5%;
-  width: 100%;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
-  height:700px;
+  height: 700px;
   .companyinfo{
     margin-top:3%;
   }
     h3{
-    color:white;
-    font-family: Avenir;
-    font-size: 1.2em;
+      color:white;
+      font-family: 'Avenir LT Std';
+      font-size: 30px;
       }
     a{
     text-decoration: none ;
     color: white;
-    font-family: Avenir;
+    font-family: 'Avenir LT Std';
     font-weight: 100;
-    font-size: .8em;
+    font-size: 20px;
       }
     a:hover{
-    color:red;
+    color: $nav-grey;
     text-decoration:none;
     cursor:pointer;
       }
@@ -29,34 +28,47 @@
     text-align: center;
     }
 }
+
 #darialogo{
-  img {
-    width: 200px;
-  }
-  // background-image:url('../../images/DariaDay_logo-02 white.svg') ;
-  // background-repeat: no-repeat;
-  // background-size: 125px 175px;
+  background: url('../../images/white-logo.svg') ;
+  background-repeat: no-repeat;
+  background-size: 125px 175px;
 }
 
-
-#hi {
-  // background-color: black;
-}
-
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop) {
   .footer {
     height:300px;
 
     .companyinfo {
       display: flex;
-      }
+    }
+    h3{
+        padding-right: 40px;
+        justify-content: space-between;
+    }
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: $tablet) {
   .footer {
-    display: grid;
+    .companyinfo {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      text-align: left;
     }
+    h3{
+      display: flex;
+      padding-right: 20px; 
+      justify-items: space-evenly; 
+
+    }
+    a{
+      display: flex; 
+      justify-content: left; 
+      text-align: left;
+    }
+  }
 }
 
 

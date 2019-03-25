@@ -83,7 +83,6 @@ sass/
 General
 =========================
 */
-
 ul, li {
   list-style: none;
 }
@@ -99,4 +98,10 @@ body {
 .content-wrapper {
   max-width: 1171px;
   margin: 0 auto;
+}
+
+h1.page-title {
+  font-family: 'Playfair Display';
+  padding: 20px 40px;
+  color: #062b35;
 }

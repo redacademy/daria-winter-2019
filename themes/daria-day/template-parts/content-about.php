@@ -26,9 +26,6 @@
         </div>
 
     </section>
-
-    <h2 class= 'header'> Our latest Additions</h2>
-
     
 	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -11,6 +11,7 @@
     let latestAdditions = new Array(image, permalink, title, price);
 
     $.getJSON(dariaData.root_url + '/wp-json/daria/v1/search', (results) => {
+<<<<<<< HEAD
       //sort results array based on date
       results.sort(function(a,b){
         return new Date(b.date) - new Date(a.date);
@@ -42,6 +43,34 @@
           ).join('')}
         </ul>`
       );
+=======
+        //sort results array based on date
+        results.sort(function(a,b){
+            return new Date(b.date) - new Date(a.date);
+        });
+        console.log(results);
+        
+        for(let i = 0; i < 4 ; i++){
+            latestAdditions[i].push(results[i].image);
+            latestAdditions[i].push(results[i].permalink);
+            latestAdditions[i].push(results[i].title);
+            latestAdditions[i].push(results[i].price);           
+        }
+        console.log(latestAdditions);
+        resultsDiv.html(`
+        <h1> Our Latest Additions </h1>
+        <div class='latest-additions-container'>
+            <div class ='latest-additions'>
+                ${latestAdditions.map(item =>
+                    `<div class="latest-additions-item">
+                        <img src = ${item[0]}>
+                        <a href="#">${item[2]}</a>
+                        <div class="price"> <p> $${item[3]} CAD </p></div>
+                    </div>`
+                ).join('')}
+            </div>
+        </div>`);
+>>>>>>> 2e6254b13c2400992729374a9019b1392db54eff
         
     });
   }
