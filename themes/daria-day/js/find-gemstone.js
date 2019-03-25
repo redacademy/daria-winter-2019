@@ -82,8 +82,6 @@
 
   // Construct product results
   const displayProducts = (product) => {
-    console.log(product);
-
     const productUrl = dariaData.rest_url + '/' + product.permalink;
 
     foundProduct = `<div class="product-result">

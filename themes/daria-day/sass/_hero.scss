@@ -2,115 +2,129 @@
    Hero Banner Section
    =========================
 */
+
 .home-hero {
-    align-items: center;
-    background:  url('../../images/mobile-hero.png') no-repeat;
-    background-size: cover;
-    background-position: 50% 30%;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: center;
-    justify-content: center;
-    height: 100vh;
-    .hero-title{
-        font-family: 'Playfair Display';
-        font-size: 30px;
-        font-weight: bold;
-        padding: 0px 50px 10px 50px;
-        text-align: center;
-        line-height: 50px;
-        color: $brand-colour-evergreen;
-      }
-      .hero-sub-title{
-        font-family: 'Avenir LT Std';
-        font-size: 20px;
-        text-align: center;
-        color: $brand-colour-evergreen;
-        line-height: 30px;
-        padding: 0px 50px 10px 80px;
-      }
-      .hero-btn{
-        font-family: 'Avenir LT Std';
-        width: 200px;
-        height: 70px;
-        background-color: $brand-colour-bright-green;
-        border: none;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-      .hero-btn:hover{
-        box-shadow: 0 4px 10px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.25);
-        cursor: pointer;
-        border-radius: 10px;
-      }
-      .hero-btn p{
-        color: #fff;
-        font-size: 20px;
-      }
-      .hero-btn a{
-          text-decoration: none;
-      }
+  background: url('../../images/home-hero.png') no-repeat center;
+  background-size: cover;
+
+  height: 50vh;
+  padding: $base-spacing * 3;
 }
+
+
+.home-hero > div{
+  box-sizing: border-box;
+
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  .hero-title {
+    h1 {
+      font-family: 'Playfair Display';
+      font-size: 1.6em;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.5em;
+      color: $brand-colour-evergreen;
+    }
+  }
+
+  .hero-sub-title{
+    font-family: 'Avenir LT Book';
+    font-size: 1.1em;
+    font-weight: lighter;
+    text-align: center;
+    color: $brand-colour-evergreen;
+    line-height: 1.25em;
+  }
+
+  .hero-btn{
+    margin: $base-spacing * 2 0;
+    padding: $base-spacing * 1.5 $base-spacing * 5;
+    
+    background-color: $brand-colour-bright-green;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #fff;
+    font-size: 1.25em;
+    font-family: 'Avenir LT Std';
+  }
+
+  .hero-btn:hover{
+    box-shadow: 0 4px 10px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    border-radius: 10px;
+  }
+}
+
+
 @media screen and (min-width: $tablet) {
   .home-hero {
-    background:url('../../images/home-hero.png') no-repeat center center;
-    background-size: cover;
-    background-position: 60% 20%;
-    .hero-title{
-      font-size: 35px;
-      
-    }
-    .hero-sub-title{
-      font-size: 25px;
-    }
-    .home-hero button{
-     
-    }
-    .hero-btn:hover{
-      
-    }
-    .hero-btn p{
-      
-    }
-    .hero-btn a{
-        text-decoration: none;
+    height: 60vh;
+
+    > div {
+      .hero-title h1 {
+        font-size: 2em;
+      }
+      .hero-sub-title p {
+        font-size: 1.25em;
+      }
     }
   }
 }
+
+@media screen and (min-width: $larger-tablet) {
+  .home-hero {
+    > div {
+      .hero-title h1 {
+        font-size: 2em;
+      }
+      .hero-sub-title p {
+        font-size: 1.25em;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: $desktop) {
   .home-hero {
-    background: url('../../images/home-hero.png') no-repeat center center;
-    background-size: cover;
-    background-position: 60% 20%;
-    .hero-title{
-      font-size: 50px;
-      width: 840px; 
-      line-height: 80px; 
-      justify-items: left;
-      text-align: left;
-      margin-left: -28%;
-      float: left; 
+    height: 50vh;
+
+    > div {
+      .hero-title {
+        width: 80%;
+        margin-right: auto;
+  
+        h1 {
+          margin: 0;
+  
+          font-size: 3em;
+          text-align: left;
+        }
+      }
+      .hero-sub-title {
+        margin-right: auto;
+  
+        p {
+          font-size: 1.5em;
+          letter-spacing: 1px; 
+        }
+      }
+  
+      .hero-btn {
+        margin-right: auto;
+        padding: $base-spacing * 1.5 $base-spacing * 9;
+      }
+
     }
-    .hero-sub-title{
-      margin-top: -20px; 
-      font-size: 30px;
-      margin-left: -29%;
-      letter-spacing: 1px; 
-    }
-    .hero-btn{
-     margin-left: -211%;
-     width: 250px;
-    }
-    .hero-btn:hover{
-      
-    }
-    .hero-btn p{
-      font-size: 25px; 
-    }
-    .hero-btn a{
-        text-decoration: none;
-    }
+
   }
 }
 /* ====================================================================
@@ -305,88 +319,56 @@
 /* ===================================
       Latest Additions Section
    ====================================== */
+
 .latest-additions-container {
-  padding: 10px 20px 25px 20px; 
-  h1{
-    padding-left: 40px; 
-  }
-  .latest-additions {
-    justify-items: center; 
-    padding: 10px; 
-    justify-content: space-evenly;
+  .latest-additions-display {
     display: grid;
-    grid-template-columns: 2fr 2fr; 
-    grid-row-gap: 100px; 
-    list-style: none;
-    font-size: .8em;
-  }
-  img{
-    padding: 10px 0; 
-  }
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $base-spacing * 2;
   
-  p{
-    font-family: 'Avenir LT Std';
-    font-weight: lighter;
-    font-size: 17px;
-    color: $brand-colour-green;
+    padding: $base-spacing;
   }
-  a{
-    font-size: 17px;
-    text-decoration: none; 
-    color: $brand-colour-evergreen;
-  }
-  a:hover{
-    color: $brand-colour-bright-green;
-  }
-  .latest-additions-item{
-    display: flex;
-    width: 18em;
-    height: 18em;
-    flex-direction: column;
-    a{
-      text-decoration: none;
+
+  .latest-additions-item {
+    position: relative;
+
+    img {
+      border: 0px solid transparent;
+      border-radius: 5px;
     }
-    img{
-      width: 18em;
-      height: 18em;
+
+    a {
+      display: block;
+      margin: $base-spacing * 2 0 $base-spacing * 3;
+
+      color: $brand-colour-evergreen;
+    }
+
+    p {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+
+      color: $brand-colour-green;
     }
   }
 }
-@media screen and (min-width: $tablet){
+
+
+@media screen and (min-width: $tablet) {
   .latest-additions-container {
-    margin-bottom: 20px; 
-    .latest-additions {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    .latest-additions-item{
-      width: 17em;
-      height: 17em;
-      img{
-        width: 17em;
-        height: 17em;
-      }
+    .latest-additions-display {
+      grid-gap: $base-spacing * 4;
     }
   }
 }
-@media screen and (min-width: $desktop){
+
+@media screen and (min-width: $larger-tablet) {
   .latest-additions-container {
-    margin-bottom: 20px; 
-    
-    .latest-additions {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    .latest-additions-item{
-      width: 20em;
-      height: 20em;
-      img{
-        width: 20em;
-        height: 20em;
-      }
-      a{
-        width: 19em;
-      }
+    .latest-additions-display {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: $base-spacing * 2;
     }
   }
 }
+

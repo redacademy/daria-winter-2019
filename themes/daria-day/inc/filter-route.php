@@ -57,7 +57,7 @@ function dariaSearchResults($data) {
                 'energy' => $tagInfoEnergy,
                 'misc' => $tagInfoMisc
             ),
-            'price' => $priceInfo,
+            'price' => intval($priceInfo),
             'date' => $row->updated_at 
         ); 
         array_push($products, $productInfo);

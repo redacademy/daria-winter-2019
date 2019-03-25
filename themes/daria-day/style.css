@@ -384,21 +384,29 @@ template {
 @font-face {
   font-family: 'Playfair Display';
   src: url("../../fonts/PlayfairDisplay-Bold.eot");
-  src: url("../../fonts/PlayfairDisplay-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../../fonts/PlayfairDisplay-Bold.woff") format("woff"), url("../../fonts/PlayfairDisplay-Bold.ttf") format("truetype");
+  src: url("../../fonts/PlayfairDisplay-BPlayfair Displayold.eot?#iefix") format("embedded-opentype"), url("../../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../../fonts/PlayfairDisplay-Bold.woff") format("woff"), url("../../fonts/PlayfairDisplay-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', sans-serif; }
+
+p {
+  font-family: 'Avenir LT Book', sans-serif; }
 
 /* =========================
    Hero Banner Section
    =========================
 */
 .home-hero {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: url("../../images/mobile-hero.png") no-repeat;
+  background: url("../../images/home-hero.png") no-repeat center;
   background-size: cover;
-  background-position: 50% 30%;
+  height: 50vh;
+  padding: 30px; }
+
+.home-hero > div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -409,78 +417,72 @@ template {
   -ms-flex-pack: center;
   -webkit-box-pack: center;
           justify-content: center;
-  height: 100vh; }
-  .home-hero .hero-title {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%; }
+  .home-hero > div .hero-title h1 {
     font-family: 'Playfair Display';
-    font-size: 30px;
+    font-size: 1.6em;
     font-weight: bold;
-    padding: 0px 50px 10px 50px;
     text-align: center;
-    line-height: 50px;
+    line-height: 1.5em;
     color: #062b35; }
-  .home-hero .hero-sub-title {
-    font-family: 'Avenir LT Std';
-    font-size: 20px;
+  .home-hero > div .hero-sub-title {
+    font-family: 'Avenir LT Book';
+    font-size: 1.1em;
+    font-weight: lighter;
     text-align: center;
     color: #062b35;
-    line-height: 30px;
-    padding: 0px 50px 10px 80px; }
-  .home-hero .hero-btn {
-    font-family: 'Avenir LT Std';
-    width: 200px;
-    height: 70px;
+    line-height: 1.25em; }
+  .home-hero > div .hero-btn {
+    margin: 20px 0;
+    padding: 15px 50px;
     background-color: #269a65;
     border: none;
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-  .home-hero .hero-btn:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #fff;
+    font-size: 1.25em;
+    font-family: 'Avenir LT Std'; }
+  .home-hero > div .hero-btn:hover {
     -webkit-box-shadow: 0 4px 10px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.25);
             box-shadow: 0 4px 10px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.25);
     cursor: pointer;
     border-radius: 10px; }
-  .home-hero .hero-btn p {
-    color: #fff;
-    font-size: 20px; }
-  .home-hero .hero-btn a {
-    text-decoration: none; }
 
 @media screen and (min-width: 600px) {
   .home-hero {
-    background: url("../../images/home-hero.png") no-repeat center center;
-    background-size: cover;
-    background-position: 60% 20%; }
-    .home-hero .hero-title {
-      font-size: 35px; }
-    .home-hero .hero-sub-title {
-      font-size: 25px; }
-    .home-hero .hero-btn a {
-      text-decoration: none; } }
+    height: 60vh; }
+    .home-hero > div .hero-title h1 {
+      font-size: 2em; }
+    .home-hero > div .hero-sub-title p {
+      font-size: 1.25em; } }
+
+@media screen and (min-width: 850px) {
+  .home-hero > div .hero-title h1 {
+    font-size: 2em; }
+  .home-hero > div .hero-sub-title p {
+    font-size: 1.25em; } }
 
 @media screen and (min-width: 1024px) {
   .home-hero {
-    background: url("../../images/home-hero.png") no-repeat center center;
-    background-size: cover;
-    background-position: 60% 20%; }
-    .home-hero .hero-title {
-      font-size: 50px;
-      width: 840px;
-      line-height: 80px;
-      justify-items: left;
-      text-align: left;
-      margin-left: -28%;
-      float: left; }
-    .home-hero .hero-sub-title {
-      margin-top: -20px;
-      font-size: 30px;
-      margin-left: -29%;
-      letter-spacing: 1px; }
-    .home-hero .hero-btn {
-      margin-left: -211%;
-      width: 250px; }
-    .home-hero .hero-btn p {
-      font-size: 25px; }
-    .home-hero .hero-btn a {
-      text-decoration: none; } }
+    height: 50vh; }
+    .home-hero > div .hero-title {
+      width: 80%;
+      margin-right: auto; }
+      .home-hero > div .hero-title h1 {
+        margin: 0;
+        font-size: 3em;
+        text-align: left; }
+    .home-hero > div .hero-sub-title {
+      margin-right: auto; }
+      .home-hero > div .hero-sub-title p {
+        font-size: 1.5em;
+        letter-spacing: 1px; }
+    .home-hero > div .hero-btn {
+      margin-right: auto;
+      padding: 15px 90px; } }
 
 /* ====================================================================
       Social Media and Mailchimp together in tablet and desktop view. 
@@ -623,8 +625,6 @@ template {
     width: 300px;
     color: #062b35; } }
 
-<<<<<<< HEAD
-=======
 @media screen and (min-width: 1024px) {
   .search-result-container a {
     font-size: 1.6em;
@@ -643,79 +643,36 @@ template {
 /* ===================================
       Latest Additions Section
    ====================================== */
-.latest-additions-container {
-  padding: 10px 20px 25px 20px; }
-  .latest-additions-container h1 {
-    padding-left: 40px; }
-  .latest-additions-container .latest-additions {
-    justify-items: center;
-    padding: 10px;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    grid-row-gap: 100px;
-    list-style: none;
-    font-size: .8em; }
-  .latest-additions-container img {
-    padding: 10px 0; }
-  .latest-additions-container p {
-    font-family: 'Avenir LT Std';
-    font-weight: lighter;
-    font-size: 17px;
-    color: #0c5535; }
-  .latest-additions-container a {
-    font-size: 17px;
-    text-decoration: none;
+.latest-additions-container .latest-additions-display {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 10px; }
+
+.latest-additions-container .latest-additions-item {
+  position: relative; }
+  .latest-additions-container .latest-additions-item img {
+    border: 0px solid transparent;
+    border-radius: 5px; }
+  .latest-additions-container .latest-additions-item a {
+    display: block;
+    margin: 20px 0 30px;
     color: #062b35; }
-  .latest-additions-container a:hover {
-    color: #269a65; }
-  .latest-additions-container .latest-additions-item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 18em;
-    height: 18em;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
-    .latest-additions-container .latest-additions-item a {
-      text-decoration: none; }
-    .latest-additions-container .latest-additions-item img {
-      width: 18em;
-      height: 18em; }
+  .latest-additions-container .latest-additions-item p {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    color: #0c5535; }
 
 @media screen and (min-width: 600px) {
-  .latest-additions-container {
-    margin-bottom: 20px; }
-    .latest-additions-container .latest-additions {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr; }
-    .latest-additions-container .latest-additions-item {
-      width: 17em;
-      height: 17em; }
-      .latest-additions-container .latest-additions-item img {
-        width: 17em;
-        height: 17em; } }
+  .latest-additions-container .latest-additions-display {
+    grid-gap: 40px; } }
 
-@media screen and (min-width: 1024px) {
-  .latest-additions-container {
-    margin-bottom: 20px; }
-    .latest-additions-container .latest-additions {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr; }
-    .latest-additions-container .latest-additions-item {
-      width: 20em;
-      height: 20em; }
-      .latest-additions-container .latest-additions-item img {
-        width: 20em;
-        height: 20em; }
-      .latest-additions-container .latest-additions-item a {
-        width: 19em; } }
+@media screen and (min-width: 850px) {
+  .latest-additions-container .latest-additions-display {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px; } }
 
->>>>>>> 2e6254b13c2400992729374a9019b1392db54eff
 .slider {
   text-align: center;
   margin-top: 2.5%; }
@@ -1017,37 +974,41 @@ Breakpoints
       color: #062b35;
       text-transform: uppercase;
       text-align: center; }
-  .secondary-menu .secondary-nav-content-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    margin: 0 auto;
-    padding: 20px 25px; }
-  .secondary-menu section {
-    padding: 0 35px; }
-    .secondary-menu section:first-of-type {
-      padding-left: 10px; }
-  .secondary-menu ul {
-    padding: 0; }
-  .secondary-menu h4 {
-    padding: 5px 0; }
-  .secondary-menu li {
-    padding: 5px 0; }
-  .secondary-menu .by-collection {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1; }
-  .secondary-menu .new-to-crystals {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-    height: 50%;
-    margin-left: auto;
-    padding: 20px; }
+  .secondary-menu {
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #062b35; }
+    .secondary-menu .secondary-nav-content-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      margin: 0 auto;
+      padding: 20px 25px; }
+    .secondary-menu section {
+      padding: 0 35px; }
+      .secondary-menu section:first-of-type {
+        padding-left: 10px; }
+    .secondary-menu ul {
+      padding: 0; }
+    .secondary-menu h4 {
+      padding: 5px 0; }
+    .secondary-menu li {
+      padding: 5px 0; }
+    .secondary-menu .by-collection {
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1; }
+    .secondary-menu .new-to-crystals {
+      -webkit-box-ordinal-group: 3;
+          -ms-flex-order: 2;
+              order: 2;
+      height: 50%;
+      margin-left: auto;
+      padding: 20px; }
   .nav-misc .cart {
     padding: 0 10px; }
   .nav-misc .cart img {
@@ -1091,15 +1052,10 @@ Breakpoints
   .footer #darialogo, .footer div#products, .footer div#company, .footer div#customers {
     text-align: center; }
 
-<<<<<<< HEAD
-#darialogo img {
-  width: 200px; }
-=======
 #darialogo {
   background: url("../../images/white-logo.svg");
   background-repeat: no-repeat;
   background-size: 125px 175px; }
->>>>>>> 2e6254b13c2400992729374a9019b1392db54eff
 
 @media screen and (min-width: 1024px) {
   .footer {
@@ -1469,9 +1425,40 @@ Find Gemstone Results Styling
 General Products Styling
 =========================
 */
+.shop-hero {
+  background: url("../../images/home-hero.png") no-repeat center;
+  background-size: cover;
+  background-position: 70%;
+  height: 50vh; }
+  .shop-hero .content-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100%;
+    padding: 0 30px;
+    color: #062b35;
+    text-align: center; }
+    .shop-hero .content-wrapper h1 {
+      font-size: 2.5em; }
+    .shop-hero .content-wrapper p {
+      font-family: 'Avenir LT Std', sans-serif;
+      font-size: 1.25em; }
+
+@media screen and (min-width: 850px) {
+  .shop-hero {
+    height: 35vh; } }
+
 .shop-all.two-column-shop {
   display: grid;
-  grid-template-columns: 1fr 2fr; }
+  grid-template-columns: 1fr 2fr;
+  padding: 20px 30px; }
 
 /*
 =========================
@@ -1513,7 +1500,8 @@ Filter Products Styling
       top: 5px;
       left: -5px;
       display: none;
-      padding: 10px;
+      width: 100%;
+      padding: 10px 10px;
       background-color: #fff;
       border: 1px solid #269a65; }
     .products-filter-section .sort-by li {
@@ -1626,6 +1614,7 @@ Filter Products Styling
 @media screen and (min-width: 850px) {
   .products-filter-section {
     display: block;
+    margin-right: 20px;
     padding: 10px 0; }
     .products-filter-section .sort-by {
       -webkit-box-pack: justify;
@@ -1710,13 +1699,11 @@ a {
 body {
   background-color: white; }
 
-<<<<<<< HEAD
 .content-wrapper {
   max-width: 1171px;
   margin: 0 auto; }
-=======
+
 h1.page-title {
   font-family: 'Playfair Display';
   padding: 20px 40px;
   color: #062b35; }
->>>>>>> 2e6254b13c2400992729374a9019b1392db54eff

@@ -1,13 +1,8 @@
 <div class="subscription">
 <?php
 	$args2 = array(
-<<<<<<< HEAD
 		'type' => 'post',
 		'p'    => 67,
-=======
-			'type' => 'post',
-			'p'    => 67,
->>>>>>> 2e6254b13c2400992729374a9019b1392db54eff
 	);
 	$the_query = new WP_Query($args2);
 

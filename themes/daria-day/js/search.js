@@ -38,7 +38,6 @@
     let mobileSearchString = event.target.value;
 
     $searchField.val(mobileSearchString);
-    console.log($searchField.val());
     $('.search-form').submit();
   }
 

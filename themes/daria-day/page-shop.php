@@ -15,7 +15,17 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<section class="shop-hero"></section>
+			<section class="shop-hero">
+				<?php	
+				$shop_main_title = get_field('shop_main_title');
+				$shop_subtitle = get_field('shop_subtitle');
+				?>
+				<div class="content-wrapper">
+					<h1><?php echo $shop_main_title ?></h1>
+					<p><?php echo $shop_subtitle ?></p>
+				</div>
+				
+			</section>
 
 			<section class="shop-all content-wrapper">
 				<section class="products-filter-section">
@@ -28,6 +38,8 @@ get_header();
 								<li>Alphabetical (Z-A)</li>
 								<li>Newest</li>
 								<li>Oldest</li>
+								<li>Price (high-low)</li>
+								<li>Price (low-high)</li>
 							</ul>
 						</div>
 					</div>

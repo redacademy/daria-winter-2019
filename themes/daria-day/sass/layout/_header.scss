@@ -288,6 +288,12 @@ Breakpoints
 
   // Secondary menu
   .secondary-menu {
+    position: absolute;
+
+    width: 100%;
+
+    border-bottom: 1px solid $brand-colour-evergreen; 
+
     .secondary-nav-content-wrapper {
       display: flex;
       flex-flow: row nowrap;

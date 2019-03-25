@@ -154,24 +154,72 @@
     $('.sort-by ul').toggleClass('dropdown-active');
   });
 
+  const obtainSortValues = () => {
+    sortProductsKey = $('#sort-products-by').val();
+
+    const sortValues = {};
+    if (sortProductsKey.toLowerCase() === 'alphabetical (z-a)') {
+      sortValues.key = 'title';
+      sortValues.order = 'desc';
+    } else if (sortProductsKey.toLowerCase() === 'oldest') {
+      sortValues.key = 'date';
+      sortValues.order = 'asc';
+    } else if (sortProductsKey.toLowerCase() === 'newest') {
+      sortValues.key = 'date';
+      sortValues.order = 'desc';
+    } else if (sortProductsKey.toLowerCase() === 'price (low-high)') {
+      sortValues.key = 'price';
+      sortValues.order = 'asc';
+    } else if (sortProductsKey.toLowerCase() === 'price (high-low)') {
+      sortValues.key = 'price';
+      sortValues.order = 'desc';
+    } else {
+      sortValues.key = 'title';
+      sortValues.order = 'asc';   
+    }
+
+    return sortValues;
+  };
+
   // Sort-by select
   $('.sort-by li').on('click', event => {
     $('.sort-by ul').removeClass('dropdown-active');
     $('#sort-products-by').val(event.currentTarget.innerHTML);
 
-    let order;
-    if (event.currentTarget.innerHTML.toLowerCase() === 'alphabetical (a-z)') {
-      order = 'alpa-dec';
-    } else if (event.currentTarget.innerHTML.toLowerCase() === 'newest') {
-      order = 'date-asc';
-    } else if (event.currentTarget.innerHTML.toLowerCase() === 'oldest') {
-      order = 'date-decc';
-    } else {
-      order = 'alpha-asc';   
-    }
-
-    // sortProducts();
+    filterProductsAjax();
   });
+
+  const compareValues = (sortValues) => {
+    const key = sortValues.key;
+    const order = sortValues.order;
+
+    return function(a, b) {
+      if(!a.hasOwnProperty(key) || 
+         !b.hasOwnProperty(key)) {
+        return 0; 
+      } else if(key ==="date" && order === "latest") {
+        return new Date(b.date) - new Date(a.date);
+      } else if (key ==="date" && order === "oldest") {
+        return new Date(a.date) - new Date(b.date);
+      }
+      
+      const varA = (typeof a[key] === 'string') ? 
+        a[key].toUpperCase() : a[key];
+      const varB = (typeof b[key] === 'string') ? 
+        b[key].toUpperCase() : b[key];
+        
+      let comparison = 0;
+      if (varA > varB) {
+        comparison = 1;
+      } else if (varA < varB) {
+        comparison = -1;
+      }
+      return (
+        (order == 'desc') ? 
+        (comparison * -1) : comparison
+      );
+    };
+  };
 
   // Apply prefilters
   const applyPrefilters = () => {
@@ -186,7 +234,6 @@
       selectingEnergyTags('prefilter', prefilteredItem);
     }
   };
-
 
   // Display the products
   const displayProducts = (product) => {
@@ -284,6 +331,9 @@
 
       // Display filtered products
       $('.products-results-section').append('<div class="display-product-results"></div>')
+
+      productArray = [...filteredGemstoneArray];
+      filteredGemstoneArray.sort(compareValues(obtainSortValues()));
 
       filteredGemstoneArray.forEach(product => {
         displayProducts(product);
