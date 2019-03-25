@@ -16,54 +16,52 @@
 <footer id="footer" class="footer">
 	<div class="companyinfo">
 
-		<div class= 'mailchimp'>
-			<?php	
-			if ( is_front_page() ) :
-			else :
-			endif;?>
-		</div>
+		
+			<div class="products">
+				<?php
+				if(is_active_sidebar('products')){
+				dynamic_sidebar('products');
+				}?>
+				
+			</div>
+			<div class="company">
+				<?php
+				if(is_active_sidebar('company')){
+				dynamic_sidebar('company');
+				}?>
+			</div>
 
-		<div id="products">
-			<?php
-			if(is_active_sidebar('products')){
-			dynamic_sidebar('products');
-			}?>
-		</div>
+			<div class="customers">
+				<?php
+				if(is_active_sidebar('customers')){
+				dynamic_sidebar('customers');
+				}?>
+			</div>
+		<section class ='contact'>
+			<div class="logocontainer">
+			
+				<img class= "darialogo" src="<?php echo get_template_directory_uri();?>/images/icons/x-symbol.svg" alt="Facebook Logo">
+			
+			</div>
+			<div class="socialmedia">	
+				<?php	
+				
+				get_template_part('template-parts/content', 'socialmedia');
+				
+				?>
+			</div>
+			<div class= 'mailchimp'>
+				<?php	
+				
+				get_template_part('template-parts/content', 'mailchimp');
+				
+				?> 
+			</div>
+		</section>		
 
-		<div id="company">
-			<?php
-			if(is_active_sidebar('company')){
-			dynamic_sidebar('company');
-			}?>
-		</div>
-
-		<div id="customers">
-			<?php
-			if(is_active_sidebar('customers')){
-			dynamic_sidebar('customers');
-			}?>
-		</div>
-
-		<div id="socialmedia">	
-			<?php	
-			if ( is_front_page() ) :
-			else :
-			get_template_part('template-parts/content', 'socialmedia');
-			endif;?>
-		</div>
-
-
-		<div id="darialogo">
-			<?php
-			if(is_active_sidebar('darialogo')){
-			dynamic_sidebar('darialogo');
-			}?>
-		</div>
-
+			
+		
 	</div>
-
-
-	</div><!-- .site-info -->
 
 </footer><!-- #colophon -->
 </div><!-- #page -->

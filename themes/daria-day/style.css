@@ -552,95 +552,46 @@ template {
   .latest-additions-item a {
     text-decoration: none; }
 
-.slider {
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  font-family: sans-serif; }
+
+.carousel {
+  margin-top: 5%;
+  background: #EEE;
+  overflow: hidden; }
+
+.flickity-viewport {
+  height: 350px; }
+
+.carousel-cell {
+  width: 66%;
+  height: 380px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  overflow: hidden; }
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
   text-align: center;
-  margin-top: 2.5%; }
-  .slider .imgList {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    padding: 0;
-    padding-top: 2%;
-    scroll-behavior: smooth;
-    vertical-align: middle;
-    text-align: center;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch; }
-  .slider ul {
-    padding: 0; }
-  .slider ul::-webkit-scrollbar {
-    display: none; }
-  .slider li {
-    list-style: none;
-    display: inline-block;
-    position: relative;
-    vertical-align: middle;
-    width: 20%;
-    margin-left: 8.5%;
-    margin-right: 1.5%;
-    -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
-    -webkit-transition: 0.2s;
-    transition: 0.2s; }
-  .slider li {
-    width: 470px; }
-    .slider li:hover {
-      -webkit-transition: 0.2s;
-      transition: 0.2s;
-      -webkit-filter: grayscale(0);
-              filter: grayscale(0); }
-  .slider .link {
-    text-decoration: none; }
-  .slider .title {
-    vertical-align: middle; }
-  .slider #bracelets, .slider #earrings, .slider #necklaces, .slider #energy {
-    border: 2px solid #73AD21;
-    padding: 20px;
-    width: 200px;
-    height: 200px;
-    margin-left: 5%; }
+  line-height: 200px;
+  font-size: 80px;
+  color: white; }
 
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+.flickity-button {
+  width: 5% !important;
+  height: 5% !important; }
 
-.btn {
-  height: 10px;
-  width: 10px;
-  margin: 10px;
-  border-radius: 20%;
-  cursor: pointer; }
+.flickity-button.flickity-prev-next-button.previous {
+  background-color: #269A65; }
 
-.btn1 {
-  background: orange;
-  position: relative;
-  overflow: hidden; }
-
-.btn2 {
-  background: green;
-  position: relative;
-  overflow: hidden; }
-
-.btn3 {
-  background: red;
-  position: relative;
-  overflow: hidden; }
-
-.btn4 {
-  background: blue;
-  position: relative;
-  overflow: hidden; }
-
-@media screen and (min-width: 1024px) {
-  .container {
-    display: none; } }
+.flickity-button.flickity-prev-next-button.next {
+  background-color: #269A65; }
 
 .site-header {
   display: grid;
@@ -727,7 +678,7 @@ template {
     width: 25px;
     height: 25px; }
 
-.header-search .search-toggle {
+.header-search .search-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -740,9 +691,8 @@ template {
           align-items: center;
   padding: 5px; }
 
-.header-search label {
-  padding: 5px;
-  padding-left: 10px; }
+.header-search .icon-search {
+  padding: 0 5px; }
 
 .header-search .search-field {
   width: 0;
@@ -756,6 +706,7 @@ template {
   background-color: #e1e1e1; }
   .mobile-search .search-field {
     width: 100%;
+    padding: 10px;
     background-color: #e1e1e1;
     border: none;
     color: white; }
@@ -807,18 +758,22 @@ template {
     width: 150px; } }
 
 .footer {
-  background-color: #062B35;
-  margin-top: 5%;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 700px; }
+  background-color: #062B35; }
   .footer .companyinfo {
-    margin-top: 3%; }
+    display: grid;
+    grid-auto-rows: minmax(125px, auto);
+    justify-items: center; }
+  .footer .companyinfo.logocontainer {
+    display: grid;
+    grid-auto-rows: minmax(125px, auto);
+    justify-items: center;
+    text-align: center; }
+  .footer .logocontainer, .footer .textwidget {
+    text-align: center; }
+  .footer .companyinfo > .sitecontent {
+    text-align: center; }
+  .footer img.darialogo {
+    max-height: 100px; }
   .footer h3 {
     color: white;
     font-family: Avenir;
@@ -829,127 +784,235 @@ template {
     font-family: Avenir;
     font-weight: 100;
     font-size: .8em; }
-  .footer a:hover {
-    color: red;
-    text-decoration: none;
-    cursor: pointer; }
-  .footer #darialogo, .footer div#products, .footer div#company, .footer div#customers {
-    text-align: center; }
-
-#darialogo {
-  background-image: url("../../images/DariaDay_logo-02 white.svg");
-  background-repeat: no-repeat;
-  background-size: 125px 175px; }
+  .footer .subscription-sub-title, .footer .subscription-title {
+    color: white; }
+  .footer .social-media .social-media-title {
+    color: white; }
+  .footer span.active {
+    display: none; }
 
 @media screen and (min-width: 1024px) {
-  .footer {
-    height: 300px; }
-    .footer .companyinfo {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex; } }
+  .logocontainer {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .contact {
+    margin-top: 10%;
+    margin-bottom: 10%; }
+  .companyinfo > div {
+    text-align: center;
+    margin-top: 20%; } }
 
 @media screen and (min-width: 600px) {
-  .footer {
-    display: grid; } }
+  .companyinfo {
+    justify-items: none;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr); }
+  .companyinfo > div {
+    text-align: center;
+    margin-top: 15%;
+    font-size: 1.3em; } }
 
 .ourstory {
   background-color: #062B35;
-  width: 100%;
-  display: block; }
+  height: 1450px; }
+  .ourstory .header {
+    font-size: 3em; }
+  .ourstory .copy {
+    display: grid;
+    padding-right: 50px;
+    color: white;
+    margin: 5%; }
+    .ourstory .copy h4 {
+      font-size: 2em; }
+    .ourstory .copy p {
+      font-size: 1.3em;
+      line-height: 32.2px; }
   .ourstory .skewedphotos {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: 100%;
+    margin: auto;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding-right: 10%;
-    margin-top: 10%;
-    height: 400px; }
+    margin-bottom: 9%; }
     .ourstory .skewedphotos .photo1 {
-      border: 2px solid #73AD21;
       width: 200px;
-      height: 200px;
-      background-image: url("../../images/artisan3.jpg");
-      background-size: contain;
-      height: 148px;
-      width: 144px;
+      margin: 0;
+      padding: 2px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+      background-color: #fff;
       -webkit-transform: rotate(-10deg);
-              transform: rotate(-10deg); }
+              transform: rotate(-10deg);
+      border: 2px solid #062B35; }
+      .ourstory .skewedphotos .photo1 .photo1 img {
+        -webkit-transform: rotate(10deg);
+                transform: rotate(10deg);
+        width: 100%; }
+      .ourstory .skewedphotos .photo1 .photo1 p {
+        text-align: center;
+        padding: 8px 4px; }
+      .ourstory .skewedphotos .photo1 .photo1img {
+        -webkit-transform: rotate(7deg);
+                transform: rotate(7deg); }
     .ourstory .skewedphotos .photo2 {
-      border: 2px solid #73AD21;
       width: 200px;
-      height: 200px;
-      background-image: url("../../images/artisan1.jpg");
-      background-size: contain;
-      height: 148px;
-      width: 144px;
+      margin: 0;
+      padding: 8px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #fff;
       -webkit-transform: translate(0, 50px) rotate(10deg);
-              transform: translate(0, 50px) rotate(10deg); }
-  .ourstory .copy {
-    display: grid;
-    padding-right: 50px;
-    color: white; }
-    .ourstory .copy h4 {
-      font-size: 2em; }
-    .ourstory .copy p {
-      font-size: 1.3em; }
-
-.latest {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-
-.jewels1 {
-  background-color: red;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 238px;
-  margin: 5%;
-  width: 214px; }
-
-.jewels3 {
-  background-color: orange;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 238px;
-  margin: 5%;
-  width: 214px; }
-
-.jewels2 {
-  background-color: yellow;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 238px;
-  margin: 5%;
-  width: 214px; }
-
-.jewels4 {
-  background-color: blue;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 238px;
-  margin: 5%;
-  width: 214px; }
+              transform: translate(0, 50px) rotate(10deg);
+      border: 2px solid #062B35; }
+      .ourstory .skewedphotos .photo2 .photo2 img {
+        width: 100%; }
+      .ourstory .skewedphotos .photo2 .photo2 p {
+        text-align: center;
+        margin-left: 33%;
+        padding: 8px 4px; }
+      .ourstory .skewedphotos .photo2 .photo2img {
+        -webkit-transform: rotate(-9deg);
+                transform: rotate(-9deg); }
+  .ourstory .wordfont {
+    font-family: courier;
+    color: #062B35; }
 
 /* =============================
 Media 
 ============================= */
 @media screen and (min-width: 1024px) {
   .ourstory {
+    height: 1150px; } }
+
+@media screen and (min-width: 600px) {
+  .ourstory {
+    height: 1350px; }
+  .ourstory .skewedphotos .photo2 {
+    width: 290px; }
+  .ourstory .skewedphotos .photo1 {
+    width: 290px; }
+  .ourstory .copy {
+    display: grid;
+    padding-right: 50px;
+    color: white;
+    margin: 5%; }
+    .ourstory .copy h4 {
+      font-size: 3em;
+      line-height: 0.2px; }
+    .ourstory .copy p {
+      font-size: 1.7em;
+      line-height: 32.2px; }
+  .ourstory .wordfont {
+    font-family: courier;
+    color: #062B35;
+    font-size: 1.4em; } }
+
+.heroimage {
+  position: relative;
+  text-align: center; }
+  .heroimage .herocopy {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+    font-family: Playfair Display; }
+
+.information {
+  display: grid;
+  margin-top: 5%;
+  margin-bottom: 5%; }
+  .information .aboutcopy, .information .artisanscopy {
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin: 5%;
+    text-align: center;
+    font-family: Playfair Display; }
+    .information .aboutcopy .header, .information .artisanscopy .header {
+      font-size: 2em; }
+  .information .jewels, .information .flowers {
+    position: relative;
+    text-align: center; }
+
+.photolinks {
+  position: relative;
+  text-align: center; }
+  .photolinks .flowercopy, .photolinks .jewelcopy {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: green;
+    z-index: 99;
+    font-size: 2em;
+    font-family: Playfair Display; }
+
+.quote-title {
+  font-size: 2em;
+  margin: 7%;
+  text-align: center; }
+
+.quote-body {
+  margin-top: 3%;
+  margin-left: 7%;
+  font-size: 1.6em;
+  text-align: center;
+  margin-right: 7%; }
+
+.quote-author {
+  font-size: 1em;
+  text-align: center; }
+
+.flickity-button {
+  height: 20px;
+  width: 20px; }
+
+@media screen and (min-width: 1024px) {
+  .heroimage .herocopy {
+    font-size: 4em; }
+    .heroimage .herocopy .header {
+      font-size: 1em; }
+  .information .aboutcopy, .information .artisanscopy {
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin: 0%;
+    text-align: center;
+    width: 50%; }
+  .about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+    .about .aboutcopy h3 {
+      font-size: 3em;
+      text-align: left;
+      padding-left: 4%; }
+    .about .aboutcopy p {
+      padding-left: 4%;
+      padding-right: 4%;
+      font-size: 1.5em;
+      text-align: left; }
+    .about .aboutimage {
+      width: 50%; }
+      .about .aboutimage .k2 {
+        width: 100%;
+        padding-right: 4%; }
+  .artisans {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -957,24 +1020,56 @@ Media
     -webkit-box-direction: reverse;
         -ms-flex-flow: row-reverse;
             flex-flow: row-reverse;
+    display: flex;
     width: 100%; }
-  .copy {
+    .artisans .artisanscopy {
+      margin-top: 5%; }
+      .artisans .artisanscopy h3 {
+        font-size: 3em;
+        text-align: left;
+        padding-left: 4%; }
+      .artisans .artisanscopy p {
+        padding-left: 4%;
+        padding-right: 4%;
+        font-size: 1.5em;
+        text-align: left; }
+        .artisans .artisanscopy p a {
+          text-decoration: underline; }
+        .artisans .artisanscopy p a:hover {
+          color: green; }
+    .artisans .artisansimage {
+      width: 50%; }
+      .artisans .artisansimage .art {
+        padding-left: 4%;
+        size: 20%; }
+  .links {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 40%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding-right: 30%; } }
+    margin-top: 2%;
+    margin-bottom: 2%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+  .photolinks {
+    width: 670px;
+    height: 440px; } }
 
 @media screen and (min-width: 600px) {
-  .ourstory .skewedphotos .photo1 {
-    height: 248px;
-    width: 244px; }
-  .ourstory .skewedphotos .photo2 {
-    height: 248px;
-    width: 244px; } }
+  .aboutcopy h3, .artisanscopy h3 {
+    font-size: 2em; }
+  .aboutcopy p, .artisanscopy p {
+    font-size: 1.4em; }
+  .links {
+    width: 100%; }
+  .photolinks {
+    width: 670px;
+    height: 440px; }
+  .aboutimage, .artisansimage {
+    width: 100%; }
+    .aboutimage .k2, .aboutimage .art, .artisansimage .k2, .artisansimage .art {
+      width: 100%; }
+    .aboutimage .links, .aboutimage .photolinks, .artisansimage .links, .artisansimage .photolinks {
+      widows: 100%; } }
 
 /*
 =========================

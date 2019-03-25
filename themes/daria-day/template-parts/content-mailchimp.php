@@ -1,8 +1,17 @@
 <div class="subscription">
+	
+<?php	
+
+			if ( is_front_page() ) :
+		
+			else :
+				wp_delete_post( $string, $force_delete );
+			endif;?>
+			
 <?php
 	$args2 = array(
 			'type' => 'post',
-			'p'    => 45,
+			'p'    => 67,
 	);
 	$the_query = new WP_Query($args2);
 
