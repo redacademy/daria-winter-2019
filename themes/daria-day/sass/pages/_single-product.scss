@@ -1,0 +1,26 @@
+
+.wps-product-link{
+    text-decoration: none;
+
+}
+@media (max-width:700px){
+    .wps-products-img{
+        height: 8.5em;
+        width: 8.5em;
+    }
+
+    .wps-product-gallery-imgs img{
+        transform: scale(1.5);
+    }
+    .wps-product-thumbs{
+        display: none;
+    }
+}
+
+@media (min-width:700px) and (max-width:1200px) {
+    .wps-products-img{
+        height: 16em;
+        width: 16em;
+    }
+}
+//600, 900, 1024

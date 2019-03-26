@@ -67,14 +67,21 @@ sass/
 // Components
 @import 'components/flickity';
 
+// @import 'components/slider';
+// @import 'components/filter';
 // Layout
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/about';
+@import 'layout/front-latest';
 
 //Pages
-
 @import 'pages/about-us';
+@import 'pages/find-gemstone';
+@import 'pages/shop-all';
+@import 'pages/single-product';
+@import 'pages/search';
+
 /*
 =========================
 General
@@ -91,4 +98,15 @@ a {
 
 body {
   background-color: white;
+}
+
+.content-wrapper {
+  max-width: 1171px;
+  margin: 0 auto;
+}
+
+h1.page-title {
+  font-family: 'Playfair Display';
+  padding: 20px 40px;
+  color: #062b35;
 }

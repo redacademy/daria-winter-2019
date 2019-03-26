@@ -6,7 +6,7 @@
  */
 
 (function ($) {
-  const desktopWidth = 1024;
+	const desktopWidth = 1024;
 
   // if navigation doesn't exist, exit here
 	const $navigation = $('.main-navigation');
@@ -15,25 +15,101 @@
 		return;
 	} 
 	
+	// Make link to shop page
+	const currentUrl = window.location.href;
+
+	let urlArray = currentUrl.split('/');
+	let shopUrl = currentUrl;
+
+	for (let i = 1; i < urlArray.length; i++) {
+		if (urlArray.slice(0, -i).includes('daria-day')) {
+			shopUrl = urlArray.slice(0, -i);
+		}
+	}
+	shopUrl = shopUrl.join('/');
+	shopUrl += '/shop';
+
   // checks mobile or desktop
   let isMobile = false;
   const $menu = $('.main-navigation ul');
 
   const checkMobile = () => {
-    if (window.screen.width < desktopWidth) {
-      isMobile = true;
-    } else {
+    if (window.matchMedia(`(min-width: ${desktopWidth}px)`).matches) {
       isMobile = false;
+    } else {
+      isMobile = true;
     }
   };
 
-  checkMobile();
+	checkMobile();
 
-	// Finds My Account link and saves it
+	// Finds My Account and Shop link and saves it
 	$menuItems = $('.menu-item a')
 	$menuItems.each((index, value) => {
 		if (value.innerHTML.toLowerCase() === 'my account') {
 			$myAccountLink = value.closest('li');
+		}
+		if (value.innerHTML.toLowerCase() === 'shop') {
+			$shopLink = $menuItems.eq(index).closest('li');
+		}
+	});
+
+	// Add secondary Shop Menu
+	const addSecondaryMenu = (isMobile) => {
+		const secondaryMenu = `<div class="secondary-menu">
+			<div class="secondary-nav-content-wrapper content-wrapper">
+				<section class="secondary-category by-jewelry">
+					<h4>By Jewelry</h4>
+					<ul>
+						<li><a id="bracelets" href="${shopUrl}">Bracelets</a></li>
+						<li><a href="${shopUrl}">Earrings</a></li>
+						<li><a href="${shopUrl}">Necklaces</a></li>
+					</ul>
+				</section>
+				<section class="secondary-category by-collection">
+					<h4>By Collection</h4>
+					<ul>
+						<li><a href="${shopUrl}">Magical Collection</a></li>
+						<li><a href="${shopUrl}">Winter Wonder</a></li>
+					</ul>
+				</section>
+				<section class="secondary-category by-energy">
+					<h4>By Energy</h4>
+					<ul>
+						<li><a href="${shopUrl}">Abundance</a></li>
+						<li><a href="${shopUrl}">Calmness</a></li>
+						<li><a href="${shopUrl}">More energies</a></li>
+					</ul>
+				</section>
+				<div class="new-to-crystals">
+					<img src="${directory_uri.stylesheet_directory_uri}/images/icons/New-To-Crystals-Icon.svg">
+					<div>
+						<p>New to crystals and Gemstones?</p>
+						<p>Let us help you.</p>
+					</div>
+				</div>
+			</div>
+		</div>`;
+
+		const $siteHeader = $('.site-header');
+		$('.secondary-menu').remove();
+
+		if (isMobile) {
+			$shopLink.append(secondaryMenu);
+			$('.secondary-menu').removeClass('hide-menu');
+		} else {
+			$siteHeader.after(secondaryMenu);
+			$('.secondary-menu').addClass('hide-menu');
+		}
+	}
+
+	addSecondaryMenu(isMobile);
+	
+	// Toggle Secondary Menu
+	$shopLink.on('click', event => {
+		if (window.matchMedia(`(min-width: ${desktopWidth}px)`).matches) {
+			event.preventDefault();
+			$('.secondary-menu').toggleClass('hide-menu');
 		}
 	});
 
@@ -60,10 +136,11 @@
 
 	// Re-evaluates mobile or desktop on screen change
 	$(window).on('resize', () => {
-		currentFormFactor = isMobile;
+		const currentFormFactor = isMobile;
 		checkMobile();
 		if (currentFormFactor !== isMobile) {
 			formFactorChange(isMobile);
+			addSecondaryMenu(isMobile);
 		}
 	});
 	 
@@ -85,106 +162,22 @@
 		});
 	}
 
+	$('.by-jewelry a').on('click', event => {
+		prefilteredItem = event.currentTarget.innerHTML.toLowerCase();
+		sessionStorage.setItem('prefilterCategory', 'productType');
+		sessionStorage.setItem('prefilterItem', prefilteredItem);
+	});
+
+	$('.by-energy a').on('click', event => {
+		prefilteredItem = event.currentTarget.innerHTML.toLowerCase();
+		sessionStorage.setItem('prefilterCategory', 'energyTag');
+		sessionStorage.setItem('prefilterItem', prefilteredItem);
+	});
+
+	$('.by-collection').on('click', event => {
+		prefilteredItem = event.currentTarget.innerHTML.toLowerCase();
+		sessionStorage.setItem('prefilterCategory', 'collectionTag');
+		sessionStorage.setItem('prefilterItem', prefilteredItem);
+	});
+
 })(jQuery);
-
-// ( function() {
-// 	var container, button, menu, links, i, len;
-
-// 	container = document.getElementById( 'main-navigation' );
-// 	if ( ! container ) {
-// 		return;
-// 	}
-
-// 	button = container.getElementsByTagName( 'button' )[0];
-// 	if ( 'undefined' === typeof button ) {
-// 		return;
-// 	}
-
-// 	menu = container.getElementsByTagName( 'ul' )[0];
-
-// 	// Hide menu toggle button if menu is empty and return early.
-// 	if ( 'undefined' === typeof menu ) {
-// 		button.style.display = 'none';
-// 		return;
-// 	}
-
-// 	menu.setAttribute( 'aria-expanded', 'false' );
-// 	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-// 		menu.className += ' nav-menu';
-// 	}
-
-// 	button.onclick = function() {
-// 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-// 			container.className = container.className.replace( ' toggled', '' );
-// 			button.setAttribute( 'aria-expanded', 'false' );
-// 			menu.setAttribute( 'aria-expanded', 'false' );
-// 		} else {
-// 			container.className += ' toggled';
-// 			button.setAttribute( 'aria-expanded', 'true' );
-// 			menu.setAttribute( 'aria-expanded', 'true' );
-// 		}
-// 	};
-
-// 	// Get all the link elements within the menu.
-// 	links    = menu.getElementsByTagName( 'a' );
-
-// 	// Each time a menu link is focused or blurred, toggle focus.
-// 	for ( i = 0, len = links.length; i < len; i++ ) {
-// 		links[i].addEventListener( 'focus', toggleFocus, true );
-// 		links[i].addEventListener( 'blur', toggleFocus, true );
-// 	}
-
-// 	/**
-// 	 * Sets or removes .focus class on an element.
-// 	 */
-// 	function toggleFocus() {
-// 		var self = this;
-
-// 		// Move up through the ancestors of the current link until we hit .nav-menu.
-// 		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
-
-// 			// On li elements toggle the class .focus.
-// 			if ( 'li' === self.tagName.toLowerCase() ) {
-// 				if ( -1 !== self.className.indexOf( 'focus' ) ) {
-// 					self.className = self.className.replace( ' focus', '' );
-// 				} else {
-// 					self.className += ' focus';
-// 				}
-// 			}
-
-// 			self = self.parentElement;
-// 		}
-// 	}
-
-// 	/**
-// 	 * Toggles `focus` class to allow submenu access on tablets.
-// 	 */
-// 	( function( container ) {
-// 		var touchStartFn, i,
-// 			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
-
-// 		if ( 'ontouchstart' in window ) {
-// 			touchStartFn = function( e ) {
-// 				var menuItem = this.parentNode, i;
-
-// 				if ( ! menuItem.classList.contains( 'focus' ) ) {
-// 					e.preventDefault();
-// 					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
-// 						if ( menuItem === menuItem.parentNode.children[i] ) {
-// 							continue;
-// 						}
-// 						menuItem.parentNode.children[i].classList.remove( 'focus' );
-// 					}
-// 					menuItem.classList.add( 'focus' );
-// 				} else {
-// 					menuItem.classList.remove( 'focus' );
-// 				}
-// 			};
-
-// 			for ( i = 0; i < parentLink.length; ++i ) {
-// 				parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
-// 			}
-// 		}
-// 	}( container ) );
-// } )();
-

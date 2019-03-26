@@ -1,62 +1,64 @@
 .footer {
   background-color: #062B35;
  
-  .companyinfo{
+  .companyinfo {
     display: grid;
     grid-auto-rows: minmax(125px, auto);
     justify-items: center;
-    
   }
-  .companyinfo.logocontainer{
+
+  .companyinfo.logocontainer {
     display: grid;
     grid-auto-rows: minmax(125px, auto);
     justify-items: center;
-    text-align: center;
-    
+    text-align: center;  
   }
-  .logocontainer, .textwidget{
+
+  .logocontainer, .textwidget {
     text-align: center;
   }
-   .companyinfo > .sitecontent{
+
+  .companyinfo > .sitecontent {
     text-align: center;
-   
-   }
-   .companyinfo > div{
-   
+  }
+
+  .companyinfo > div {
     font-size: 1.3em;
   }
-   .contact{
-    box-sizing:content-box;
-   }
 
-  h3{
-        color:white;
-        font-family: Avenir;
-        font-size: 1.2em;
-          }
-        a{
-        text-decoration: none ;
-        color: white;
-        font-family: Avenir;
-        font-weight: 100;
-        font-size: .8em;
-        
-          }
-          .subscription .subscription-sub-title {
-            
-            font-size: 1em;
-           
-        }
-  .subscription-sub-title, .subscription-title{
-      color: white;
-      
-    }
-    .social-media .social-media-title{
-      color: white;
-    }
-    span.active {
-      display : none;
-      }
+  .contact {
+    box-sizing:content-box;
+  }
+  
+  h3 {
+    color:white;
+    font-family: Avenir;
+    font-size: 1.2em;
+  }
+
+  a {
+    text-decoration: none ;
+    color: white;
+    font-family: Avenir;
+    font-weight: 100;
+    font-size: .8em;      
+  }
+
+  .subscription .subscription-sub-title {  
+    font-size: 1em;
+  }
+
+  .subscription-sub-title, .subscription-title {
+    color: white;  
+  }
+
+  .social-media .social-media-title {
+    color: white;
+  }
+
+  span.active {
+    display: none;
+  }
 }
 .footer img.darialogo {
   max-height: 300px;
@@ -64,45 +66,46 @@
   margin-bottom: -20%;
   margin-top: -20%;
 }
-.social-media .social-media-icons img {
 
+
+.footer img.darialogo {
+  max-height: 300px;
+  max-width: 300px;
+  margin-bottom: -20%;
+  margin-top: -20%;
+}
+
+.social-media .social-media-icons img {
   padding: 1px 2px;
 }
 
-
 @media screen and (min-width: 1024px) {
-  .logocontainer{
-  width: 100%;
-  justify-content: center;
-  display: flex;
-    }
-    .contact{
-      margin-top: 10%;
-      margin-bottom: 10%;
+  .logocontainer {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .contact {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
 
-    }
-    .companyinfo > div{
-      text-align: center;
-      margin-top: 35%;
-    }
-  
-  
+  .companyinfo > div {
+    text-align: center;
+    margin-top: 35%;
+  } 
 }
 
 @media screen and (min-width: 600px) {
-  .companyinfo{
+  .companyinfo {
     justify-items: none;
     display: grid;
-    grid-template-columns: repeat(4, 2fr)
-    ;
-  
+    grid-template-columns: repeat(4, 2fr);
   }
-  .companyinfo > div{
+
+  .companyinfo > div {
     margin-top: 35%;
     font-size: 1.3em;
   }
 }
-
-
-
-  

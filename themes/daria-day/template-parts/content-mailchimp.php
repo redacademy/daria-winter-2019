@@ -10,8 +10,8 @@
 			
 <?php
 	$args2 = array(
-			'type' => 'post',
-			'p'    => 67,
+		'type' => 'post',
+		'p'    => 67,
 	);
 	$the_query = new WP_Query($args2);
 

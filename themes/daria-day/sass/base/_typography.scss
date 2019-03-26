@@ -34,10 +34,18 @@
 @font-face {
   font-family: 'Playfair Display';
   src: url('../../fonts/PlayfairDisplay-Bold.eot');
-  src: url('../../fonts/PlayfairDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+  src: url('../../fonts/PlayfairDisplay-BPlayfair Displayold.eot?#iefix') format('embedded-opentype'),
       url('../../fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
       url('../../fonts/PlayfairDisplay-Bold.woff') format('woff'),
       url('../../fonts/PlayfairDisplay-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', sans-serif;
+}
+
+p {
+  font-family: 'Avenir LT Book', sans-serif;
 }

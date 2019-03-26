@@ -1,0 +1,63 @@
+/*
+=========================
+Latest Additions Section
+=========================
+*/
+
+.latest-additions-container {
+  h2 {
+    text-align: center;
+  }
+
+  .latest-additions-display {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $base-spacing * 2;
+
+    padding: $base-spacing;
+  }
+
+  .latest-additions-item {
+    position: relative;
+
+    img {
+      border: 0px solid transparent;
+      border-radius: 5px;
+    }
+
+    a {
+      display: block;
+      margin: $base-spacing * 2 0 $base-spacing * 3;
+
+      color: $brand-colour-evergreen;
+    }
+
+    p {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+
+      color: $brand-colour-green;
+    }
+  }
+}
+
+
+@media screen and (min-width: $tablet) {
+  .latest-additions-container {
+    .latest-additions-display {
+      grid-gap: $base-spacing * 4;
+    }
+  }
+}
+
+  @media screen and (min-width: $larger-tablet) {
+  .latest-additions-container {
+    .latest-additions-display {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: $base-spacing * 2;
+    }
+  }
+}
+
+    

@@ -8,7 +8,6 @@
  *
  * @package daria-day
  */
-
 ?>
 
 	</div><!-- #content -->
