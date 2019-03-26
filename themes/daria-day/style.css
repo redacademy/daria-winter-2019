@@ -1057,9 +1057,6 @@ Breakpoints
       .ourstory .skewedphotos div {
         max-height: 330px; } }
 
-/* =============================
-	Media 
-	============================= */
 /*
 =========================
 Latest Additions Section
@@ -1723,55 +1720,59 @@ Products Results Styling
 /* =========================
       Search Result Page
    ========================= */
-.search-result-container {
-  color: #062b35;
-  padding-left: 40px; }
-  .search-result-container a {
-    font-size: 1.2em;
-    color: #062b35; }
-  .search-result-container .search-price {
-    font-size: 0.8em;
-    color: #062b35; }
-  .search-result-container img {
-    height: 150px;
-    width: 150px; }
-  .search-result-container .search-price {
-    width: 300px;
-    color: #062b35; }
-  .search-result-container a:hover {
-    color: #0d5468; }
+.search-results h1.page-title {
+  padding: 50px 0;
+  margin: 0;
+  border-bottom: 2px solid #062b35;
+  text-align: center; }
 
-.hr {
-  color: #cdcdcd; }
+.search-result-container {
+  padding: 20px 10px;
+  color: #062b35; }
+  .search-result-container h2 {
+    margin: 20px 0;
+    font-size: 1.5em; }
+  .search-result-container a {
+    display: block;
+    color: #062b35;
+    text-align: center; }
+    .search-result-container a:hover {
+      color: #0d5468; }
+  .search-result-container .search-img img {
+    width: 80%;
+    margin: 0 auto; }
+  .search-result-container .search-price {
+    font-size: 1.25em; }
 
 @media screen and (min-width: 600px) {
+  .search-results h1.page-title {
+    font-size: 2.5em; }
   .search-result-container a {
-    font-size: 1.5em;
-    margin-left: 180px;
-    width: 300px; }
-  .search-result-container img {
-    margin-top: -90px;
-    height: 150px;
-    width: 150px; }
-  .search-result-container .search-price {
-    margin-left: 180px;
-    width: 300px;
-    color: #062b35; } }
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "img info"; }
+    .search-result-container a .product-info {
+      grid-area: info;
+      padding: 0 30px;
+      text-align: left; }
+      .search-result-container a .product-info h2 {
+        margin-top: 0; }
+    .search-result-container a .search-img {
+      grid-area: img; }
+      .search-result-container a .search-img img {
+        width: 100%; } }
+
+@media screen and (min-width: 850px) {
+  .search-results h1.page-title {
+    font-size: 3em; }
+  .search-result-container a {
+    grid-template-columns: 1fr 3fr; }
+    .search-result-container a .product-info {
+      font-size: 1.25em; } }
 
 @media screen and (min-width: 1024px) {
   .search-result-container a {
-    font-size: 1.6em;
-    margin-left: 200px;
-    width: 300px; }
-  .search-result-container img {
-    margin-top: -90px;
-    height: 180px;
-    width: 180px; }
-  .search-result-container .search-price {
-    font-size: 0.8em;
-    margin-left: 200px;
-    width: 300px;
-    color: #062b35; } }
+    grid-template-columns: 1fr 4fr; } }
 
 /*
 =========================

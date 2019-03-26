@@ -9,11 +9,14 @@
 ?>
 
 <div class="search-result-container">
-	<div class="srch-title">
-	<?php the_title( sprintf( '<p class="search-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></p>' ); ?>
-	</div>
-	<div class="search-excerpt">
+	<a href="<?php echo get_permalink() ?>">
+		<div class="product-info">
+			<h2 class="search-title"><?php the_title() ?></h2>
+		</div>
+	</a>
+	<div class="item-excerpt">
 		<?php the_excerpt(); ?>
 	</div>
+	
 </div><!-- #post--->
 <hr class="hr">
