@@ -391,8 +391,11 @@ template {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', sans-serif; }
 
-p {
+p, button, a {
   font-family: 'Avenir LT Book', sans-serif; }
+
+body {
+  line-height: 1.5em; }
 
 /* =========================
    Hero Banner Section
@@ -1063,6 +1066,7 @@ Latest Additions Section
 =========================
 */
 .latest-additions-container h2 {
+  margin: 40px auto;
   text-align: center; }
 
 .latest-additions-container .latest-additions-display {
@@ -1078,22 +1082,57 @@ Latest Additions Section
     border-radius: 5px; }
   .latest-additions-container .latest-additions-item a {
     display: block;
-    margin: 20px 0 30px;
-    color: #062b35; }
+    margin: 10px 0 30px;
+    color: #062b35;
+    font-family: 'Avenir LT Std', sans-serif; }
   .latest-additions-container .latest-additions-item p {
     position: absolute;
     bottom: 0;
     margin: 0;
     color: #0c5535; }
 
+.latest-additions-container .see-more-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px auto 40px; }
+  .latest-additions-container .see-more-button button {
+    padding: 0 5px;
+    background-color: transparent;
+    border: 0px solid transparent;
+    border-bottom: 2px solid #5b4646;
+    color: #062b35;
+    text-transform: uppercase; }
+
 @media screen and (min-width: 600px) {
   .latest-additions-container .latest-additions-display {
-    grid-gap: 40px; } }
+    grid-gap: 40px; }
+  .latest-additions-container .latest-additions-item {
+    font-size: 1.1em; } }
 
 @media screen and (min-width: 850px) {
   .latest-additions-container .latest-additions-display {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px; } }
+
+.embed-video {
+  margin: 30px auto 40px; }
+
+.embed-video {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative; }
+
+.embed-video iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border: 0; }
 
 .heroimage {
   position: relative;

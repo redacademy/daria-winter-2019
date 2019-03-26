@@ -1,0 +1,20 @@
+.embed-video {
+  margin: $base-spacing * 3 auto $base-spacing * 4;
+}
+
+.embed-video {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+ 
+.embed-video iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 100%;
+  width: 100%;
+
+  border: 0;
+}

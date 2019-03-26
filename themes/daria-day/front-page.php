@@ -20,10 +20,6 @@ get_header();
 				get_template_part('template-parts/content', 'latest');
 				get_template_part('template-parts/content', 'video'); 
 				?> 
-				<div class="socialmedia-mailchimp"><?php
-				get_template_part('template-parts/content', 'mailchimp');
-				get_template_part('template-parts/content', 'socialmedia');?>
-				</div>
 
 			<?php endwhile;
 

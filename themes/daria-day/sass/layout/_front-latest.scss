@@ -4,8 +4,14 @@ Latest Additions Section
 =========================
 */
 
+// .latest-additions-container.content-wrapper {
+//   margin: $base-spacing * 4 auto;
+// }
+
 .latest-additions-container {
   h2 {
+    margin: $base-spacing * 4 auto;
+
     text-align: center;
   }
 
@@ -27,9 +33,10 @@ Latest Additions Section
 
     a {
       display: block;
-      margin: $base-spacing * 2 0 $base-spacing * 3;
+      margin: $base-spacing * 1 0 $base-spacing * 3;
 
       color: $brand-colour-evergreen;
+      font-family: 'Avenir LT Std', sans-serif;
     }
 
     p {
@@ -40,13 +47,33 @@ Latest Additions Section
       color: $brand-colour-green;
     }
   }
-}
 
+  .see-more-button {
+    display: flex;
+    justify-content: center;
+
+    margin: $base-spacing * 3 auto $base-spacing * 4;
+
+    button {
+      padding: 0 $base-spacing / 2;
+
+      background-color: transparent;
+      border: 0px solid transparent;
+      border-bottom: 2px solid $greyish-brown;
+      color: $brand-colour-evergreen;
+      text-transform: uppercase;
+    }
+  }
+}
 
 @media screen and (min-width: $tablet) {
   .latest-additions-container {
     .latest-additions-display {
       grid-gap: $base-spacing * 4;
+    }
+
+    .latest-additions-item {
+      font-size: 1.1em;
     }
   }
 }

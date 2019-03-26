@@ -32,7 +32,9 @@
 					</div>`
 				).join('')}
 				</div>
-		</div>`);
+			<div class="see-more-button">
+				<button>See More</button>
+			</div>`);
         
     });
   }
