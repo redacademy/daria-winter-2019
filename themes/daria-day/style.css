@@ -850,7 +850,7 @@ body {
 
 .ourstory {
   background-color: #062B35;
-  height: 1550px; }
+  height: 1540px; }
   .ourstory .header {
     font-size: 3em; }
   .ourstory .copy {
@@ -864,11 +864,10 @@ body {
       font-size: 1.3em;
       line-height: 32.2px; }
   .ourstory .skewedphotos {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: grid;
     width: 100%;
     margin: auto;
+    text-align: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -923,7 +922,18 @@ Media
 ============================= */
 @media screen and (min-width: 1024px) {
   .ourstory {
-    height: 1150px; } }
+    height: 1150px; }
+  .skewedphotos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 9%; } }
 
 @media screen and (min-width: 600px) {
   .ourstory {
@@ -946,7 +956,11 @@ Media
   .ourstory .wordfont {
     font-family: courier;
     color: #062B35;
-    font-size: 1.4em; } }
+    font-size: 1.4em; }
+  .skewedphotos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; } }
 
 .heroimage {
   position: relative;
@@ -1084,6 +1098,12 @@ Media
   .photolinks {
     height: 440px; } }
 
+@media screen and (min-width: 1024px) {
+  .photolinks {
+    width: 100%;
+    margin-right: 2%;
+    margin-left: 2%; } }
+
 @media screen and (min-width: 600px) {
   .aboutcopy h3, .artisanscopy h3 {
     font-size: 2em; }
@@ -1098,10 +1118,7 @@ Media
     -ms-flex-pack: distribute;
         justify-content: space-around; }
   .photolinks {
-    width: 100%;
-    margin-right: 2%;
-    height: 440px;
-    margin-left: 2%; }
+    height: 0px; }
   .aboutimage, .artisansimage {
     width: 100%; }
     .aboutimage .k2, .aboutimage .art, .artisansimage .k2, .artisansimage .art {

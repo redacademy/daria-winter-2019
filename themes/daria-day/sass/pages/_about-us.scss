@@ -170,7 +170,11 @@
 
 
 @media screen and (min-width: 1024px) {
-    
+    .photolinks{
+        width: 100%;
+        margin-right: 2%;
+        margin-left: 2%;
+    }
     
   }
 
@@ -192,10 +196,8 @@
        
     }
     .photolinks{
-        width: 100%;
-        margin-right: 2%;
-        height: 440px;
-        margin-left: 2%;
+        height: 0px ;
+     
     }
     
     .aboutimage,.artisansimage{
