@@ -569,11 +569,17 @@ body {
 
 .carousel-cell {
   width: 66%;
-  height: 380px;
+  height: 40vh;
   margin-right: 10px;
   background: #8C8;
   border-radius: 5px;
   overflow: hidden; }
+  .carousel-cell .quote-title {
+    font-size: 1.3em;
+    margin: 7%;
+    text-align: center; }
+  .carousel-cell .quote-body {
+    font-size: .9em; }
 
 /* cell number */
 .carousel-cell:before {
@@ -592,6 +598,18 @@ body {
 
 .flickity-button.flickity-prev-next-button.next {
   background-color: #269A65; }
+
+@media screen and (min-width: 1024px) {
+  .carousel-cell .quote-title {
+    font-size: 3em; }
+  .carousel-cell .quote-body {
+    font-size: 2em; } }
+
+@media screen and (min-width: 600px) {
+  .carousel-cell .quote-title {
+    font-size: 2em; }
+  .carousel-cell .quote-body {
+    font-size: 1em; } }
 
 .site-header {
   display: grid;
@@ -772,8 +790,11 @@ body {
     text-align: center; }
   .footer .companyinfo > .sitecontent {
     text-align: center; }
-  .footer img.darialogo {
-    max-height: 100px; }
+  .footer .companyinfo > div {
+    font-size: 1.3em; }
+  .footer .contact {
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box; }
   .footer h3 {
     color: white;
     font-family: Avenir;
@@ -784,12 +805,23 @@ body {
     font-family: Avenir;
     font-weight: 100;
     font-size: .8em; }
+  .footer .subscription .subscription-sub-title {
+    font-size: 1em; }
   .footer .subscription-sub-title, .footer .subscription-title {
     color: white; }
   .footer .social-media .social-media-title {
     color: white; }
   .footer span.active {
     display: none; }
+
+.footer img.darialogo {
+  max-height: 300px;
+  max-width: 300px;
+  margin-bottom: -20%;
+  margin-top: -20%; }
+
+.social-media .social-media-icons img {
+  padding: 1px 2px; }
 
 @media screen and (min-width: 1024px) {
   .logocontainer {
@@ -805,7 +837,7 @@ body {
     margin-bottom: 10%; }
   .companyinfo > div {
     text-align: center;
-    margin-top: 20%; } }
+    margin-top: 35%; } }
 
 @media screen and (min-width: 600px) {
   .companyinfo {
@@ -813,13 +845,12 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 2fr); }
   .companyinfo > div {
-    text-align: center;
-    margin-top: 15%;
+    margin-top: 35%;
     font-size: 1.3em; } }
 
 .ourstory {
   background-color: #062B35;
-  height: 1450px; }
+  height: 1550px; }
   .ourstory .header {
     font-size: 3em; }
   .ourstory .copy {
@@ -1051,7 +1082,6 @@ Media
     -ms-flex-pack: distribute;
         justify-content: space-around; }
   .photolinks {
-    width: 670px;
     height: 440px; } }
 
 @media screen and (min-width: 600px) {
@@ -1060,16 +1090,24 @@ Media
   .aboutcopy p, .artisanscopy p {
     font-size: 1.4em; }
   .links {
-    width: 100%; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
   .photolinks {
-    width: 670px;
-    height: 440px; }
+    width: 100%;
+    margin-right: 2%;
+    height: 440px;
+    margin-left: 2%; }
   .aboutimage, .artisansimage {
     width: 100%; }
     .aboutimage .k2, .aboutimage .art, .artisansimage .k2, .artisansimage .art {
       width: 100%; }
     .aboutimage .links, .aboutimage .photolinks, .artisansimage .links, .artisansimage .photolinks {
-      widows: 100%; } }
+      width: 100%; } }
 
 /*
 =========================

@@ -159,28 +159,43 @@
         justify-content: space-around;
        }
        .photolinks{
-        width: 670px;
+        // width: 670px;
         height: 440px;
     
     
        }
   
 }
+
+
+
+@media screen and (min-width: 1024px) {
+    
+    
+  }
+
+
   @media screen and (min-width: 600px) {
     .aboutcopy,.artisanscopy{
-        h3{font-size:2em;}
-        p{font-size:1.4em;}
+        h3{
+            font-size:2em;
+        }
+        p{
+            font-size:1.4em;
+        }
     }
     .links{
-        // display: grid;
-        width: 100%;
-        // justify-content: center;
-        // display: grid;
+        display: flex;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        justify-content: space-around;
+       
     }
     .photolinks{
-        width: 670px;
+        width: 100%;
+        margin-right: 2%;
         height: 440px;
-      
+        margin-left: 2%;
     }
     
     .aboutimage,.artisansimage{
@@ -189,7 +204,7 @@
         width: 100%;
     }   
     .links ,.photolinks{
-        widows: 100%;
+        width: 100%;
         
     }
 }

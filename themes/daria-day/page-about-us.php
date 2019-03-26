@@ -66,7 +66,7 @@ $taking_care_of_your_jewlery = get_field('taking_care_of_your_jewlery');
 <section class= 'links'>
 	<div class ='photolinks'>
 
-		<img class ='photolinks' id= 'flowers' src="<?php echo get_template_directory_uri();?>/images/ddgreen3.jpg" alt="Our Process">
+		<img class ='photolinks' id= 'flowers' src="<?php echo get_template_directory_uri();?>/images/ddgreen3.png" alt="Our Process">
 
 		<div class='flowercopy'>
 		

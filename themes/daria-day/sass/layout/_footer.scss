@@ -21,10 +21,13 @@
     text-align: center;
    
    }
-
-  img.darialogo{
-    max-height:100px ;
+   .companyinfo > div{
+   
+    font-size: 1.3em;
   }
+   .contact{
+    box-sizing:content-box;
+   }
 
   h3{
         color:white;
@@ -39,6 +42,11 @@
         font-size: .8em;
         
           }
+          .subscription .subscription-sub-title {
+            
+            font-size: 1em;
+           
+        }
   .subscription-sub-title, .subscription-title{
       color: white;
       
@@ -50,7 +58,16 @@
       display : none;
       }
 }
+.footer img.darialogo {
+  max-height: 300px;
+  max-width: 300px;
+  margin-bottom: -20%;
+  margin-top: -20%;
+}
+.social-media .social-media-icons img {
 
+  padding: 1px 2px;
+}
 
 
 @media screen and (min-width: 1024px) {
@@ -66,7 +83,7 @@
     }
     .companyinfo > div{
       text-align: center;
-      margin-top: 20%;
+      margin-top: 35%;
     }
   
   
@@ -81,99 +98,11 @@
   
   }
   .companyinfo > div{
-    text-align: center;
-    margin-top: 15%;
+    margin-top: 35%;
     font-size: 1.3em;
   }
 }
 
 
 
-  // @media screen and (min-width: 1024px) {
-  //   .footer{
-  //     background-color: #095f1c;
-  //   }
-  // }
-  //   .companyinfo{
-  //   display: flex;
-  //   flex-flow: row nowrap;
-  //   margin: 0 auto;
-  //   }
-  //   }
-    
   
-  // @media screen and (min-width: 600px) {
-    
-  //   }
-
-
-//   background-color: #062B35;
-//   margin-top: 5%;
-//   width: 100%;
-//   display: flex;
-//   flex-flow: column nowrap;
-//   margin: 0 auto;
-//   // height:700px;
-//   .companyinfo{
-//     // margin-top:10%;
-//     width: 100%;
-//   }
-//     h3{
-//     color:white;
-//     font-family: Avenir;
-//     font-size: 1.2em;
-//       }
-//     a{
-//     text-decoration: none ;
-//     color: white;
-//     font-family: Avenir;
-//     font-weight: 100;
-//     font-size: .8em;
-//       }
-//     a:hover{
-//     color:red;
-//     text-decoration:none;
-//     cursor:pointer;
-//       }
-//     #darialogo,div#products,div#company,div#customers {
-//     text-align: center;
-//     }
-    
-// }
-// .mailchimp{
-//   // width: 0%;
- 
-//   #darialogo{
-//     width: 20%;
-//     justify-content: center;
-
-//   }
-// }
-
-// .subscription {
-  
-//   text-align: center;
-//    .subscription-title {
-//       font-family: 'PlayfairDisplay';
-//       font-size: 32px;
-//       color: white;
-//     }
-//     .subscription-sub-title{
-//       font-family: 'AvenirNext';
-//       font-size: 21px;
-//       color: white;
-//     }
-//     .notactive {
-//       display: grid;
-//     }
-//     .active {
-//       display : none;
-//     }
-    
-//   }
-
-// #darialogo{
-// display: grid;
-
-// width: 100%;
-// }
