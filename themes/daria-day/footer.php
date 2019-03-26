@@ -8,7 +8,6 @@
  *
  * @package daria-day
  */
-
 ?>
 
 	</div><!-- #content -->
@@ -40,7 +39,7 @@
 		<section class ='contact'>
 			<div class="logocontainer">
 			
-				<img class= "darialogo" src="<?php echo get_template_directory_uri();?>/images/icons/x-symbol.svg" alt="Facebook Logo">
+				<img class= "darialogo" src="<?php echo get_template_directory_uri();?>/images/DariaDay_logo/DariaDay_logo-02_White.svg" alt="Facebook Logo">
 			
 			</div>
 			<div class="socialmedia">	

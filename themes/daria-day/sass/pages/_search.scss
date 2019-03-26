@@ -1,0 +1,73 @@
+/* =========================
+      Search Result Page
+   ========================= */
+
+   .search-result-container{
+    color: $brand-colour-evergreen;
+    padding-left: 40px;
+  
+    a{
+      font-size: 1.2em; 
+      color: $brand-colour-evergreen;
+    }
+    .search-price{
+      font-size: 0.8em;
+      color: $brand-colour-evergreen;
+    }
+    img{
+      height: 150px;
+      width: 150px;
+    }
+    
+    .search-price{
+      width: 300px;
+      color: $brand-colour-evergreen;
+    }
+    a:hover{
+        color: #0d5468;
+    }
+  }
+  .hr{
+    color: #cdcdcd;
+  }
+  @media screen and (min-width: $tablet){
+    .search-result-container{
+      a{
+        font-size: 1.5em; 
+        margin-left: 180px; 
+        width: 300px;
+      }
+      img{
+          margin-top: -90px; 
+          height: 150px;
+          width: 150px;
+      }
+      .search-price{
+          margin-left: 180px; 
+          width: 300px;
+          color: $brand-colour-evergreen;
+      }
+    }
+  }
+  @media screen and (min-width: $desktop){
+    .search-result-container {
+      a{
+        font-size: 1.6em; 
+        margin-left: 200px; 
+        width: 300px;
+      }
+      img{
+          margin-top: -90px; 
+          height: 180px;
+          width: 180px;
+      }
+      .search-price{
+          font-size: 0.8em;
+          margin-left: 200px; 
+          width: 300px;
+          color: $brand-colour-evergreen;
+      }
+    }
+  }
+    
+  

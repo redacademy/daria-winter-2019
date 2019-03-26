@@ -67,6 +67,8 @@ sass/
 // Components
 @import 'components/flickity';
 
+// @import 'components/slider';
+// @import 'components/filter';
 // Layout
 @import 'layout/header';
 @import 'layout/footer';
@@ -77,12 +79,15 @@ sass/
 @import 'pages/about-us';
 @import 'pages/find-gemstone';
 @import 'pages/shop-all';
+@import 'pages/single-product';
+@import 'pages/search';
 
 /*
 =========================
 General
 =========================
 */
+
 ul, li {
   list-style: none;
 }

@@ -11,7 +11,6 @@
  *
  * @package daria-day
  */
-
 get_header();
 ?>
 <?php
@@ -56,17 +55,15 @@ $sub_header = get_field('sub_header');
 	
 	</section>
 <?php
-
 $our_process = get_field('our_process');
 $taking_care_of_your_jewlery = get_field('taking_care_of_your_jewlery');
-
 ?>
 
 
 <section class= 'links'>
 	<div class ='photolinks'>
 
-		<img class ='photolinks' id= 'flowers' src="<?php echo get_template_directory_uri();?>/images/ddgreen3.jpg" alt="Our Process">
+		<img class ='photolinks' id= 'flowers' src="<?php echo get_template_directory_uri();?>/images/ddgreen3.png" alt="Our Process">
 
 		<div class='flowercopy'>
 		
@@ -101,5 +98,4 @@ $taking_care_of_your_jewlery = get_field('taking_care_of_your_jewlery');
 	</div><!-- #primary -->
 
 <?php
-
 get_footer();

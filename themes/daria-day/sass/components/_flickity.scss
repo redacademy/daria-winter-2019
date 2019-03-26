@@ -19,6 +19,16 @@
   border-radius: 5px;
   // counter-increment: carousel-cell;
   overflow: hidden;
+
+  .quote-title {
+    font-size: 1.3em;
+    margin: 7%;
+    text-align: center;
+  }
+
+  .quote-body {
+    font-size:.9em;
+  }
 }
 
 /* cell number */
@@ -31,17 +41,40 @@
   color: white;
 }
 
-.flickity-button{
-    // display: none;
-    width: 5% !important;
-    height: 5%!important;
+.flickity-button {
+  // display: none;
+  width: 5% !important;
+  height: 5%!important;
 }
 
-.flickity-button.flickity-prev-next-button.previous{
-     background-color: #269A65;
+.flickity-button.flickity-prev-next-button.previous {
+  background-color: #269A65;    
+}
+
+.flickity-button.flickity-prev-next-button.next {
+  background-color: #269A65;
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel-cell {
+    .quote-title {
+      font-size:3em;
+    }
     
+    .quote-body {
+      font-size:2em;
+    }
+  }
 }
 
-.flickity-button.flickity-prev-next-button.next{
-    background-color: #269A65;
+@media screen and (min-width: 600px) {
+  .carousel-cell {
+    .quote-title {
+      font-size:2em;
+    }
+    
+    .quote-body {
+      font-size:1em;
+    }
   }
+}
