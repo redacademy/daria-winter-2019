@@ -16,6 +16,7 @@
 <footer id="footer" class="footer">
 	<div class="companyinfo">
 
+<<<<<<< HEAD
 		<div class= 'mailchimp'>
 			<?php	
 			if ( is_front_page() ) :
@@ -69,6 +70,55 @@
 
 	<!-- <img class="hi" src="<?php echo get_template_directory_uri() ?>/images/DariaDay_logo/DariaDay_logo-02-white.svg"> -->
 
+=======
+		
+			<div class="products">
+				<?php
+				if(is_active_sidebar('products')){
+				dynamic_sidebar('products');
+				}?>
+				
+			</div>
+			<div class="company">
+				<?php
+				if(is_active_sidebar('company')){
+				dynamic_sidebar('company');
+				}?>
+			</div>
+
+			<div class="customers">
+				<?php
+				if(is_active_sidebar('customers')){
+				dynamic_sidebar('customers');
+				}?>
+			</div>
+		<section class ='contact'>
+			<div class="logocontainer">
+			
+				<img class= "darialogo" src="<?php echo get_template_directory_uri();?>/images/icons/x-symbol.svg" alt="Facebook Logo">
+			
+			</div>
+			<div class="socialmedia">	
+				<?php	
+				
+				get_template_part('template-parts/content', 'socialmedia');
+				
+				?>
+			</div>
+			<div class= 'mailchimp'>
+				<?php	
+				
+				get_template_part('template-parts/content', 'mailchimp');
+				
+				?> 
+			</div>
+		</section>		
+
+			
+		
+	</div>
+
+>>>>>>> 1a4200b0e05df143589ac160391e37a94e825c84
 </footer><!-- #colophon -->
 </div><!-- #page -->
 

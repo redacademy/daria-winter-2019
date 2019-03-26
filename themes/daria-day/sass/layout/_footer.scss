@@ -1,74 +1,104 @@
 .footer {
   background-color: #062B35;
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  height: 700px;
-  .companyinfo{
-    margin-top:3%;
+ 
+  .companyinfo {
+    display: grid;
+    grid-auto-rows: minmax(125px, auto);
+    justify-items: center;
   }
-    h3{
-      color:white;
-      font-family: 'Avenir LT Std';
-      font-size: 30px;
-      }
-    a{
+
+  .companyinfo.logocontainer {
+    display: grid;
+    grid-auto-rows: minmax(125px, auto);
+    justify-items: center;
+    text-align: center;  
+  }
+
+  .logocontainer, .textwidget {
+    text-align: center;
+  }
+
+  .companyinfo > .sitecontent {
+    text-align: center;
+  }
+
+  .companyinfo > div {
+    font-size: 1.3em;
+  }
+
+  .contact {
+    box-sizing:content-box;
+  }
+  
+  h3 {
+    color:white;
+    font-family: Avenir;
+    font-size: 1.2em;
+  }
+
+  a {
     text-decoration: none ;
     color: white;
-    font-family: 'Avenir LT Std';
+    font-family: Avenir;
     font-weight: 100;
-    font-size: 20px;
-      }
-    a:hover{
-    color: $nav-grey;
-    text-decoration:none;
-    cursor:pointer;
-      }
-    #darialogo,div#products,div#company,div#customers {
+    font-size: .8em;      
+  }
+
+  .subscription .subscription-sub-title {  
+    font-size: 1em;
+  }
+
+  .subscription-sub-title, .subscription-title {
+    color: white;  
+  }
+
+  .social-media .social-media-title {
+    color: white;
+  }
+
+  span.active {
+    display: none;
+  }
+}
+
+.footer img.darialogo {
+  max-height: 300px;
+  max-width: 300px;
+  margin-bottom: -20%;
+  margin-top: -20%;
+}
+
+.social-media .social-media-icons img {
+  padding: 1px 2px;
+}
+
+@media screen and (min-width: 1024px) {
+  .logocontainer {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .contact {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  .companyinfo > div {
     text-align: center;
-    }
+    margin-top: 35%;
+  } 
 }
 
-#darialogo{
-  background: url('../../images/white-logo.svg') ;
-  background-repeat: no-repeat;
-  background-size: 125px 175px;
-}
+@media screen and (min-width: 600px) {
+  .companyinfo {
+    justify-items: none;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+  }
 
-@media screen and (min-width: $desktop) {
-  .footer {
-    height:300px;
-
-    .companyinfo {
-      display: flex;
-    }
-    h3{
-        padding-right: 40px;
-        justify-content: space-between;
-    }
+  .companyinfo > div {
+    margin-top: 35%;
+    font-size: 1.3em;
   }
 }
-
-@media screen and (min-width: $tablet) {
-  .footer {
-    .companyinfo {
-      display: flex;
-      flex-flow: row;
-      justify-content: space-between;
-      text-align: left;
-    }
-    h3{
-      display: flex;
-      padding-right: 20px; 
-      justify-items: space-evenly; 
-
-    }
-    a{
-      display: flex; 
-      justify-content: left; 
-      text-align: left;
-    }
-  }
-}
-
-

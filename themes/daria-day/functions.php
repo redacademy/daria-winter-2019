@@ -215,6 +215,7 @@ function daria_day_scripts() {
 	));
 }
 add_action( 'wp_enqueue_scripts', 'daria_day_scripts' );
+
 /**
  * Enable uploading SVG files to gallery
  */
