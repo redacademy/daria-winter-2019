@@ -590,6 +590,7 @@ body {
     width: 61px;
     height: 61px; } }
 
+<<<<<<< HEAD
 /*
 =========================
 Front Carousel Styling
@@ -617,6 +618,28 @@ Front Carousel Styling
     padding: 0 10px;
     font-weight: normal;
     line-height: 1.5em;
+=======
+.carousel {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 5%;
+  background: #EEE;
+  overflow: hidden; }
+
+.flickity-viewport {
+  height: 350px; }
+
+.carousel-cell {
+  width: 66%;
+  height: 40vh;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  overflow: hidden; }
+  .carousel-cell .quote-title {
+    font-size: 1.3em;
+    margin: 7%;
+>>>>>>> 045bef2748565a062bc77ca8fdcedce2e02a3633
     text-align: center; }
   .front-carousel .flickity-page-dots {
     bottom: -50px; }
@@ -645,6 +668,7 @@ Front Carousel Styling
   .front-carousel h2 {
     font-size: 2em; } }
 
+<<<<<<< HEAD
 /*
 =========================
 Front Carousel Dropdown Styling
@@ -695,6 +719,22 @@ Front Carousel Dropdown Styling
   .front-carousel .shop-by {
     margin: 0;
     margin-top: 5px; } }
+=======
+.flickity-button.flickity-prev-next-button.next {
+  background-color: #269A65; }
+
+@media screen and (min-width: 1024px) {
+  .carousel-cell .quote-title {
+    font-size: 3em; }
+  .carousel-cell .quote-body {
+    font-size: 2em; } }
+
+@media screen and (min-width: 600px) {
+  .carousel-cell .quote-title {
+    font-size: 2em; }
+  .carousel-cell .quote-body {
+    font-size: 1em; } }
+>>>>>>> 045bef2748565a062bc77ca8fdcedce2e02a3633
 
 /*
 =========================
@@ -1001,6 +1041,12 @@ Breakpoints
   margin-bottom: -20%;
   margin-top: -20%; }
 
+.footer img.darialogo {
+  max-height: 300px;
+  max-width: 300px;
+  margin-bottom: -20%;
+  margin-top: -20%; }
+
 .social-media .social-media-icons img {
   padding: 1px 2px; }
 
@@ -1197,29 +1243,20 @@ Latest Additions Section
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: Playfair Display; }
 
-.information {
+.aboutcopy, .artisanscopy {
+  padding: 5%; }
+
+.about, .artisans {
   display: grid;
-  margin-top: 5%;
-  margin-bottom: 5%; }
-  .information .aboutcopy, .information .artisanscopy {
-    -ms-flex-line-pack: center;
-        align-content: center;
-    margin: 5%;
-    text-align: center;
-    font-family: Playfair Display; }
-    .information .aboutcopy .header, .information .artisanscopy .header {
-      font-size: 2em; }
-  .information .jewels, .information .flowers {
-    position: relative;
-    text-align: center; }
+  width: 100%; }
 
-.photolinks {
+.bgimg {
   position: relative;
   text-align: center; }
-  .photolinks .flowercopy, .photolinks .jewelcopy {
+  .bgimg .flowercopy, .bgimg .jewelcopy {
     position: absolute;
     width: 100%;
     top: 50%;
@@ -1227,9 +1264,90 @@ Latest Additions Section
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     color: green;
-    z-index: 99;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: Playfair Display; }
+
+.k2 {
+  width: 100%; }
+
+.quote-title {
+  font-size: 2em;
+  margin: 7%;
+  text-align: center; }
+
+.quote-body {
+  margin-top: 3%;
+  margin-left: 7%;
+  font-size: 1.6em;
+  text-align: center;
+  margin-right: 7%; }
+
+.quote-author {
+  font-size: 1em;
+  text-align: center; }
+
+.bgimg > img {
+  min-width: 100%; }
+
+.flickity-button {
+  height: 20px;
+  width: 20px; }
+
+@media screen and (min-width: 600px) {
+  .aboutcopy h3 {
+    font-size: 3em; }
+  .aboutcopy p {
+    font-size: 1.4em; }
+  .heroimage .herocopy p {
+    font-size: 2em; }
+  .artisans .artisanscopy h3 {
+    font-size: 3em;
+    text-align: left;
+    padding-left: 4%; }
+  .artisans .artisanscopy p {
+    padding-left: 4%;
+    padding-right: 4%;
+    font-size: 1.5em;
+    text-align: left; }
+    .artisans .artisanscopy p a {
+      text-decoration: underline; }
+      .artisans .artisanscopy p a:hover {
+        color: green;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%; }
+  .artisansimage {
+    width: 100%; }
+    .artisansimage .art {
+      size: 20%; } }
+
+@media screen and (min-width: 1024px) {
+  .heroimage .herocopy {
+    font-size: 4em; }
+    .heroimage .herocopy .header {
+      font-size: 1em; }
+  .about, .artisans {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    grid-column-gap: 5%; }
+  .information-wrapper {
+    padding-top: 5%; }
+  .artisansimage {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1; }
+  .photolinks {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 5%;
+    padding-top: 3%; }
+  .bgimg > img {
+    min-width: 100%; } }
 
 .quote-title {
   font-size: 2em;
@@ -1249,96 +1367,9 @@ Latest Additions Section
 
 .flickity-button {
   height: 20px;
-  width: 20px; }
-
-@media screen and (min-width: 1024px) {
-  .heroimage .herocopy {
-    font-size: 4em; }
-    .heroimage .herocopy .header {
-      font-size: 1em; }
-  .information .aboutcopy, .information .artisanscopy {
-    -ms-flex-line-pack: center;
-        align-content: center;
-    margin: 0%;
-    text-align: center;
-    width: 50%; }
-  .about {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%; }
-    .about .aboutcopy h3 {
-      font-size: 3em;
-      text-align: left;
-      padding-left: 4%; }
-    .about .aboutcopy p {
-      padding-left: 4%;
-      padding-right: 4%;
-      font-size: 1.5em;
-      text-align: left; }
-    .about .aboutimage {
-      width: 50%; }
-      .about .aboutimage .k2 {
-        width: 100%;
-        padding-right: 4%; }
-  .artisans {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-flow: row-reverse;
-            flex-flow: row-reverse;
-    display: flex;
-    width: 100%; }
-    .artisans .artisanscopy {
-      margin-top: 5%; }
-      .artisans .artisanscopy h3 {
-        font-size: 3em;
-        text-align: left;
-        padding-left: 4%; }
-      .artisans .artisanscopy p {
-        padding-left: 4%;
-        padding-right: 4%;
-        font-size: 1.5em;
-        text-align: left; }
-        .artisans .artisanscopy p a {
-          text-decoration: underline; }
-        .artisans .artisanscopy p a:hover {
-          color: green; }
-    .artisans .artisansimage {
-      width: 50%; }
-      .artisans .artisansimage .art {
-        padding-left: 4%;
-        size: 20%; }
-  .links {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
-  .photolinks {
-    width: 670px;
-    height: 440px; } }
-
-@media screen and (min-width: 600px) {
-  .aboutcopy h3, .artisanscopy h3 {
-    font-size: 2em; }
-  .aboutcopy p, .artisanscopy p {
-    font-size: 1.4em; }
-  .links {
-    width: 100%; }
-  .photolinks {
-    width: 670px;
-    height: 440px; }
-  .aboutimage, .artisansimage {
-    width: 100%; }
-    .aboutimage .k2, .aboutimage .art, .artisansimage .k2, .artisansimage .art {
-      width: 100%; }
-    .aboutimage .links, .aboutimage .photolinks, .artisansimage .links, .artisansimage .photolinks {
-      widows: 100%; } }
+  width: 20px;
+  position: relative;
+  left: 45%; }
 
 /*
 =========================

@@ -1,59 +1,150 @@
 .heroimage{
     position: relative;
     text-align: center;
-
-    .herocopy{
+        .herocopy{
         position: absolute;
         width: 100%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
-        // z-index: 99;
-        font-size: 2em;
+        font-size: 1.5em;
         font-family: Playfair Display;
         }  
     }
-
-.information{
-    display: grid;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    .aboutcopy, .artisanscopy {
+        padding: 5%;
+    }
     
-    .aboutcopy,.artisanscopy{
-        align-content: center;
-        margin:5%;
-        text-align: center;
-        font-family: Playfair Display;
-        .header{
-            font-size: 2em;
+    .about, .artisans{
+        display: grid;
+        width: 100%;  
         }
-    }.jewels,.flowers{
-        position: relative;
-    text-align: center;
-
-    }
-}
-
-.photolinks{
-    position: relative;
-    text-align: center;
-
-    .flowercopy, .jewelcopy{
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: green;
-        z-index: 99;
-        font-size: 2em;
-        font-family: Playfair Display;
-        }  
-    }
-   
-   
+        .bgimg{
+            position: relative;
+            text-align: center;
+                .flowercopy, .jewelcopy{
+                position: absolute;
+                width: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: green;
+                font-size: 1.5em;
+                font-family: Playfair Display;
+                }  
+            }
+            .k2{
+                width: 100%;
+            }
+        .quote-title{
+            font-size: 2em;
+            margin: 7%;
+            text-align: center;
+        }    
+        .quote-body{
+            margin-top: 3%;
+            margin-left: 7%;       
+            font-size: 1.6em;        
+            text-align: center;        
+            margin-right: 7%;
+        }
+        .quote-author{
+            font-size: 1em;
+            text-align: center;
+        }
+        .bgimg > img{
+            min-width: 100%;
+        }
+        .flickity-button{
+        height: 20px;
+        width: 20px;
+        }
        
+    @media screen and (min-width: $tablet) {
+    .aboutcopy {
+        h3 {
+            font-size:3em;
+        }
+        p {
+            font-size:1.4em;
+          }
+        }
+    
+    .heroimage .herocopy{
+        p { 
+            font-size: 2em  ;
+        }
+        }
+
+
+
+        .artisans{
+               
+                
+                    .artisanscopy{
+                   
+                    h3{
+                    font-size: 3em;
+                    text-align: left;
+                    padding-left: 4%;
+                    }
+                    p{
+                    padding-left: 4%;
+                    padding-right: 4%;
+                    font-size: 1.5em;
+                    text-align: left;
+                    a{
+                    text-decoration: underline;
+                    &:hover{
+                    color:green;
+                    display: flex;
+                    width: 100%;
+                        }
+                    }
+                    }
+                    }
+                    }
+                    .artisansimage{
+                    width: 100%;
+                    .art{
+                   
+                    size:20%;
+                    }
+                }
+            }
+    
+
+@media screen and (min-width: $desktop) {
+    .heroimage .herocopy{
+        font-size: 4em;
+        .header{
+        font-size: 1em;
+        }
+    }
+    .about, .artisans {
+
+        display: grid;
+        width: 100%;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        grid-column-gap: 5%;
+    }
+    .information-wrapper{
+        padding-top: 5%;
+    }
+    .artisansimage{
+        order:-1;
+    }
+    .photolinks{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-column-gap: 5%;
+        padding-top: 3%;
+    }
+    .bgimg > img{
+        min-width: 100%;
+    }
     .quote-title{
         font-size: 2em;
         margin: 7%;
@@ -69,134 +160,16 @@
     .quote-author{
         font-size: 1em;
         text-align: center;
-     
     }
 
-
-.flickity-button{
-   height: 20px;
-    width: 20px;
-}
-
-
-@media screen and (min-width: 1024px) {
-    .heroimage .herocopy{
-        font-size: 4em;
-    .header{
-        font-size: 1em;
+    .information-wrapper {
+        .flickity-button{
+            height: 20px;
+            width: 20px;
+            position: relative;
+            left:45%;
         }
     }
-     .information .aboutcopy, .information .artisanscopy {
-        align-content: center;
-        margin: 0%;
-        text-align: center;
-        width: 50%;
+
+}
         
-     }
-    .about{
-    display: flex;
-    width: 100%;
-    .aboutcopy{
-        h3{
-            font-size: 3em;
-            text-align: left;
-            padding-left: 4%;
-        }
-        p{
-            padding-left: 4%;
-            padding-right: 4%;
-            font-size: 1.5em;
-            text-align: left;
-        }
-    }
-        .aboutimage{
-        width: 50%;
-        .k2{
-        width:100%;
-        padding-right: 4%;
-        }
-    }
-}
-    .artisans{
-    display: flex;
-    flex-flow: row-reverse;
-        .artisanscopy{
-        margin-top: 5%;
-        h3{
-            font-size: 3em;
-            text-align: left;
-            padding-left: 4%;
-        }
-        p{
-            
-            padding-left: 4%;
-            padding-right: 4%;
-            font-size: 1.5em;
-            text-align: left;
-            a{
-                text-decoration: underline;
-            }
-            a:hover{
-                color:green;
-            }
-        }
-}
-        display: flex;
-        width: 100%;
-        .artisansimage{
-        width: 50%;
-        .art{
-        padding-left: 4%;
-        size:20%;
-
-         }
-        }
-
-    } .links{
-        display: flex;
-        margin-top: 2%;
-        margin-bottom: 2%;
-        justify-content: space-around;
-       }
-       .photolinks{
-        width: 670px;
-        height: 440px;
-    
-    
-       }
-  
-}
-  @media screen and (min-width: 600px) {
-    .aboutcopy,.artisanscopy{
-        h3{font-size:2em;}
-        p{font-size:1.4em;}
-    }
-    .links{
-        // display: grid;
-        width: 100%;
-        // justify-content: center;
-        // display: grid;
-    }
-    .photolinks{
-        width: 670px;
-        height: 440px;
-      
-    }
-    
-    .aboutimage,.artisansimage{
-        width: 100%;
-    .k2, .art{
-        width: 100%;
-    }   
-    .links ,.photolinks{
-        widows: 100%;
-        
-    }
-}
-}
-  
-
-
-
-  
-
