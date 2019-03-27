@@ -487,116 +487,13 @@ body {
       margin-right: auto;
       padding: 15px 90px; } }
 
-/* ====================================================================
-      Social Media and Mailchimp together in tablet and desktop view. 
-    ===================================================================== */
-.socialmedia-mailchimp {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  padding: 20px; }
-
-@media screen and (min-width: 600px) {
-  .socialmedia-mailchimp {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row;
-            flex-flow: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    padding: 0 20px; } }
-
-/* =========================
-      Subscription Section
-    ========================= */
-.subscription {
-  text-align: center; }
-  .subscription .subscription-title {
-    font-family: 'Playfair Display';
-    font-size: 30px;
-    color: #062b35; }
-  .subscription .subscription-sub-title {
-    font-family: 'Avenir LT Std';
-    font-size: 20px;
-    color: #062b35;
-    line-height: 30px; }
-  .subscription .text-input {
-    width: 200px;
-    height: 36px;
-    padding: 1px 10px;
-    border: solid 1px #269a65;
-    background-color: #ffffff;
-    padding-left: -2px; }
-  .subscription .signupbtn {
-    font-family: 'Avenir LT Std';
-    width: 112px;
-    height: 40px;
-    color: #fff;
-    margin-left: -10px;
-    cursor: pointer;
-    border: solid 1px #269a65;
-    background-color: #269a65; }
-  .subscription .signupbtn:hover {
-    width: 113px;
-    height: 40px; }
-
-@media screen and (min-width: 1024px) {
-  .subscription .subscription-title {
-    font-size: 40px; }
-  .subscription .subscription-sub-title {
-    font-size: 25px;
-    line-height: 32px; }
-  .subscription .text-input {
-    width: 220px;
-    height: 41px; }
-  .subscription .signupbtn {
-    font-size: 18px;
-    width: 118px;
-    height: 45px;
-    border-bottom: 2.5px solid #269a65; }
-  .subscription .signupbtn:hover {
-    width: 118px;
-    height: 45px; } }
-
-/* =========================
-      Social Media Section
-   ========================= */
-.social-media {
-  text-align: center; }
-  .social-media .social-media-title {
-    font-family: 'Playfair Display';
-    font-size: 30px;
-    color: #062b35; }
-  .social-media .social-media-icons img {
-    width: 50px;
-    height: 50px;
-    padding: 1px 10px; }
-  .social-media .social-media-icons img:hover {
-    width: 51px;
-    height: 51px; }
-
-@media screen and (min-width: 1024px) {
-  .social-media .social-media-title {
-    font-size: 40px; }
-  .social-media .social-media-icons img {
-    width: 60px;
-    height: 60px; }
-  .social-media .social-media-icons img:hover {
-    width: 61px;
-    height: 61px; } }
-
 /*
 =========================
 Front Carousel Styling
 =========================
 */
 .front-carousel {
-  margin: 50px auto; }
+  margin: 50px auto 80px; }
   .front-carousel .front-carousel-label {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -956,84 +853,71 @@ Breakpoints
       width: 150px;
       border-bottom: 2px solid #062b35; } }
 
+/* 
+=========================
+Footer
+=========================
+*/
 .footer {
-  background-color: #062B35; }
+  padding: 10px;
+  padding-bottom: 50px;
+  background-color: #062b35;
+  line-height: 1em;
+  text-align: center; }
+  .footer h3 {
+    font-family: 'Avenir LT Book', sans-serif;
+    color: white; }
+  .footer a {
+    color: white; }
   .footer .companyinfo {
     display: grid;
-    grid-auto-rows: minmax(125px, auto);
     justify-items: center; }
-  .footer .companyinfo.logocontainer {
-    display: grid;
-    grid-auto-rows: minmax(125px, auto);
-    justify-items: center;
-    text-align: center; }
-  .footer .logocontainer, .footer .textwidget {
-    text-align: center; }
-  .footer .companyinfo > .sitecontent {
-    text-align: center; }
-  .footer .companyinfo > div {
-    font-size: 1.3em; }
-  .footer .contact {
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box; }
-  .footer h3 {
-    color: white;
-    font-family: Avenir;
-    font-size: 1.2em; }
-  .footer a {
-    text-decoration: none;
-    color: white;
-    font-family: Avenir;
-    font-weight: 100;
-    font-size: .8em; }
-  .footer .subscription .subscription-sub-title {
-    font-size: 1em; }
-  .footer .subscription-sub-title, .footer .subscription-title {
-    color: white; }
-  .footer .social-media .social-media-title {
-    color: white; }
-  .footer span.active {
-    display: none; }
-
-.footer img.darialogo {
-  max-height: 300px;
-  max-width: 300px;
-  margin-bottom: -20%;
-  margin-top: -20%; }
-
-.footer img.darialogo {
-  max-height: 300px;
-  max-width: 300px;
-  margin-bottom: -20%;
-  margin-top: -20%; }
-
-.social-media .social-media-icons img {
-  padding: 1px 2px; }
-
-@media screen and (min-width: 1024px) {
-  .logocontainer {
-    width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-  .contact {
-    margin-top: 10%;
-    margin-bottom: 10%; }
-  .companyinfo > div {
-    text-align: center;
-    margin-top: 35%; } }
+    .footer .companyinfo > div {
+      margin: 10px auto; }
+  .footer .logocontainer {
+    margin: -60px auto; }
 
 @media screen and (min-width: 600px) {
-  .companyinfo {
-    justify-items: none;
-    display: grid;
-    grid-template-columns: repeat(4, 2fr); }
-  .companyinfo > div {
-    margin-top: 35%;
-    font-size: 1.3em; } }
+  .footer {
+    padding: 20px;
+    padding-bottom: 50px; }
+    .footer .companyinfo {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "products connect" "company connect" "customer connect"; }
+      .footer .companyinfo .products {
+        grid-area: products; }
+      .footer .companyinfo .company {
+        grid-area: company; }
+      .footer .companyinfo .customer {
+        grid-area: customer; }
+      .footer .companyinfo .contact {
+        grid-area: connect; }
+        .footer .companyinfo .contact > div {
+          margin: 20px auto; }
+        .footer .companyinfo .contact .logocontainer {
+          margin: -60px auto; } }
+
+@media screen and (min-width: 850px) {
+  .footer {
+    padding: 30px; }
+    .footer .companyinfo {
+      grid-template-columns: 2fr 2fr 2fr 3fr;
+      grid-template-areas: initial;
+      grid-template-areas: "products company customer connect"; }
+      .footer .companyinfo > div {
+        margin: 30% auto; }
+      .footer .companyinfo .products {
+        grid-area: products; }
+      .footer .companyinfo .company {
+        grid-area: company; }
+      .footer .companyinfo .customer {
+        grid-area: customer; }
+      .footer .companyinfo .contact {
+        grid-area: connect; }
+        .footer .companyinfo .contact > div {
+          margin: 0; }
+        .footer .companyinfo .contact .logocontainer {
+          margin: -90px auto; } }
 
 .ourstory {
   background-color: #062B35;
@@ -1191,6 +1075,59 @@ Latest Additions Section
   height: 100%;
   width: 100%;
   border: 0; }
+
+/* ====================================================================
+      Social Media  
+    ===================================================================== */
+.social-media-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80%;
+  margin: 0 auto; }
+  .social-media-icons img {
+    width: 40px; }
+
+@media screen and (min-width: 600px) {
+  .social-media-icons img {
+    width: 50px; } }
+
+/* ====================================================================
+      MailChimp  
+    ===================================================================== */
+.subscription .mc4wp-form-fields {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-template-areas: "label label" "input button";
+  width: 100%; }
+  .subscription .mc4wp-form-fields .subscription-sub-title {
+    grid-area: label;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em; }
+  .subscription .mc4wp-form-fields .text-input {
+    grid-area: input;
+    width: 100%;
+    padding: 10px;
+    color: #062b35; }
+  .subscription .mc4wp-form-fields .signupbtn {
+    grid-area: button;
+    justify-self: start;
+    width: 100%;
+    background-color: #269a65;
+    border: 0px solid transparent;
+    color: white;
+    font-family: 'Avenir LT Std', sans-serif;
+    font-size: 0.9em; }
 
 .heroimage {
   position: relative;

@@ -13,7 +13,7 @@
 	</div><!-- #content -->
 
 <footer id="footer" class="footer">
-	<div class="companyinfo">
+	<div class="companyinfo content-wrapper">
 
 		
 			<div class="products">
