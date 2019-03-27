@@ -19,13 +19,14 @@
 	const currentUrl = window.location.href;
 
 	let urlArray = currentUrl.split('/');
-	let shopUrl = currentUrl;
+	let shopUrl = currentUrl.split('/');
 
 	for (let i = 1; i < urlArray.length; i++) {
 		if (urlArray.slice(0, -i).includes('daria-day')) {
 			shopUrl = urlArray.slice(0, -i);
 		}
 	}
+	console.log(shopUrl);
 	shopUrl = shopUrl.join('/');
 	shopUrl += '/shop';
 
