@@ -590,7 +590,6 @@ body {
     width: 61px;
     height: 61px; } }
 
-<<<<<<< HEAD
 /*
 =========================
 Front Carousel Styling
@@ -618,28 +617,6 @@ Front Carousel Styling
     padding: 0 10px;
     font-weight: normal;
     line-height: 1.5em;
-=======
-.carousel {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin-top: 5%;
-  background: #EEE;
-  overflow: hidden; }
-
-.flickity-viewport {
-  height: 350px; }
-
-.carousel-cell {
-  width: 66%;
-  height: 40vh;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
-  overflow: hidden; }
-  .carousel-cell .quote-title {
-    font-size: 1.3em;
-    margin: 7%;
->>>>>>> 045bef2748565a062bc77ca8fdcedce2e02a3633
     text-align: center; }
   .front-carousel .flickity-page-dots {
     bottom: -50px; }
@@ -668,7 +645,6 @@ Front Carousel Styling
   .front-carousel h2 {
     font-size: 2em; } }
 
-<<<<<<< HEAD
 /*
 =========================
 Front Carousel Dropdown Styling
@@ -719,22 +695,6 @@ Front Carousel Dropdown Styling
   .front-carousel .shop-by {
     margin: 0;
     margin-top: 5px; } }
-=======
-.flickity-button.flickity-prev-next-button.next {
-  background-color: #269A65; }
-
-@media screen and (min-width: 1024px) {
-  .carousel-cell .quote-title {
-    font-size: 3em; }
-  .carousel-cell .quote-body {
-    font-size: 2em; } }
-
-@media screen and (min-width: 600px) {
-  .carousel-cell .quote-title {
-    font-size: 2em; }
-  .carousel-cell .quote-body {
-    font-size: 1em; } }
->>>>>>> 045bef2748565a062bc77ca8fdcedce2e02a3633
 
 /*
 =========================
@@ -1347,29 +1307,25 @@ Latest Additions Section
     grid-column-gap: 5%;
     padding-top: 3%; }
   .bgimg > img {
-    min-width: 100%; } }
-
-.quote-title {
-  font-size: 2em;
-  margin: 7%;
-  text-align: center; }
-
-.quote-body {
-  margin-top: 3%;
-  margin-left: 7%;
-  font-size: 1.6em;
-  text-align: center;
-  margin-right: 7%; }
-
-.quote-author {
-  font-size: 1em;
-  text-align: center; }
-
-.flickity-button {
-  height: 20px;
-  width: 20px;
-  position: relative;
-  left: 45%; }
+    min-width: 100%; }
+  .quote-title {
+    font-size: 2em;
+    margin: 7%;
+    text-align: center; }
+  .quote-body {
+    margin-top: 3%;
+    margin-left: 7%;
+    font-size: 1.6em;
+    text-align: center;
+    margin-right: 7%; }
+  .quote-author {
+    font-size: 1em;
+    text-align: center; }
+  .information-wrapper .flickity-button {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    left: 45%; } }
 
 /*
 =========================

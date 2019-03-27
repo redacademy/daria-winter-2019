@@ -14,11 +14,11 @@
 get_header();
 ?>
 <?php
-$header = get_field('header');
-$sub_header = get_field('sub_header');
+$about_us_title = get_field('about_us_title');
+$our_artisans_title = get_field('our_artisans_title');
 
-$our_process = get_field('our_process');
-$taking_care_of_your_jewlery = get_field('taking_care_of_your_jewlery');
+$more_about_us_1 = get_field('more_about_us_1');
+$more_about_us_2 = get_field('more_about_us_2');
 
 ?>
 	
@@ -40,8 +40,8 @@ $taking_care_of_your_jewlery = get_field('taking_care_of_your_jewlery');
 			<div class='about'>
 
 				<div class='aboutcopy'>
-					<h3><?php echo $header; ?></h3>
-					<p><?php the_field('about_us'); ?></p>
+					<h3><?php echo $about_us_title; ?></h3>
+					<p><?php the_field('about_us_body'); ?></p>
 				</div>
 
 				<div class='aboutimage'>
@@ -54,8 +54,8 @@ $taking_care_of_your_jewlery = get_field('taking_care_of_your_jewlery');
 			<div class='artisans'>
 
 				<div class='artisanscopy'>
-					<h3><?php echo $sub_header ?></h3>
-					<p><?php the_field('our_artisans'); ?></p>
+					<h3><?php echo $our_artisans_title ?></h3>
+					<p><?php the_field('our_artisans_body'); ?></p>
 				</div>
 
 				<div class='artisansimage'>
@@ -73,7 +73,7 @@ $taking_care_of_your_jewlery = get_field('taking_care_of_your_jewlery');
 				<img src="<?php echo get_template_directory_uri();?>/images/ddgreen3.png" alt="Our Process">
 
 					<div class='flowercopy'>
-						<p><?php echo $our_process ?></p>
+						<p><?php echo $more_about_us_1; ?></p>
 					</div>
 					
 				</div>
@@ -82,7 +82,7 @@ $taking_care_of_your_jewlery = get_field('taking_care_of_your_jewlery');
 
 					<img src="<?php echo get_template_directory_uri();?>/images/braclet5.JPG" alt="Take Care of your Jewelry">
 					<div class='jewelcopy'>
-						<p><?php echo $taking_care_of_your_jewlery; ?></p>
+						<p><?php echo $more_about_us_2; ?></p>
 					</div>	
 
 
