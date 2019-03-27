@@ -1,0 +1,374 @@
+/*
+=========================
+General Products Styling
+=========================
+*/
+
+.shop-hero {
+  background: url('../../images/home-hero.png') no-repeat center;
+  background-size: cover;
+  background-position: 70%;
+  height: 50vh;
+
+  .content-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    height: 100%;
+    padding: 0 $find-gemstone-base-spacing * 3;
+    
+    color: $brand-colour-evergreen;
+    text-align: center;
+    
+    h1 {
+      font-size: 2.5em;
+    }
+
+    p {
+      font-family: 'Avenir LT Std', sans-serif;
+      font-size: 1.25em;
+    }
+  }
+}
+
+@media screen and (min-width: $larger-tablet) {
+  .shop-hero {
+    height: 35vh;
+  }
+}
+
+.shop-all.two-column-shop {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  padding: $base-spacing * 2 $base-spacing * 3;
+}
+
+/*
+=========================
+Filter Products Styling
+=========================
+*/
+
+.products-filter-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: space-around;
+  justify-items: center;
+
+  margin: $base-spacing * 2 0;
+  padding: $base-spacing;
+
+  .sort-by {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    .sort-products-dropdown-container {
+      position: relative;
+    }
+
+    input {
+      width: 130px;
+      margin-left: $base-spacing / 2;
+      padding-right: $base-spacing;
+
+      background: url('../../images/icons/Carat-Icon.svg') no-repeat center right;
+      border: 1px solid transparent;
+      color: $brand-colour-green;
+    }
+
+    ul {
+      z-index: 2;
+      position: absolute;
+      top: $base-spacing / 2;
+      left: -$base-spacing / 2;
+      
+      display: none;
+
+      width: 100%;
+      padding: $base-spacing $base-spacing;
+
+      background-color: #fff;
+      border: 1px solid $brand-colour-bright-green;
+    }
+
+    li {
+      color: $brand-colour-green;
+      margin: $base-spacing / 2 0;
+    }
+
+    ul.dropdown-active {
+      display: block;
+    }
+  }
+
+  .show-filters {
+    justify-self: start;
+    display: flex;
+
+    margin-left: $base-spacing;
+
+    background-color: transparent;
+    border: 0px solid transparent;
+
+    img {
+      height: 100%;
+      width: 16px;
+      padding-right: $base-spacing;
+    }
+  }
+
+  // Filter Dropdown
+  .filter-menu {
+    z-index: 2;
+    position: absolute;
+    top: 50px;
+    left: $base-spacing;
+
+    min-width: 60%;
+    padding: $base-spacing;
+
+    background-color: #fff;
+    border: 1px solid $brand-colour-bright-green;
+
+    .filters-title {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+  
+      margin: $base-spacing * 2 0 $base-spacing * 3;
+  
+      h3 {
+        margin: 0;
+      } 
+  
+      .close-filter {
+        height: 1em;
+        padding-right: 20px;
+      }
+    }
+    
+    .filter-category-container div {
+      margin: $base-spacing * 2 0;
+    }
+
+    h4 {
+      color: $brand-colour-evergreen;
+      margin: $base-spacing 0;
+    }
+
+    ul {
+      display: grid;
+
+      margin: 0;
+      padding-left: $base-spacing * 2;
+    }
+
+    li {
+      display: inline-block;
+
+      margin: $base-spacing / 2 0;
+    }
+
+    p {
+      display: inline-block;
+      margin: 0;
+      padding: $base-spacing / 4 $base-spacing;
+
+      border: 1px solid transparent;
+      color: $brand-colour-green;
+    }
+
+    .selected-product-type, .selected-tag {
+      background-color: $brand-colour-bright-green;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .filter-button-container {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+
+      button {
+        padding: $base-spacing $base-spacing * 3;
+        margin: 0 $base-spacing / 2;
+
+        border: 0px solid transparent;
+      }
+    }
+
+    .apply-filters {
+      background-color: black;
+      color: white;
+
+      &:hover {
+        background-color: $brand-colour-bright-green;
+      }
+    }
+
+    .reset-filters {
+      background-color: transparent;
+      color: $brand-colour-green;
+
+      &:hover {
+        background-color: $brand-colour-bright-green;
+        color: white;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+.shop-all:not(.two-column-shop) {
+  .filter-menu.hide-filters {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .products-filter-section {
+    .filter-menu {
+      .filter-category-container div {
+        margin: $base-spacing * 3 0;
+      }
+
+      ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $larger-tablet) {
+  .products-filter-section {
+    display: block;
+
+    margin-right: $base-spacing * 2;
+    padding: $base-spacing 0;
+
+    .sort-by {
+      justify-content: space-between;
+
+      margin: 0 $base-spacing;
+    }
+
+    .show-filters {
+      display: none;
+    }
+    
+    .filter-menu {
+      position: static;
+
+      border: 0px solid transparent;
+
+      .filters-title {
+        .close-filter {
+          display: none;
+        }
+      }
+
+      ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      p {
+        &:hover {
+          border: 1px solid $brand-colour-bright-green;
+          border-radius: 5px;
+        }
+      }
+
+      .filter-button-container {
+        justify-content: left;
+      }
+    }
+  }
+}
+
+/*
+=========================
+Products Results Styling
+=========================
+*/
+
+.products-results-section {
+
+  .display-product-results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $find-gemstone-base-spacing * 2;
+  
+    padding: $find-gemstone-base-spacing;
+  }
+
+  .product-result {
+    position: relative;
+  }
+
+  a {
+    color: $brand-colour-evergreen;
+
+    img {
+      border: 0px solid transparent;
+      border-radius: 5px;
+    }
+
+    h3 {
+      margin-bottom: $find-gemstone-base-spacing * 3;
+    }
+
+    p {
+      position: absolute;
+      bottom: 0;
+
+      margin: 0;
+
+      color: $brand-colour-green;
+
+      &:before {
+        content: '$';
+      }
+
+      &:after {
+        content: ' CAD';
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .products-results-section {
+    .display-product-results {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media screen and (min-width: $larger-tablet) {
+  .products-results-section {
+    margin-top: $base-spacing * 2;
+
+    .display-product-results {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .products-results-section {
+    margin-top: $base-spacing * 2;
+
+    .display-product-results {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

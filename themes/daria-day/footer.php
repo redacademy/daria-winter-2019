@@ -8,26 +8,61 @@
  *
  * @package daria-day
  */
-
 ?>
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'daria-day' ) ); ?>">
+<footer id="footer" class="footer">
+	<div class="companyinfo content-wrapper">
+
+		
+			<div class="products">
 				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'daria-day' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
+				if(is_active_sidebar('products')){
+				dynamic_sidebar('products');
+				}?>
+				
+			</div>
+			<div class="company">
 				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'daria-day' ), 'daria-day', '<a href="http://underscores.me/">Underscores.me</a>' );
+				if(is_active_sidebar('company')){
+				dynamic_sidebar('company');
+				}?>
+			</div>
+
+			<div class="customers">
+				<?php
+				if(is_active_sidebar('customers')){
+				dynamic_sidebar('customers');
+				}?>
+			</div>
+		<section class ='contact'>
+			<div class="logocontainer">
+			
+				<img class= "darialogo" src="<?php echo get_template_directory_uri();?>/images/DariaDay_logo/DariaDay_logo-02_White.svg" alt="Facebook Logo">
+			
+			</div>
+			<div class="socialmedia">	
+				<?php	
+				
+				get_template_part('template-parts/content', 'socialmedia');
+				
 				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+			</div>
+			<div class= 'mailchimp'>
+				<?php	
+				
+				get_template_part('template-parts/content', 'mailchimp');
+				
+				?> 
+			</div>
+		</section>		
+
+			
+		
+	</div>
+
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

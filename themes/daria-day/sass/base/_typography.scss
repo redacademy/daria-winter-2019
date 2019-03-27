@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Avenir LT Book';
+  src: url('../../fonts/AvenirLTStd-Book.eot');
+  src: url('../../fonts/AvenirLTStd-Book.eot?#iefix') format('embedded-opentype'),
+      url('../../fonts/AvenirLTStd-Book.woff2') format('woff2'),
+      url('../../fonts/AvenirLTStd-Book.woff') format('woff'),
+      url('../../fonts/AvenirLTStd-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display Normal';
+  src: url('../../fonts/PlayfairDisplay-Regular.eot');
+  src: url('../../fonts/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../../fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+      url('../../fonts/PlayfairDisplay-Regular.woff') format('woff'),
+      url('../../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir LT Std';
+  src: url('../../fonts/AvenirLTStd-Medium.eot');
+  src: url('../../fonts/AvenirLTStd-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../../fonts/AvenirLTStd-Medium.woff2') format('woff2'),
+      url('../../fonts/AvenirLTStd-Medium.woff') format('woff'),
+      url('../../fonts/AvenirLTStd-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display Bold';
+  src: url('../../fonts/PlayfairDisplay-Bold.eot');
+  src: url('../../fonts/PlayfairDisplay-BPlayfair Displayold.eot?#iefix') format('embedded-opentype'),
+      url('../../fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
+      url('../../fonts/PlayfairDisplay-Bold.woff') format('woff'),
+      url('../../fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display Normal', sans-serif;
+}
+
+p, button, a {
+  font-family: 'Avenir LT Book', sans-serif;
+}
+
+body {
+  line-height: 1.5em;
+}

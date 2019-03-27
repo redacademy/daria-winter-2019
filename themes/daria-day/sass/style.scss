@@ -1,0 +1,116 @@
+/*!
+Theme Name: daria-day
+Theme URI: http://underscores.me/
+Author: Avengers Dev Team
+Author URI: http://underscores.me/
+Description: Daria Day
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: daria-day
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+daria-day is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+sass/
+|
+|– abstracts/ (or utilities/)
+|   |– _variables.scss    // Sass Variables
+|   |– _functions.scss    // Sass Functions
+|   |– _mixins.scss       // Sass Mixins
+|
+|– base/
+|   |– _reset.scss        // Reset/normalize
+|   |– _typography.scss   // Typography rules
+|
+|– components/ (or modules/)
+|   |– _buttons.scss      // Buttons
+|   |– _carousel.scss     // Carousel
+|   |– _slider.scss       // Slider
+|
+|– layout/
+|   |– _navigation.scss   // Navigation
+|   |– _grid.scss         // Grid system
+|   |– _header.scss       // Header
+|   |– _footer.scss       // Footer
+|   |– _sidebar.scss      // Sidebar
+|   |– _forms.scss        // Forms
+|
+|– pages/
+|   |– _home.scss         // Home specific styles
+|   |– _about.scss        // About specific styles
+|   |– _contact.scss      // Contact specific styles
+|
+`– main.scss              // Main Sass file
+--------------------------------------------------------------*/
+
+// Abstract
+@import 'abstracts/variables';
+
+// Base
+@import 'base/normalize';
+@import 'base/typography';
+@import 'hero.scss';
+
+// Components
+@import 'components/front-flickity';
+// @import 'components/flickity';
+
+// @import 'components/slider';
+// @import 'components/filter';
+// Layout
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/about';
+@import 'layout/front-latest';
+@import 'layout/front-video';
+@import 'layout/social-media-and-mailchimp';
+@import 'layout/instagram';
+
+//Pages
+@import 'pages/about-us';
+@import 'pages/find-gemstone';
+@import 'pages/shop-all';
+@import 'pages/single-product';
+@import 'pages/search';
+
+/*
+=========================
+General
+=========================
+*/
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: white;
+}
+
+.content-wrapper {
+  max-width: 1171px;
+  margin: 0 auto;
+}
+
+h1.page-title {
+  font-family: 'Playfair Display Bold', serif;
+  padding: 20px 40px;
+  color: #062b35;
+}

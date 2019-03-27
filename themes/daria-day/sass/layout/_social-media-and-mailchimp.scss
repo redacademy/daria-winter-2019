@@ -1,0 +1,72 @@
+/* ====================================================================
+      Social Media  
+    ===================================================================== */
+
+.social-media-icons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+
+  width: 80%;
+  margin: 0 auto;
+
+  img {
+    width: 40px;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .social-media-icons {
+    img {
+      width: 50px;
+    }
+  }
+}
+
+/* ====================================================================
+      MailChimp  
+    ===================================================================== */
+
+.subscription {
+
+  .mc4wp-form-fields {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: center;
+    grid-template-areas: 
+      "label label"
+      "input button";
+
+    width: 100%;
+    
+    .subscription-sub-title {
+      grid-area: label;
+
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+    }
+
+    .text-input {
+      grid-area: input;
+
+      width: 100%;
+      padding: $base-spacing;
+
+      color: $brand-colour-evergreen;
+    }
+
+    .signupbtn {
+      grid-area: button;
+      justify-self: start;
+
+      width: 100%;
+      
+      background-color: $brand-colour-bright-green;
+      border: 0px solid transparent;
+      color: white;
+      font-family: 'Avenir LT Std', sans-serif;
+      font-size: 0.9em;
+    }
+  }
+}

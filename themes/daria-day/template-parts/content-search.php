@@ -6,30 +6,17 @@
  *
  * @package daria-day
  */
-
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			daria_day_posted_on();
-			daria_day_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php daria_day_post_thumbnail(); ?>
-
-	<div class="entry-summary">
+<div class="search-result-container">
+	<a href="<?php echo get_permalink() ?>">
+		<div class="product-info">
+			<h2 class="search-title"><?php the_title() ?></h2>
+		</div>
+	</a>
+	<div class="item-excerpt">
 		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php daria_day_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	</div>
+	
+</div><!-- #post--->
+<hr class="hr">

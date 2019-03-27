@@ -13,6 +13,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
@@ -23,36 +24,37 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'daria-day' ); ?></a>
-
+	
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<div class="main-nav-content-wrapper content-wrapper">
+			<nav id="site-navigation" class="main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+				<div class="close-mobile-nav hide-menu">
+					<button>
+						<img src="<?php echo get_template_directory_uri() ?>/images/icons/x-symbol.svg">
+					</button>
+				</div>
 				<?php
-			else :
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				));
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			</nav><!-- #site-navigation -->
+			<div class="site-branding">
 				<?php
-			endif;
-			$daria_day_description = get_bloginfo( 'description', 'display' );
-			if ( $daria_day_description || is_customize_preview() ) :
+				the_custom_logo();
 				?>
-				<p class="site-description"><?php echo $daria_day_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+			</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'daria-day' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
+			<div class="nav-misc">
+				<div class="header-search">
+					<?php get_search_form(); ?>
+				</div>
+				<a href="#" class="cart">
+					<img src="<?php echo get_template_directory_uri() ?>/images/Shopping-Bag-Icon.svg">
+				</a>
+			</div>
+		</div>
+	</header><!-- #masthead --> 
 	<div id="content" class="site-content">

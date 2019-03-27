@@ -1,0 +1,120 @@
+/* 
+=========================
+Footer
+=========================
+*/
+
+.footer {
+  
+  padding: $base-spacing;
+  padding-bottom: $base-spacing * 5;
+  
+  background-color: $brand-colour-evergreen;
+  line-height: 1em;
+  text-align: center;
+  
+  h3 {
+    font-family: 'Avenir LT Book', sans-serif;
+
+    color: white;
+  }
+
+  a {
+    color: white;
+  }
+
+  .companyinfo {
+    display: grid;
+    justify-items: center;
+
+    > div {
+      margin: $base-spacing auto;
+    }
+  }
+
+  .logocontainer {
+    margin: -$base-spacing * 6 auto;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .footer {
+    padding: $base-spacing * 2;
+    padding-bottom: $base-spacing * 5;
+
+    .companyinfo {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: 
+        "products connect"
+        "company connect"
+        "customer connect";
+
+      .products {
+        grid-area: products;
+      }
+
+      .company {
+        grid-area: company;
+      }
+
+      .customer {
+        grid-area: customer;
+      }
+
+      .contact {
+        grid-area: connect;
+
+        > div {
+          margin: $base-spacing * 2 auto;
+        }
+
+        .logocontainer {
+          margin: -$base-spacing * 6 auto;
+        }
+      }
+    }
+  }
+}
+
+
+    
+@media screen and (min-width: $larger-tablet) {
+  .footer {
+    padding: $base-spacing * 3;
+
+    .companyinfo {
+      grid-template-columns: 2fr 2fr 2fr 3fr;
+      grid-template-areas: initial;
+      grid-template-areas: 
+        "products company customer connect";
+
+      > div {
+        margin: 30% auto;
+      }
+
+      .products {
+        grid-area: products;
+      }
+
+      .company {
+        grid-area: company;
+      }
+
+      .customer {
+        grid-area: customer;
+      }
+
+      .contact {
+        grid-area: connect;
+
+        > div {
+          margin: 0;
+        }
+
+        .logocontainer {
+          margin: -$base-spacing * 9 auto;
+        }
+      }
+    }
+  }
+}

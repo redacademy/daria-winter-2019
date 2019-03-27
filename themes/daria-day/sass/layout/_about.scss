@@ -1,0 +1,126 @@
+.ourstory {
+	background-color: #062B35;
+	padding: $base-spacing;
+
+	h2, h4 {
+		font-size: 1.5em;
+		font-weight: lighter;
+		line-height: 1.5em;
+	}
+
+	h4 {
+		margin: $base-spacing * 2 0;
+
+		font-size: 1.3em;
+	}
+
+	.copy {
+		display: grid;
+
+		color:white;
+			
+		p {
+			font-family: 'Avenir LT Std', sans-serif;
+			line-height: 1.5em;
+		}
+	}
+
+	.skewedphotos {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		justify-content: center;
+		
+		width: 90%;
+		margin: 10% auto 20%;
+		
+		div {
+			max-width: 290px;
+			padding: 1px;
+
+			background-color: white;
+			border: 1px solid $brand-colour-evergreen;
+
+			p {
+				margin: 0 $base-spacing * 1.5 $base-spacing;
+
+				font-family: courier;
+				color:#062B35;
+			}
+		}
+
+		.photo1 {
+			justify-self: end;
+			margin-right: -15px;
+
+			transform: rotate(-10deg);
+
+			img {
+				transform: rotate(7deg);
+			}
+		}
+
+		.photo2 {
+			justify-self: start;
+
+			margin-left: -15px;
+
+			transform: translate(0,50px) rotate(10deg);
+
+			img {
+				transform: rotate(-9deg);
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $tablet) {
+	.ourstory {
+		padding: $base-spacing * 2;
+
+		h2 {
+			font-size: 2em;
+		}
+
+		h4 {
+			font-size: 1.5em;
+		}
+
+		.copy {
+			font-size: 1.1em;
+		}
+
+		.skewedphotos {
+			margin: 55px auto 110px;
+		}
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	.ourstory {
+		padding: $base-spacing * 3;
+
+		.content-wrapper {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			align-items: center;
+			grid-template-areas: 
+				"photos text";
+		}
+
+		.copy {
+			grid-area: text;
+		}
+
+		.skewedphotos {
+			box-sizing: border-box;
+			grid-area: photos;
+
+			margin: 55px auto 110px;
+			padding: $base-spacing * 5;
+
+			div {
+				max-height: 330px;
+			}
+		}
+	}
+}

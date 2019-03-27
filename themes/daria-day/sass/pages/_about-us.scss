@@ -1,0 +1,175 @@
+.heroimage{
+    position: relative;
+    text-align: center;
+        .herocopy{
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.5em;
+        font-family: 'Playfair Display', serif;
+        }  
+    }
+    .aboutcopy, .artisanscopy {
+        padding: 5%;
+    }
+    
+    .about, .artisans{
+        display: grid;
+        width: 100%;  
+        }
+        .bgimg{
+            position: relative;
+            text-align: center;
+                .flowercopy, .jewelcopy{
+                position: absolute;
+                width: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: green;
+                font-size: 1.5em;
+                font-family: 'Playfair Display', serif;
+                }  
+            }
+            .k2{
+                width: 100%;
+            }
+        .quote-title{
+            font-size: 2em;
+            margin: 7%;
+            text-align: center;
+        }    
+        .quote-body{
+            margin-top: 3%;
+            margin-left: 7%;       
+            font-size: 1.6em;        
+            text-align: center;        
+            margin-right: 7%;
+        }
+        .quote-author{
+            font-size: 1em;
+            text-align: center;
+        }
+        .bgimg > img{
+            min-width: 100%;
+        }
+        .flickity-button{
+        height: 20px;
+        width: 20px;
+        }
+       
+    @media screen and (min-width: $tablet) {
+    .aboutcopy {
+        h3 {
+            font-size:3em;
+        }
+        p {
+            font-size:1.4em;
+          }
+        }
+    
+    .heroimage .herocopy{
+        p { 
+            font-size: 2em  ;
+        }
+        }
+
+
+
+        .artisans{
+               
+                
+                    .artisanscopy{
+                   
+                    h3{
+                    font-size: 3em;
+                    text-align: left;
+                    padding-left: 4%;
+                    }
+                    p{
+                    padding-left: 4%;
+                    padding-right: 4%;
+                    font-size: 1.5em;
+                    text-align: left;
+                    a{
+                    text-decoration: underline;
+                    &:hover{
+                    color:green;
+                    display: flex;
+                    width: 100%;
+                        }
+                    }
+                    }
+                    }
+                    }
+                    .artisansimage{
+                    width: 100%;
+                    .art{
+                   
+                    size:20%;
+                    }
+                }
+            }
+    
+
+@media screen and (min-width: $desktop) {
+    .heroimage .herocopy{
+        font-size: 4em;
+        .header{
+        font-size: 1em;
+        }
+    }
+    .about, .artisans {
+
+        display: grid;
+        width: 100%;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        grid-column-gap: 5%;
+    }
+    .information-wrapper{
+        padding-top: 5%;
+    }
+    .artisansimage{
+        order:-1;
+    }
+    .photolinks{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-column-gap: 5%;
+        padding-top: 3%;
+    }
+    .bgimg > img{
+        min-width: 100%;
+    }
+    .quote-title{
+        font-size: 2em;
+        margin: 7%;
+        text-align: center;
+    }    
+    .quote-body{
+        margin-top: 3%;
+        margin-left: 7%;       
+        font-size: 1.6em;        
+        text-align: center;        
+        margin-right: 7%;
+    }
+    .quote-author{
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .information-wrapper {
+        .flickity-button{
+            height: 20px;
+            width: 20px;
+            position: relative;
+            left:45%;
+        }
+    }
+
+}
+        
