@@ -26,7 +26,7 @@
 			shopUrl = urlArray.slice(0, -i);
 		}
 	}
-	console.log(shopUrl);
+	
 	shopUrl = shopUrl.join('/');
 	shopUrl += '/shop';
 
