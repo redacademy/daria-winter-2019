@@ -1,0 +1,148 @@
+/*
+=========================
+Front Carousel Styling
+=========================
+*/
+
+.front-carousel {
+  margin: $base-spacing * 5 auto;
+
+  .front-carousel-label {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: $base-spacing auto;
+  }
+
+  h2 {
+    margin: 0;  
+    padding: 0 $base-spacing;
+
+    font-weight: normal;
+    line-height: 1.5em;
+    text-align: center;
+  }
+
+  .flickity-page-dots {
+    bottom: -50px;
+  }
+
+  .categories-flickity-slider {
+    padding: 0;
+
+    .flickity-item {
+      margin: 0 $base-spacing;
+      padding: $base-spacing * 1.5;
+
+      border: 1px solid $brand-colour-bright-green;
+
+      p {
+        margin: 0;
+
+        color: $brand-colour-evergreen;
+        font-size: 1.25em;
+      }
+
+      a {
+        color: $brand-colour-green;
+        font-size: 1.1em;
+      }
+    }
+
+    img {
+      max-width: none;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .front-carousel {
+    // margin: $base-spacing * 5 auto;
+  
+    .front-carousel-label {
+      flex-flow: row;
+      // align-items: flex-start;
+      // justify-content: flex-start;
+
+      // font-size: 1.5em;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+}
+
+/*
+=========================
+Front Carousel Dropdown Styling
+=========================
+*/
+
+.front-carousel {
+  .shop-by {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    
+    margin: $base-spacing * 1.5 0;
+
+    font-family: 'Avenir LT Std', sans-serif;
+    font-size: 1.1em;
+
+    .sort-categories-dropdown-container {
+      position: relative;
+    }
+
+    input {
+      width: 110px;
+      margin: 0 $base-spacing;
+      padding-right: $base-spacing;
+
+      background: url('../../images/icons/Carat-Icon.svg') no-repeat center right;
+      border: 1px solid transparent;
+      border-bottom: 2px solid $brand-colour-evergreen;
+      color: $brand-colour-green;
+      text-align: center;
+    }
+
+    ul {
+      z-index: 2;
+      position: absolute;
+      top: $base-spacing / 2;
+      left: $base-spacing;
+      
+      display: none;
+
+      width: 80%;
+      padding: $base-spacing $base-spacing;
+
+      background-color: #fff;
+      border: 1px solid $brand-colour-bright-green;
+    }
+
+    li {
+      color: $brand-colour-green;
+      margin: $base-spacing / 2 0;
+    }
+
+    ul.dropdown-active {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .front-carousel {
+    .shop-by {
+      margin: 0;
+      margin-top: 5px;
+
+      input {
+        // width: 160px;
+      }
+    }
+  }
+}

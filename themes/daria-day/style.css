@@ -590,59 +590,111 @@ body {
     width: 61px;
     height: 61px; } }
 
-.carousel {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin-top: 5%;
-  background: #EEE;
-  overflow: hidden; }
-
-.flickity-viewport {
-  height: 350px; }
-
-.carousel-cell {
-  width: 66%;
-  height: 380px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
-  overflow: hidden; }
-  .carousel-cell .quote-title {
-    font-size: 1.3em;
-    margin: 7%;
+/*
+=========================
+Front Carousel Styling
+=========================
+*/
+.front-carousel {
+  margin: 50px auto; }
+  .front-carousel .front-carousel-label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 10px auto; }
+  .front-carousel h2 {
+    margin: 0;
+    padding: 0 10px;
+    font-weight: normal;
+    line-height: 1.5em;
     text-align: center; }
-  .carousel-cell .quote-body {
-    font-size: .9em; }
-
-/* cell number */
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  line-height: 200px;
-  font-size: 80px;
-  color: white; }
-
-.flickity-button {
-  width: 5% !important;
-  height: 5% !important; }
-
-.flickity-button.flickity-prev-next-button.previous {
-  background-color: #269A65; }
-
-.flickity-button.flickity-prev-next-button.next {
-  background-color: #269A65; }
+  .front-carousel .flickity-page-dots {
+    bottom: -50px; }
+  .front-carousel .categories-flickity-slider {
+    padding: 0; }
+    .front-carousel .categories-flickity-slider .flickity-item {
+      margin: 0 10px;
+      padding: 15px;
+      border: 1px solid #269a65; }
+      .front-carousel .categories-flickity-slider .flickity-item p {
+        margin: 0;
+        color: #062b35;
+        font-size: 1.25em; }
+      .front-carousel .categories-flickity-slider .flickity-item a {
+        color: #0c5535;
+        font-size: 1.1em; }
+    .front-carousel .categories-flickity-slider img {
+      max-width: none; }
 
 @media screen and (min-width: 1024px) {
-  .carousel-cell .quote-title {
-    font-size: 3em; }
-  .carousel-cell .quote-body {
+  .front-carousel .front-carousel-label {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row; }
+  .front-carousel h2 {
     font-size: 2em; } }
 
-@media screen and (min-width: 600px) {
-  .carousel-cell .quote-title {
-    font-size: 2em; }
-  .carousel-cell .quote-body {
-    font-size: 1em; } }
+/*
+=========================
+Front Carousel Dropdown Styling
+=========================
+*/
+.front-carousel .shop-by {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px 0;
+  font-family: 'Avenir LT Std', sans-serif;
+  font-size: 1.1em; }
+  .front-carousel .shop-by .sort-categories-dropdown-container {
+    position: relative; }
+  .front-carousel .shop-by input {
+    width: 110px;
+    margin: 0 10px;
+    padding-right: 10px;
+    background: url("../../images/icons/Carat-Icon.svg") no-repeat center right;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #062b35;
+    color: #0c5535;
+    text-align: center; }
+  .front-carousel .shop-by ul {
+    z-index: 2;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    display: none;
+    width: 80%;
+    padding: 10px 10px;
+    background-color: #fff;
+    border: 1px solid #269a65; }
+  .front-carousel .shop-by li {
+    color: #0c5535;
+    margin: 5px 0; }
+  .front-carousel .shop-by ul.dropdown-active {
+    display: block; }
+
+@media screen and (min-width: 1024px) {
+  .front-carousel .shop-by {
+    margin: 0;
+    margin-top: 5px; } }
 
 /*
 =========================

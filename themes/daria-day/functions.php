@@ -172,13 +172,14 @@ function daria_day_scripts() {
 
 	wp_enqueue_style( 'daria-day-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'daria-day-fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+	wp_enqueue_style( 'daria-day-flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css');
 	
 	wp_enqueue_script( 'daria-day-filters', get_template_directory_uri() . '/js/filters.js', array(), '20151215', true );
 	wp_enqueue_script( 'daria-day-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'demo-theme-search', get_template_directory_uri() . '/js/search.js', array(), '20151215', true );
 	wp_enqueue_script( 'daria-day-find-gemstone', get_template_directory_uri() . '/js/find-gemstone.js', array(), '20151215', true );
 	wp_enqueue_script( 'daria-day-products-filter', get_template_directory_uri() . '/js/products-filter.js', array(), '20151215', true );
-	wp_enqueue_script( 'daria-day-front-page-video', get_template_directory_uri() . '/js/front-page-video.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-front-page-flickity', get_template_directory_uri() . '/js/front-page-flickity.js', array(), '20151215', true );
 
 	// Add template directory uri to navigation.js
 	wp_localize_script('daria-day-navigation', 'directory_uri', $dariaDayThemeDirectory);

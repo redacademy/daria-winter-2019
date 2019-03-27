@@ -4,8 +4,11 @@
 
   // exit if not shop page
   if (!$('body').hasClass('page-template-page-shop')) {
+    console.log('1');
     return;
   } 
+
+  console.log('2');
 
   // Save products results section
   $productResultsSection = $('.products-results-section');  
@@ -143,10 +146,6 @@
   $('.by-gemstone li p').on('click', event => {
     selectingGemstoneTags(event);
   });
-
-  const sortProducts = (productList, order) => {
-
-  };
 
   // Sort-by select toggle
   $('#sort-products-by').on('click', event => {
