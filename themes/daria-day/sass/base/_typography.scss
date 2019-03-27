@@ -10,7 +10,7 @@
 }
 
 @font-face {
-  font-family: 'Playfair Display';
+  font-family: 'Playfair Display Normal';
   src: url('../../fonts/PlayfairDisplay-Regular.eot');
   src: url('../../fonts/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),
       url('../../fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
@@ -32,7 +32,7 @@
 }
 
 @font-face {
-  font-family: 'Playfair Display';
+  font-family: 'Playfair Display Bold';
   src: url('../../fonts/PlayfairDisplay-Bold.eot');
   src: url('../../fonts/PlayfairDisplay-BPlayfair Displayold.eot?#iefix') format('embedded-opentype'),
       url('../../fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
@@ -43,7 +43,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Playfair Display Normal', sans-serif;
 }
 
 p, button, a {

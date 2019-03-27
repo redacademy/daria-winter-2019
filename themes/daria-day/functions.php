@@ -174,21 +174,21 @@ function daria_day_scripts() {
 	wp_enqueue_style( 'daria-day-fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 	wp_enqueue_style( 'daria-day-flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css');
 	
-	wp_enqueue_script( 'daria-day-filters', get_template_directory_uri() . '/js/filters.js', array(), '20151215', true );
-	wp_enqueue_script( 'daria-day-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	wp_enqueue_script( 'demo-theme-search', get_template_directory_uri() . '/js/search.js', array(), '20151215', true );
-	wp_enqueue_script( 'daria-day-find-gemstone', get_template_directory_uri() . '/js/find-gemstone.js', array(), '20151215', true );
-	wp_enqueue_script( 'daria-day-products-filter', get_template_directory_uri() . '/js/products-filter.js', array(), '20151215', true );
-	wp_enqueue_script( 'daria-day-front-page-flickity', get_template_directory_uri() . '/js/front-page-flickity.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-filters', get_template_directory_uri() . '/build/js/filters.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-navigation', get_template_directory_uri() . '/build/js/navigation.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'demo-theme-search', get_template_directory_uri() . '/build/js/search.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-find-gemstone', get_template_directory_uri() . '/build/js/find-gemstone.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-products-filter', get_template_directory_uri() . '/build/js/products-filter.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-front-page-flickity', get_template_directory_uri() . '/build/js/front-page-flickity.min.js', array(), '20151215', true );
 
-	// Add template directory uri to navigation.js
+	// Add template directory uri to navigation
 	wp_localize_script('daria-day-navigation', 'directory_uri', $dariaDayThemeDirectory);
 
 	// JQuery
 	wp_enqueue_script('jquery');
 
-	wp_enqueue_script( 'daria-day-search-product', get_template_directory_uri() . '/js/product-search.js', array(), '20151215', true );
-	wp_enqueue_script( 'daria-day-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-search-product', get_template_directory_uri() . '/build/js/product-search.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-skip-link-focus-fix', get_template_directory_uri() . '/build/js/skip-link-focus-fix.min.js', array(), '20151215', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

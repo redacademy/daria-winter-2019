@@ -368,7 +368,7 @@ template {
   font-style: normal; }
 
 @font-face {
-  font-family: 'Playfair Display';
+  font-family: 'Playfair Display Normal';
   src: url("../../fonts/PlayfairDisplay-Regular.eot");
   src: url("../../fonts/PlayfairDisplay-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("../../fonts/PlayfairDisplay-Regular.woff") format("woff"), url("../../fonts/PlayfairDisplay-Regular.ttf") format("truetype");
   font-weight: normal;
@@ -382,14 +382,14 @@ template {
   font-style: normal; }
 
 @font-face {
-  font-family: 'Playfair Display';
+  font-family: 'Playfair Display Bold';
   src: url("../../fonts/PlayfairDisplay-Bold.eot");
   src: url("../../fonts/PlayfairDisplay-BPlayfair Displayold.eot?#iefix") format("embedded-opentype"), url("../../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../../fonts/PlayfairDisplay-Bold.woff") format("woff"), url("../../fonts/PlayfairDisplay-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', sans-serif; }
+  font-family: 'Playfair Display Normal', sans-serif; }
 
 p, button, a {
   font-family: 'Avenir LT Book', sans-serif; }
@@ -425,7 +425,7 @@ body {
           align-items: center;
   height: 100%; }
   .home-hero > div .hero-title h1 {
-    font-family: 'Playfair Display';
+    font-family: 'Playfair Display Bold';
     font-size: 1.6em;
     font-weight: bold;
     text-align: center;
@@ -493,7 +493,7 @@ Front Carousel Styling
 =========================
 */
 .front-carousel {
-  margin: 50px auto 80px; }
+  margin: 50px auto; }
   .front-carousel .front-carousel-label {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -508,15 +508,15 @@ Front Carousel Styling
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin: 10px auto; }
+    margin: 10px auto;
+    padding: 0 10px; }
   .front-carousel h2 {
     margin: 0;
-    padding: 0 10px;
     font-weight: normal;
     line-height: 1.5em;
     text-align: center; }
   .front-carousel .flickity-page-dots {
-    bottom: -50px; }
+    display: none; }
   .front-carousel .categories-flickity-slider {
     padding: 0; }
     .front-carousel .categories-flickity-slider .flickity-item {
@@ -534,13 +534,17 @@ Front Carousel Styling
       max-width: none; }
 
 @media screen and (min-width: 1024px) {
-  .front-carousel .front-carousel-label {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row;
-            flex-flow: row; }
-  .front-carousel h2 {
-    font-size: 2em; } }
+  .front-carousel {
+    margin: 50px auto 80px; }
+    .front-carousel .front-carousel-label {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row;
+              flex-flow: row;
+      margin: 40px auto;
+      padding: 0 30px; }
+    .front-carousel h2 {
+      font-size: 2em; } }
 
 /*
 =========================
@@ -1009,6 +1013,8 @@ Latest Additions Section
 */
 .latest-additions-container h2 {
   margin: 40px auto;
+  font-family: 'Playfair Display Normal';
+  font-weight: normal;
   text-align: center; }
 
 .latest-additions-container .latest-additions-display {
@@ -1050,15 +1056,26 @@ Latest Additions Section
     text-transform: uppercase; }
 
 @media screen and (min-width: 600px) {
+  .latest-additions-container h2 {
+    margin: 60px auto;
+    font-size: 1.75em; }
   .latest-additions-container .latest-additions-display {
     grid-gap: 40px; }
   .latest-additions-container .latest-additions-item {
-    font-size: 1.1em; } }
+    font-size: 1.1em; }
+  .latest-additions-container .see-more-button {
+    margin: 40px auto 60px; } }
 
 @media screen and (min-width: 850px) {
+  .latest-additions-container h2 {
+    font-size: 2em; }
   .latest-additions-container .latest-additions-display {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px; } }
+
+@media screen and (min-width: 850px) {
+  .latest-additions-container h2 {
+    font-size: 2.25em; } }
 
 .embed-video {
   margin: 30px auto 40px; }
@@ -1129,6 +1146,47 @@ Latest Additions Section
     font-family: 'Avenir LT Std', sans-serif;
     font-size: 0.9em; }
 
+/*
+=========================
+Instagram Styling
+=========================
+*/
+.instagram {
+  margin: 40px auto;
+  padding: 10px; }
+  .instagram .instagram-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    margin: 25px auto 40px; }
+    .instagram .instagram-title h2 {
+      margin: 0;
+      color: #062b35; }
+    .instagram .instagram-title p {
+      margin: 0;
+      margin-top: 5px;
+      color: #0c5535;
+      font-size: 1.1em;
+      font-weight: lighter; }
+  .instagram .instagram-content {
+    padding: 0 20px; }
+
+@media screen and (min-width: 600px) {
+  .instagram .instagram-title {
+    font-size: 1.25em; } }
+
+@media screen and (min-width: 850px) {
+  .instagram .instagram-title {
+    font-size: 1.5em; } }
+
 .heroimage {
   position: relative;
   text-align: center; }
@@ -1141,7 +1199,7 @@ Latest Additions Section
             transform: translate(-50%, -50%);
     color: white;
     font-size: 1.5em;
-    font-family: Playfair Display; }
+    font-family: 'Playfair Display', serif; }
 
 .aboutcopy, .artisanscopy {
   padding: 5%; }
@@ -1162,7 +1220,7 @@ Latest Additions Section
             transform: translate(-50%, -50%);
     color: green;
     font-size: 1.5em;
-    font-family: Playfair Display; }
+    font-family: 'Playfair Display', serif; }
 
 .k2 {
   width: 100%; }
@@ -1717,7 +1775,7 @@ Products Results Styling
 .wps-product-link {
   text-decoration: none; }
 
-@media (max-width: 700px) {
+@media (min-width: 300px) and (max-width: 500px) {
   .wps-products-img {
     height: 8.5em;
     width: 8.5em; }
@@ -1727,10 +1785,35 @@ Products Results Styling
   .wps-product-thumbs {
     display: none; } }
 
-@media (min-width: 700px) and (max-width: 1200px) {
+@media (max-width: 300px) {
+  .wps-products-img {
+    height: 8.5em;
+    width: 8.5em; }
+  .wps-product-gallery-imgs img {
+    -webkit-transform: scale(2);
+            transform: scale(2); }
+  .wps-product-thumbs {
+    display: none; } }
+
+@media (min-width: 500px) and (max-width: 700px) {
+  .wps-products-img {
+    height: 8.5em;
+    width: 8.5em; }
+  .wps-product-gallery-imgs img {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4); }
+  .wps-product-thumbs {
+    display: none; } }
+
+@media (min-width: 700px) and (max-width: 1100px) {
   .wps-products-img {
     height: 16em;
-    width: 16em; } }
+    width: 16em; }
+  .wps-product-gallery-imgs img {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
+  .wps-product-thumbs {
+    display: none; } }
 
 /* =========================
       Search Result Page
@@ -1808,6 +1891,6 @@ body {
   margin: 0 auto; }
 
 h1.page-title {
-  font-family: 'Playfair Display';
+  font-family: 'Playfair Display Bold', serif;
   padding: 20px 40px;
   color: #062b35; }

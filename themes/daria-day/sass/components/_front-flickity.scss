@@ -5,7 +5,7 @@ Front Carousel Styling
 */
 
 .front-carousel {
-  margin: $base-spacing * 5 auto $base-spacing * 8;
+  margin: $base-spacing * 5 auto;
 
   .front-carousel-label {
     display: flex;
@@ -14,11 +14,11 @@ Front Carousel Styling
     justify-content: space-between;
 
     margin: $base-spacing auto;
+    padding: 0 $base-spacing; 
   }
 
   h2 {
-    margin: 0;  
-    padding: 0 $base-spacing;
+    margin: 0;
 
     font-weight: normal;
     line-height: 1.5em;
@@ -26,7 +26,7 @@ Front Carousel Styling
   }
 
   .flickity-page-dots {
-    bottom: -50px;
+    display: none;
   }
 
   .categories-flickity-slider {
@@ -59,14 +59,13 @@ Front Carousel Styling
 
 @media screen and (min-width: $desktop) {
   .front-carousel {
-    // margin: $base-spacing * 5 auto;
+    margin: $base-spacing * 5 auto $base-spacing * 8;
   
     .front-carousel-label {
       flex-flow: row;
-      // align-items: flex-start;
-      // justify-content: flex-start;
 
-      // font-size: 1.5em;
+      margin: $base-spacing * 4 auto;
+      padding: 0 $base-spacing * 3; 
     }
 
     h2 {

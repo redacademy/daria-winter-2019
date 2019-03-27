@@ -14,11 +14,11 @@ get_header();
 			while ( have_posts() ) :
                 the_post();
 				get_template_part('template-parts/content','hero');
-				get_template_part('template-parts/content', 'instagram');
 				get_template_part('template-parts/content', 'front-page-flickity');
 				get_template_part('template-parts/content', 'about');
 				get_template_part('template-parts/content', 'latest');
 				get_template_part('template-parts/content', 'video'); 
+				get_template_part('template-parts/content', 'instagram');
 				?> 
 
 			<?php endwhile;

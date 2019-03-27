@@ -12,6 +12,8 @@ Latest Additions Section
   h2 {
     margin: $base-spacing * 4 auto;
 
+    font-family: 'Playfair Display Normal';
+    font-weight: normal;
     text-align: center;
   }
 
@@ -68,6 +70,11 @@ Latest Additions Section
 
 @media screen and (min-width: $tablet) {
   .latest-additions-container {
+    h2 {
+      margin: $base-spacing * 6 auto;
+      font-size: 1.75em;
+    }
+
     .latest-additions-display {
       grid-gap: $base-spacing * 4;
     }
@@ -75,14 +82,30 @@ Latest Additions Section
     .latest-additions-item {
       font-size: 1.1em;
     }
+
+    .see-more-button {
+      margin: $base-spacing * 4 auto $base-spacing * 6;
+    }
   }
 }
 
-  @media screen and (min-width: $larger-tablet) {
+@media screen and (min-width: $larger-tablet) {
   .latest-additions-container {
+    h2 {
+      font-size: 2em;
+    }
+
     .latest-additions-display {
       grid-template-columns: repeat(4, 1fr);
       grid-gap: $base-spacing * 2;
+    }
+  }
+}
+
+@media screen and (min-width: $larger-tablet) {
+  .latest-additions-container {
+    h2 {
+      font-size: 2.25em;
     }
   }
 }
