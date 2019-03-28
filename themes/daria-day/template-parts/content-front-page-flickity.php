@@ -17,85 +17,20 @@
   </div>
 
   <ul class="categories-flickity-slider">
-    <li class="flickity-item by-product-type">
+    <li class="flickity-item">
       <img src="https://via.placeholder.com/200">
       <p>Energizing Earrings</p>
-      <a>See more</a>
+      <a href="<?php echo get_home_url() ?>/shop">See more</a>
     </li>
-    <li class="flickity-item by-product-type">
+    <li class="flickity-item"> -->
       <img src="https://via.placeholder.com/200">
       <p>Bold Earrings</p>
-      <a>See more</a>
+      <a href="<?php echo get_home_url() ?>/shop">See more</a>
     </li>
-    <li class="flickity-item by-product-type">
+    <li class="flickity-item">
       <img src="https://via.placeholder.com/200">
       <p>Noble Earrings</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-gemstone">
-      <img src="https://via.placeholder.com/200">
-      <p>Quartz</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-gemstone">
-      <img src="https://via.placeholder.com/200">
-      <p>Garnet</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-gemstone">
-      <img src="https://via.placeholder.com/200">
-      <p>Amethyst</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-gemstone">
-      <img src="https://via.placeholder.com/200">
-      <p>Amazonite</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-energy">
-      <img src="https://via.placeholder.com/200">
-      <p>Abundance</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-energy">
-      <img src="https://via.placeholder.com/200">
-      <p>Calmness</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-energy">
-      <img src="https://via.placeholder.com/200">
-      <p>Enlightenment</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-energy">
-      <img src="https://via.placeholder.com/200">
-      <p>Fertility</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-energy">
-      <img src="https://via.placeholder.com/200">
-      <p>Focus</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-energy">
-      <img src="https://via.placeholder.com/200">
-      <p>Love</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-energy">
-      <img src="https://via.placeholder.com/200">
-      <p>Healing</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-energy">
-      <img src="https://via.placeholder.com/200">
-      <p>Positivity</p>
-      <a>See more</a>
-    </li>
-    <li class="flickity-item by-energy">
-      <img src="https://via.placeholder.com/200">
-      <p>Prosperity</p>
-      <a>See more</a>
+      <a href="<?php echo get_home_url() ?>/shop">See more</a>
     </li>
   </ul>
 

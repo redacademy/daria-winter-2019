@@ -62,18 +62,15 @@ sass/
 // Base
 @import 'base/normalize';
 @import 'base/typography';
-@import 'hero.scss';
 
 // Components
 @import 'components/front-flickity';
-// @import 'components/flickity';
 
-// @import 'components/slider';
-// @import 'components/filter';
 // Layout
 @import 'layout/header';
 @import 'layout/footer';
-@import 'layout/about';
+@import 'layout/front-hero.scss';
+@import 'layout/our-story';
 @import 'layout/front-latest';
 @import 'layout/front-video';
 @import 'layout/social-media-and-mailchimp';

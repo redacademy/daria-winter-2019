@@ -116,17 +116,24 @@
 
   // Select and deselect gemstone
   const gemstoneTags = [];
-  const selectingGemstoneTags = (event) => {
+  const selectingGemstoneTags = (event, prefilterItem) => {
     if (event === 'clear') {
       gemstoneTags.length = 0;
       $('.by-gemstone li p').each((index, gemstoneTagFilter) => {
         $(gemstoneTagFilter).removeClass('selected-tag');
       });
+    } else if (event === 'prefilter') {
+      gemstoneTags.push(prefilterItem);
+      $('.by-gemstone li p').each((index, gemstoneTagFilter) => {
+        if (prefilterItem.toLowerCase() === gemstoneTagFilter.innerHTML.toLowerCase()) {
+          $(gemstoneTagFilter).addClass('selected-tag');
+        }
+      });
     } else {
       let removeTag = false;
 
       gemstoneTags.forEach((tag, index) => {
-        if (tag === event.currentTarget.innerHTML) {
+        if (tag.toLowerCase() === event.currentTarget.innerHTML.toLowerCase()) {
           gemstoneTags.splice(index, 1);
           removeTag = true;
           $(event.currentTarget).removeClass('selected-tag');
@@ -228,6 +235,8 @@
       selectingProductTypes('prefilter', prefilteredItem);
     } else if (prefilteredCategory === 'energyTag') {
       selectingEnergyTags('prefilter', prefilteredItem);
+    } else if (prefilteredCategory === 'gemstoneTag') {
+      selectingGemstoneTags('prefilter', prefilteredItem);
     }
   };
 

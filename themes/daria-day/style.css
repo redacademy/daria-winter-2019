@@ -397,96 +397,6 @@ p, button, a {
 body {
   line-height: 1.5em; }
 
-/* =========================
-   Hero Banner Section
-   =========================
-*/
-.home-hero {
-  background: url("../../images/home-hero.png") no-repeat center;
-  background-size: cover;
-  height: 50vh;
-  padding: 30px; }
-
-.home-hero > div {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%; }
-  .home-hero > div .hero-title h1 {
-    font-family: 'Playfair Display Bold';
-    font-size: 1.6em;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.5em;
-    color: #062b35; }
-  .home-hero > div .hero-sub-title {
-    font-family: 'Avenir LT Book';
-    font-size: 1.1em;
-    font-weight: lighter;
-    text-align: center;
-    color: #062b35;
-    line-height: 1.25em; }
-  .home-hero > div .hero-btn {
-    margin: 20px 0;
-    padding: 15px 50px;
-    background-color: #269a65;
-    border: none;
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: #fff;
-    font-size: 1.25em;
-    font-family: 'Avenir LT Std'; }
-  .home-hero > div .hero-btn:hover {
-    -webkit-box-shadow: 0 4px 10px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.25);
-            box-shadow: 0 4px 10px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.25);
-    cursor: pointer;
-    border-radius: 10px; }
-
-@media screen and (min-width: 600px) {
-  .home-hero {
-    height: 60vh; }
-    .home-hero > div .hero-title h1 {
-      font-size: 2em; }
-    .home-hero > div .hero-sub-title p {
-      font-size: 1.25em; } }
-
-@media screen and (min-width: 850px) {
-  .home-hero > div .hero-title h1 {
-    font-size: 2em; }
-  .home-hero > div .hero-sub-title p {
-    font-size: 1.25em; } }
-
-@media screen and (min-width: 1024px) {
-  .home-hero {
-    height: 50vh; }
-    .home-hero > div .hero-title {
-      width: 80%;
-      margin-right: auto; }
-      .home-hero > div .hero-title h1 {
-        margin: 0;
-        font-size: 3em;
-        text-align: left; }
-    .home-hero > div .hero-sub-title {
-      margin-right: auto; }
-      .home-hero > div .hero-sub-title p {
-        font-size: 1.5em;
-        letter-spacing: 1px; }
-    .home-hero > div .hero-btn {
-      margin-right: auto;
-      padding: 15px 90px; } }
-
 /*
 =========================
 Front Carousel Styling
@@ -639,7 +549,7 @@ Nav Bar Styling
     margin: 0;
     padding: 0; }
   .main-navigation ul.mobile-nav {
-    z-index: 2;
+    z-index: 10;
     position: absolute;
     left: 0;
     top: 96px;
@@ -759,6 +669,7 @@ Header Search Styling
   border: none; }
 
 .mobile-search {
+  z-index: 5;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
@@ -809,6 +720,7 @@ Breakpoints
       text-transform: uppercase;
       text-align: center; }
   .secondary-menu {
+    z-index: 10;
     position: absolute;
     width: 100%;
     border-bottom: 1px solid #062b35; }
@@ -922,6 +834,97 @@ Footer
           margin: 0; }
         .footer .companyinfo .contact .logocontainer {
           margin: -90px auto; } }
+
+/* =========================
+   Hero Banner Section
+   =========================
+*/
+.home-hero {
+  background: url("../../images/home-hero.png") no-repeat center;
+  background-size: cover;
+  height: 50vh;
+  padding: 20px; }
+
+.home-hero > div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%; }
+  .home-hero > div .hero-title h1 {
+    font-family: 'Playfair Display Bold';
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5em;
+    color: #062b35; }
+  .home-hero > div .hero-sub-title {
+    font-family: 'Avenir LT Book';
+    font-size: 1.1em;
+    font-weight: lighter;
+    text-align: center;
+    color: #062b35;
+    line-height: 1.25em; }
+  .home-hero > div .hero-btn {
+    margin: 20px 0;
+    padding: 15px 50px;
+    background-color: #269a65;
+    border: none;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    .home-hero > div .hero-btn a {
+      color: #fff;
+      font-size: 1.25em;
+      font-family: 'Avenir LT Std'; }
+  .home-hero > div .hero-btn:hover {
+    -webkit-box-shadow: 0 4px 10px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 10px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    border-radius: 10px; }
+
+@media screen and (min-width: 600px) {
+  .home-hero {
+    height: 60vh; }
+    .home-hero > div .hero-title h1 {
+      font-size: 2em; }
+    .home-hero > div .hero-sub-title p {
+      font-size: 1.25em; } }
+
+@media screen and (min-width: 850px) {
+  .home-hero > div .hero-title h1 {
+    font-size: 2em; }
+  .home-hero > div .hero-sub-title p {
+    font-size: 1.25em; } }
+
+@media screen and (min-width: 1024px) {
+  .home-hero {
+    height: 50vh; }
+    .home-hero > div .hero-title {
+      width: 80%;
+      margin-right: auto; }
+      .home-hero > div .hero-title h1 {
+        margin: 0;
+        font-size: 3em;
+        text-align: left; }
+    .home-hero > div .hero-sub-title {
+      margin-right: auto; }
+      .home-hero > div .hero-sub-title p {
+        font-size: 1.5em;
+        letter-spacing: 1px; }
+    .home-hero > div .hero-btn {
+      margin-right: auto;
+      padding: 15px 90px; } }
 
 .ourstory {
   background-color: #062B35;
@@ -1187,9 +1190,17 @@ Instagram Styling
   .instagram .instagram-title {
     font-size: 1.5em; } }
 
+/*
+=========================
+About page Styling
+=========================
+*/
 .heroimage {
   position: relative;
-  text-align: center; }
+  text-align: center;
+  min-height: 60vh;
+  -o-object-fit: cover;
+     object-fit: cover; }
   .heroimage .herocopy {
     position: absolute;
     width: 100%;
@@ -1198,15 +1209,30 @@ Instagram Styling
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     color: white;
-    font-size: 1.5em;
     font-family: 'Playfair Display', serif; }
+    .heroimage .herocopy h1 {
+      line-height: 1.5em; }
 
 .aboutcopy, .artisanscopy {
-  padding: 5%; }
+  margin-bottom: 30px; }
+
+.information-wrapper h3 {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 1.5em;
+  font-weight: normal;
+  text-align: center; }
+
+.information-wrapper p {
+  margin: 0; }
 
 .about, .artisans {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: grid;
-  width: 100%; }
+  width: 100%;
+  margin: 30px auto;
+  padding: 0 15px; }
 
 .bgimg {
   position: relative;
@@ -1225,102 +1251,94 @@ Instagram Styling
 .k2 {
   width: 100%; }
 
-.quote-title {
-  font-size: 2em;
-  margin: 7%;
-  text-align: center; }
-
-.quote-body {
-  margin-top: 3%;
-  margin-left: 7%;
-  font-size: 1.6em;
-  text-align: center;
-  margin-right: 7%; }
-
-.quote-author {
-  font-size: 1em;
-  text-align: center; }
-
-.bgimg > img {
-  min-width: 100%; }
-
-.flickity-button {
-  height: 20px;
-  width: 20px; }
-
 @media screen and (min-width: 600px) {
-  .aboutcopy h3 {
-    font-size: 3em; }
-  .aboutcopy p {
-    font-size: 1.4em; }
-  .heroimage .herocopy p {
-    font-size: 2em; }
-  .artisans .artisanscopy h3 {
-    font-size: 3em;
-    text-align: left;
-    padding-left: 4%; }
-  .artisans .artisanscopy p {
-    padding-left: 4%;
-    padding-right: 4%;
-    font-size: 1.5em;
-    text-align: left; }
-    .artisans .artisanscopy p a {
-      text-decoration: underline; }
-      .artisans .artisanscopy p a:hover {
-        color: green;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        width: 100%; }
+  .about, .artisans {
+    margin: 50px auto;
+    padding: 0 30px; }
+  .aboutcopy, .artisanscopy {
+    font-size: 1.25em;
+    margin-bottom: 50px; }
+    .aboutcopy h3, .artisanscopy h3 {
+      margin-bottom: 50px; }
+  .artisans .artisanscopy a {
+    text-decoration: underline; }
+    .artisans .artisanscopy a:hover {
+      color: green;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%; }
   .artisansimage {
     width: 100%; }
     .artisansimage .art {
       size: 20%; } }
 
-@media screen and (min-width: 1024px) {
-  .heroimage .herocopy {
-    font-size: 4em; }
-    .heroimage .herocopy .header {
-      font-size: 1em; }
+@media screen and (min-width: 850px) {
+  .herocopy h1 {
+    font-size: 3em; }
   .about, .artisans {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     display: grid;
-    width: 100%;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2, 1fr);
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    grid-column-gap: 5%; }
-  .information-wrapper {
-    padding-top: 5%; }
+    grid-column-gap: 40px;
+    width: 100%;
+    padding: 0 30px; }
+    .about h3, .artisans h3 {
+      text-align: left; }
   .artisansimage {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1; }
+    .artisansimage img {
+      width: 100%; }
   .photolinks {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-column-gap: 5%;
-    padding-top: 3%; }
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5%; }
   .bgimg > img {
-    min-width: 100%; }
-  .quote-title {
-    font-size: 2em;
-    margin: 7%;
+    min-width: 100%; } }
+
+/*
+=========================
+Slider Styling
+=========================
+*/
+.carousel {
+  padding-bottom: 30px;
+  background-color: #269a65;
+  color: white; }
+  .carousel h4 {
+    margin-top: 0;
+    font-size: 1.5em;
+    font-weight: normal;
+    line-height: 1.5em; }
+  .carousel .quote-body {
+    margin-bottom: 0;
+    font-style: italic; }
+  .carousel .quote-author {
+    margin: 0;
+    font-weight: bold; }
+  .carousel .carousel-cell {
+    width: 100%;
     text-align: center; }
-  .quote-body {
-    margin-top: 3%;
-    margin-left: 7%;
-    font-size: 1.6em;
-    text-align: center;
-    margin-right: 7%; }
-  .quote-author {
-    font-size: 1em;
-    text-align: center; }
-  .information-wrapper .flickity-button {
-    height: 20px;
-    width: 20px;
-    position: relative;
-    left: 45%; } }
+    .carousel .carousel-cell .quote-container {
+      padding: 10% 20%; }
+  .carousel .flickity-page-dots {
+    bottom: 30px; }
+
+@media screen and (min-width: 600px) {
+  .carousel {
+    font-size: 1.25em; } }
+
+@media screen and (min-width: 600px) {
+  .carousel {
+    font-size: 1.4em; } }
 
 /*
 =========================
@@ -1340,13 +1358,15 @@ Find Gemstone Search Styling
 .find-gemstone-search {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 150px 0;
+  padding: 120px 0;
   height: 60vh;
   color: #062b35;
   border: 10px solid #269a65; }
   .find-gemstone-search h1 {
     margin: 0;
     margin-bottom: 40px;
+    font-weight: normal;
+    line-height: 1.5em;
     text-align: center; }
   .find-gemstone-search form > div {
     display: -webkit-box;
@@ -1360,9 +1380,12 @@ Find Gemstone Search Styling
         -ms-flex-pack: center;
             justify-content: center;
     margin: 10px;
-    white-space: nowrap; }
+    white-space: nowrap;
+    font-family: 'Avenir LT Book', sans-serif; }
     .find-gemstone-search form > div:nth-of-type(1) {
       margin-left: 30px; }
+      .find-gemstone-search form > div:nth-of-type(1) input {
+        max-width: 150px; }
     .find-gemstone-search form > div:nth-of-type(2) {
       margin-left: 20px; }
     .find-gemstone-search form > div div {
@@ -1382,7 +1405,8 @@ Find Gemstone Search Styling
     padding: 10px;
     background-color: black;
     border: 0px solid transparent;
-    color: white; }
+    color: white;
+    font-family: 'Avenir LT Std', sans-serif; }
 
 @media screen and (min-width: 600px) {
   .find-gemstone-search {
@@ -1473,7 +1497,8 @@ Find Gemstone Results Styling
       border: 0px solid transparent;
       border-radius: 5px; }
     .find-gemstone-results a h3 {
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      font-family: 'Avenir LT Std', sans-serif; }
     .find-gemstone-results a p {
       position: absolute;
       bottom: 0;
@@ -1582,7 +1607,7 @@ Filter Products Styling
       border: 1px solid transparent;
       color: #0c5535; }
     .products-filter-section .sort-by ul {
-      z-index: 2;
+      z-index: 1;
       position: absolute;
       top: 5px;
       left: -5px;
@@ -1745,7 +1770,8 @@ Products Results Styling
     border: 0px solid transparent;
     border-radius: 5px; }
   .products-results-section a h3 {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    font-family: 'Avenir LT Std', sans-serif; }
   .products-results-section a p {
     position: absolute;
     bottom: 0;

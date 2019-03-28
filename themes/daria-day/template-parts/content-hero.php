@@ -13,7 +13,7 @@ $hero_sub_title = get_field('hero_sub_title');
             <p> <?php echo $hero_sub_title ?> </p>
         </div>
 
-        <button class="hero-btn">Shop now</button>
+        <button class="hero-btn"><a href="<?php echo get_home_url() ?>/shop">Shop now</a></button>
     </div>
 </div>
 

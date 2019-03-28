@@ -23,14 +23,14 @@ $more_about_us_2 = get_field('more_about_us_2');
 ?>
 	
 <div id="primary" class="content-area">
-	<main id="main" class="site-main">
+	<main id="main" class="site-main about-us-page">
 
 	<section class ='heroimage'>
 
 		<img class='heroimage' src="<?php echo get_template_directory_uri();?>/images/jewelrymaking1.jpg" alt="Jewelry Making">
 
 		<div class='herocopy'>
-			<p><?php the_field('hero_text'); ?></p>
+			<h1><?php the_field('hero_text'); ?></h1>
 		</div>
 
 	</section>
@@ -90,14 +90,16 @@ $more_about_us_2 = get_field('more_about_us_2');
 			
 			</div>
 		</section>
+		
+	</section>
 
-			<section class='slider'>
+
+
+	<section class='slider'>
 				<?php
 				get_template_part('template-parts/content', 'flickity');
 				?>
 			</section>
-		
-	</section>
 </div>
 
 

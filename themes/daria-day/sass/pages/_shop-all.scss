@@ -81,7 +81,7 @@ Filter Products Styling
     }
 
     ul {
-      z-index: 2;
+      z-index: 1;
       position: absolute;
       top: $base-spacing / 2;
       left: -$base-spacing / 2;
@@ -324,6 +324,7 @@ Products Results Styling
 
     h3 {
       margin-bottom: $find-gemstone-base-spacing * 3;
+      font-family: 'Avenir LT Std', sans-serif;
     }
 
     p {

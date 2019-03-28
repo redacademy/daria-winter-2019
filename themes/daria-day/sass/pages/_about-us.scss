@@ -1,175 +1,219 @@
+/*
+=========================
+About page Styling
+=========================
+*/
+
 .heroimage{
-    position: relative;
-    text-align: center;
-        .herocopy{
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 1.5em;
-        font-family: 'Playfair Display', serif;
-        }  
-    }
-    .aboutcopy, .artisanscopy {
-        padding: 5%;
-    }
-    
-    .about, .artisans{
-        display: grid;
-        width: 100%;  
-        }
-        .bgimg{
-            position: relative;
-            text-align: center;
-                .flowercopy, .jewelcopy{
-                position: absolute;
-                width: 100%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: green;
-                font-size: 1.5em;
-                font-family: 'Playfair Display', serif;
-                }  
-            }
-            .k2{
-                width: 100%;
-            }
-        .quote-title{
-            font-size: 2em;
-            margin: 7%;
-            text-align: center;
-        }    
-        .quote-body{
-            margin-top: 3%;
-            margin-left: 7%;       
-            font-size: 1.6em;        
-            text-align: center;        
-            margin-right: 7%;
-        }
-        .quote-author{
-            font-size: 1em;
-            text-align: center;
-        }
-        .bgimg > img{
-            min-width: 100%;
-        }
-        .flickity-button{
-        height: 20px;
-        width: 20px;
-        }
-       
-    @media screen and (min-width: $tablet) {
-    .aboutcopy {
-        h3 {
-            font-size:3em;
-        }
-        p {
-            font-size:1.4em;
-          }
-        }
-    
-    .heroimage .herocopy{
-        p { 
-            font-size: 2em  ;
-        }
-        }
 
+	position: relative;
+	text-align: center;
 
+	min-height: 60vh;
+	object-fit: cover;
 
-        .artisans{
-               
-                
-                    .artisanscopy{
-                   
-                    h3{
-                    font-size: 3em;
-                    text-align: left;
-                    padding-left: 4%;
-                    }
-                    p{
-                    padding-left: 4%;
-                    padding-right: 4%;
-                    font-size: 1.5em;
-                    text-align: left;
-                    a{
-                    text-decoration: underline;
-                    &:hover{
-                    color:green;
-                    display: flex;
-                    width: 100%;
-                        }
-                    }
-                    }
-                    }
-                    }
-                    .artisansimage{
-                    width: 100%;
-                    .art{
-                   
-                    size:20%;
-                    }
-                }
-            }
-    
+	.herocopy {
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: white;
+		font-family: 'Playfair Display', serif;
 
-@media screen and (min-width: $desktop) {
-    .heroimage .herocopy{
-        font-size: 4em;
-        .header{
-        font-size: 1em;
-        }
-    }
-    .about, .artisans {
-
-        display: grid;
-        width: 100%;
-        grid-template-columns: 50% 50%;
-        align-items: center;
-        grid-column-gap: 5%;
-    }
-    .information-wrapper{
-        padding-top: 5%;
-    }
-    .artisansimage{
-        order:-1;
-    }
-    .photolinks{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-column-gap: 5%;
-        padding-top: 3%;
-    }
-    .bgimg > img{
-        min-width: 100%;
-    }
-    .quote-title{
-        font-size: 2em;
-        margin: 7%;
-        text-align: center;
-    }    
-    .quote-body{
-        margin-top: 3%;
-        margin-left: 7%;       
-        font-size: 1.6em;        
-        text-align: center;        
-        margin-right: 7%;
-    }
-    .quote-author{
-        font-size: 1em;
-        text-align: center;
-    }
-
-    .information-wrapper {
-        .flickity-button{
-            height: 20px;
-            width: 20px;
-            position: relative;
-            left:45%;
-        }
-    }
-
+		h1 {
+			line-height: 1.5em;
+		}
+	}  
 }
-        
+
+.aboutcopy, .artisanscopy {
+	margin-bottom: $base-spacing * 3;
+}
+	
+.information-wrapper {
+	h3 {
+		margin: 0;
+		margin-bottom: $base-spacing * 3;
+
+		font-size: 1.5em;
+		font-weight: normal;
+		text-align: center;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.about, .artisans{
+	box-sizing: border-box;
+	display: grid;
+	width: 100%;  
+	margin: $base-spacing * 3 auto;
+	padding: 0 $base-spacing * 1.5;
+}
+
+.bgimg{
+	position: relative;
+	text-align: center;
+
+	.flowercopy, .jewelcopy{
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: green;
+		font-size: 1.5em;
+		font-family: 'Playfair Display', serif;
+	}  
+}
+
+.k2 {
+	width: 100%;
+}
+
+@media screen and (min-width: $tablet) {
+	.about, .artisans {
+		margin: $base-spacing * 5 auto;
+		padding: 0 $base-spacing * 3;
+	}
+
+	.aboutcopy, .artisanscopy {
+		font-size: 1.25em;
+		margin-bottom: $base-spacing * 5;
+
+		h3 {
+			margin-bottom: $base-spacing * 5;
+		}
+	}
+
+	.artisans {     
+		.artisanscopy {
+	
+			a	{
+			text-decoration: underline;
+
+				&:hover {
+					color:green;
+					display: flex;
+					width: 100%;
+				}
+			}
+		}
+	}
+	
+	.artisansimage{
+		width: 100%;
+	
+		.art {		
+			size:20%;
+		}
+	}
+}
+
+
+@media screen and (min-width: $larger-tablet) {
+	.herocopy {
+		h1 {
+			font-size: 3em;
+		}
+	}
+
+	.about, .artisans {
+		box-sizing: border-box;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		grid-column-gap: $base-spacing * 4;
+		
+		width: 100%;
+		padding: 0 $base-spacing * 3;
+
+
+		h3 {
+			text-align: left;	
+		}
+	}
+
+	.aboutcopy, .artisanscopy {
+	}
+	
+	.artisansimage {
+		box-sizing: border-box;
+		order:-1;
+
+		img {
+			width: 100%;
+		}
+	}
+	
+	.photolinks {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: 5%;
+	}
+	
+	.bgimg > img {
+		min-width: 100%;
+	}
+}
+				
+/*
+=========================
+Slider Styling
+=========================
+*/
+
+.carousel {
+	padding-bottom: 30px;
+
+  background-color: $brand-colour-bright-green;
+  color: white;
+
+  h4 {
+		margin-top: 0;
+
+		font-size: 1.5em;
+		font-weight: normal;
+		line-height: 1.5em;
+	}
+
+	.quote-body {
+		margin-bottom: 0;
+		font-style: italic;
+	}
+
+	.quote-author {
+		margin: 0;
+		font-weight: bold;
+	}
+	
+	.carousel-cell {
+		width: 100%;
+
+		text-align: center;
+
+		.quote-container {
+			padding: 10% 20%;
+		}
+	}
+
+	.flickity-page-dots {
+		bottom: 30px;
+	}
+}
+
+
+@media screen and (min-width: $tablet) {
+	.carousel {
+		font-size: 1.25em;
+	}
+}
+
+@media screen and (min-width: $tablet) {
+	.carousel {
+		font-size: 1.4em;
+	}
+}
