@@ -639,7 +639,7 @@ Nav Bar Styling
     margin: 0;
     padding: 0; }
   .main-navigation ul.mobile-nav {
-    z-index: 2;
+    z-index: 10;
     position: absolute;
     left: 0;
     top: 96px;
@@ -759,6 +759,7 @@ Header Search Styling
   border: none; }
 
 .mobile-search {
+  z-index: 5;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
@@ -809,6 +810,7 @@ Breakpoints
       text-transform: uppercase;
       text-align: center; }
   .secondary-menu {
+    z-index: 10;
     position: absolute;
     width: 100%;
     border-bottom: 1px solid #062b35; }
@@ -1584,7 +1586,7 @@ Filter Products Styling
       border: 1px solid transparent;
       color: #0c5535; }
     .products-filter-section .sort-by ul {
-      z-index: 2;
+      z-index: 1;
       position: absolute;
       top: 5px;
       left: -5px;

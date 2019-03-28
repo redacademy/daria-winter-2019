@@ -57,7 +57,7 @@ Nav Bar Styling
   =========================
   */
   ul.mobile-nav{
-    z-index: 2;
+    z-index: 10;
 
     position: absolute;
     left: 0;
@@ -215,6 +215,7 @@ Header Search Styling
 
 // Mobile Search
 .mobile-search {
+  z-index: 5;
   box-sizing: border-box;
   position: absolute;
 
@@ -288,6 +289,7 @@ Breakpoints
 
   // Secondary menu
   .secondary-menu {
+    z-index: 10;
     position: absolute;
 
     width: 100%;

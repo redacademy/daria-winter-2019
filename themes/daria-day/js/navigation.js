@@ -11,9 +11,9 @@
   // if navigation doesn't exist, exit here
 	const $navigation = $('.main-navigation');
 	
-	if (!$navigation) {
-		return;
-	} 
+	// if (!$navigation) {
+	// 	return;
+	// } 
 	
 	// Make link to shop page
 	const currentUrl = window.location.href;
