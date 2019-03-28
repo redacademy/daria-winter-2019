@@ -11,17 +11,7 @@
 	// Make link to shop page
 	const currentUrl = window.location.href;
 
-	let urlArray = currentUrl.split('/');
-	let shopUrl = currentUrl.split('/');
-
-	for (let i = 1; i < urlArray.length; i++) {
-		if (urlArray.slice(0, -i).includes('daria-day')) {
-			shopUrl = urlArray.slice(0, -i);
-		}
-	}
-	
-	shopUrl = shopUrl.join('/');
-	shopUrl += '/shop';
+	let shopUrl = home_url.website_home_url + '/shop';
 
   // checks mobile or desktop
   let isMobile = false;

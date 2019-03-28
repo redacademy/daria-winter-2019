@@ -20,17 +20,17 @@
     <li class="flickity-item">
       <img src="https://via.placeholder.com/200">
       <p>Energizing Earrings</p>
-      <a>See more</a>
+      <a href="<?php echo get_home_url() ?>/shop">See more</a>
     </li>
     <li class="flickity-item"> -->
       <img src="https://via.placeholder.com/200">
       <p>Bold Earrings</p>
-      <a>See more</a>
+      <a href="<?php echo get_home_url() ?>/shop">See more</a>
     </li>
     <li class="flickity-item">
       <img src="https://via.placeholder.com/200">
       <p>Noble Earrings</p>
-      <a>See more</a>
+      <a href="<?php echo get_home_url() ?>/shop">See more</a>
     </li>
   </ul>
 

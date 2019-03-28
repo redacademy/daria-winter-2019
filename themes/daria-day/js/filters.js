@@ -38,7 +38,7 @@
 				).join('')}
 				</div>
 			<div class="see-more-button">
-				<button>See More</button>
+				<a href="${home_url.website_home_url}/shop"><button>See More</button></a>
 			</div>`);
         
     });

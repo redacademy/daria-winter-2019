@@ -4,6 +4,6 @@
   }
 
   $('.carousel').flickity({
-    initialIndex: 1
+    wrapAround: true
   });
 })(jQuery); 
