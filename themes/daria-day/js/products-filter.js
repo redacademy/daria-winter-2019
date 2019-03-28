@@ -231,9 +231,6 @@
     sessionStorage.removeItem('prefilterItem');
     sessionStorage.removeItem('prefilterCategory');
 
-    console.log(prefilteredItem);
-    console.log(prefilteredCategory);
-
     if (prefilteredCategory === 'productType') {
       selectingProductTypes('prefilter', prefilteredItem);
     } else if (prefilteredCategory === 'energyTag') {

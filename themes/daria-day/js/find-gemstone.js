@@ -1,4 +1,9 @@
 (function($) {
+
+  if (!$('.site-main').hasClass('find-your-gem')) {
+    return;
+  }
+
   const $findType = $('#find-gemstone-type');
   const $findTag = $('#find-gemstone-tag');
 

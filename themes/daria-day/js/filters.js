@@ -1,4 +1,9 @@
 ( function( $ ) {
+
+	if (!$('body').hasClass('home')) {
+    return;
+  } 
+
   //latest addistion on front page
   if($('#latest-additions-container').attr('data-exists')== 'yes'){
     let resultsDiv = $('#latest-additions-container');

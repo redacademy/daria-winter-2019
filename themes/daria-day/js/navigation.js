@@ -7,13 +7,6 @@
 
 (function ($) {
 	const desktopWidth = 1024;
-
-  // if navigation doesn't exist, exit here
-	const $navigation = $('.main-navigation');
-	
-	// if (!$navigation) {
-	// 	return;
-	// } 
 	
 	// Make link to shop page
 	const currentUrl = window.location.href;
