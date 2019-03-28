@@ -8,9 +8,6 @@
 (function ($) {
 	const desktopWidth = 1024;
 	
-	// Make link to shop page
-	const currentUrl = window.location.href;
-
 	let shopUrl = home_url.website_home_url + '/shop';
 
   // checks mobile or desktop

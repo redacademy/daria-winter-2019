@@ -180,7 +180,7 @@ function daria_day_scripts() {
 	wp_enqueue_script( 'demo-theme-search', get_template_directory_uri() . '/build/js/search.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'daria-day-find-gemstone', get_template_directory_uri() . '/build/js/find-gemstone.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'daria-day-products-filter', get_template_directory_uri() . '/build/js/products-filter.min.js', array(), '20151215', true );
-	wp_enqueue_script( 'daria-day-front-page-flickity', get_template_directory_uri() . '/build/js/front-page-flickity.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'daria-day-front-flickity', get_template_directory_uri() . '/build/js/front-flickity.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'daria-day-about-slider', get_template_directory_uri() . '/build/js/about-slider.min.js', array(), '20151215', true );
 
 	// Add template directory uri to navigation
