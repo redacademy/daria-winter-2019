@@ -28,12 +28,15 @@
 	$menuItems = $('.menu-item a')
 	$menuItems.each((index, value) => {
 		if (value.innerHTML.toLowerCase() === 'my account') {
+			$(value).attr('href', 'https://zendagi.shop/account/login');
 			$myAccountLink = value.closest('li');
 		}
 		if (value.innerHTML.toLowerCase() === 'shop') {
 			$shopLink = $menuItems.eq(index).closest('li');
 		}
 	});
+
+	
 
 	// Add secondary Shop Menu
 	const addSecondaryMenu = (isMobile) => {
@@ -160,5 +163,4 @@
 		sessionStorage.setItem('prefilterCategory', 'collectionTag');
 		sessionStorage.setItem('prefilterItem', prefilteredItem);
 	});
-
 })(jQuery);

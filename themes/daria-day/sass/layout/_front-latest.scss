@@ -64,6 +64,12 @@ Latest Additions Section
       border-bottom: 2px solid $greyish-brown;
       color: $brand-colour-evergreen;
       text-transform: uppercase;
+
+      &:hover {
+        color: $brand-colour-green;
+        border-bottom: 2px solid $brand-colour-green;
+        cursor: pointer;
+      }
     }
   }
 }

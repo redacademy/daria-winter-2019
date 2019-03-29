@@ -785,6 +785,8 @@ Footer
     color: white; }
   .footer a {
     color: white; }
+    .footer a:hover {
+      text-decoration: underline; }
   .footer .companyinfo {
     display: grid;
     justify-items: center; }
@@ -1057,6 +1059,10 @@ Latest Additions Section
     border-bottom: 2px solid #5b4646;
     color: #062b35;
     text-transform: uppercase; }
+    .latest-additions-container .see-more-button button:hover {
+      color: #0c5535;
+      border-bottom: 2px solid #0c5535;
+      cursor: pointer; }
 
 @media screen and (min-width: 600px) {
   .latest-additions-container h2 {
